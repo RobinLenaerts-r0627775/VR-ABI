@@ -13,7 +13,7 @@ namespace Interactive360
         public GameObject m_playButton; //A reference to the button that toggles the video content to play
         public GameObject m_pauseButton; //A reference to the button that toggle the video content to pause
 
-        [SerializeField] string m_oculusMenuToggle = "Button2"; //The name of the oculus button input that will toggle the scene on and off
+        [SerializeField] string m_oculusMenuToggle = "Button4"; //The name of the oculus button input that will toggle the scene on and off
 
         private AudioSource m_menuToggleAudio; //Audio clip to play when the menu is closed
 
