@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Jupiler.unity
     guid: f0d5cfc3e4b1d2147b4e111ab87934a3
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Corona.unity
+    path: Assets/ABI-VR/Scenes/Hertog_Jan.unity
     guid: 8feb821b3327e324fa5facb81a46d719
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Stella.unity
