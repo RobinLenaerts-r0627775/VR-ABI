@@ -411,3 +411,6 @@ TextMesh Pro/
 
 #mp4 files too big to push
 *.mp4
+
+#ignore the plugins folder
+Plugins/
