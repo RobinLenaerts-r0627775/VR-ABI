@@ -1010,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1344230159807386, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 224326043054302856, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1124,10 +1128,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344230159807386, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
-      propertyPath: m_Name
-      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 1591591694353182, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
       propertyPath: m_Layer
@@ -1977,7 +1977,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ControlUI
       value: 
-      objectReference: {fileID: 2035272338}
+      objectReference: {fileID: 1185508720}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 3}
       propertyPath: fadeOverlay
@@ -2328,6 +2328,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.5754717
       objectReference: {fileID: 0}
+    - target: {fileID: 223916870061627708, guid: ffc720a8724cdcd4eb30b387945b6159,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 605141207}
     m_RemovedComponents:
     - {fileID: 7640770554758907224, guid: ffc720a8724cdcd4eb30b387945b6159, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffc720a8724cdcd4eb30b387945b6159, type: 3}
@@ -2931,10 +2936,4 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4948056085071156, guid: 39475d556840902458f2711a3956c86b,
     type: 3}
   m_PrefabInstance: {fileID: 1216529168}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2035272338 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1831353035923418, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1211001842}
   m_PrefabAsset: {fileID: 0}
