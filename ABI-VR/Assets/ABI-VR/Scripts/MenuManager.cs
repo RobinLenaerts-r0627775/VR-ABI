@@ -33,8 +33,6 @@ namespace Interactive360
         // on Start, bind all buttons to their respective scenes and call DontDestroyOnLoad to keep the Main Menu in every scene
         void Start()
         {
-
-            BindButtonsToScenes();
             m_menuToggleAudio = GetComponent<AudioSource>();
         }
 
@@ -73,31 +71,6 @@ namespace Interactive360
                 //if we have an audio source to play with menu toggle, play it now
                 if (m_menuToggleAudio)
                     m_menuToggleAudio.Play();
-            }
-
-        }
-
-
-        // Each button will match up to a respective scene. Button 1 in the Menu Manager will match up to Scene 1 in the Video Manager
-        public void BindButtonsToScenes()
-        {
-            //check to see if there are the same buttons in the menu as scenes to load. if not, return an error
-
-            if (m_buttonsInScene.Length != GameManager.instance.scenesToLoad.Length)
-            {
-                Debug.Log("Amount of buttons and scenes do not match!");
-                return;
-            }
-
-            //otherwise bind Button 1-i from Menu Manager, to load Scene 1-i in Video Manager 
-            else
-            {
-                for (int i = 0; i < m_buttonsInScene.Length; i++)
-                {
-                    string sceneName = GameManager.instance.scenesToLoad[i];
-                    m_buttonsInScene[i].onClick.AddListener(() => GameManager.instance.SelectScene(sceneName));
-
-                }
             }
 
         }

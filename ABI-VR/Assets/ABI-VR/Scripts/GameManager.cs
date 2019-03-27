@@ -20,18 +20,13 @@ namespace Interactive360
         Image fadeImage;
 
         AsyncOperation operation;
-
-
-        [Header("Scene Management")]
-        public string[] scenesToLoad;
-        public string activeScene;
-
-        [Space]
+        
         [Header("UI Settings")]
 
         public bool useFade;
         public GameObject fadeOverlay;
-        public GameObject ControlUI;
+        public GameObject BrandUI;
+        public GameObject CategoryUI;
         public GameObject LoadingUI;
 
 
@@ -55,7 +50,6 @@ namespace Interactive360
         void Start()
         {
             scene = SceneManager.GetActiveScene();
-            activeScene = scene.buildIndex + " - " + scene.name;
         }
 
 
@@ -77,8 +71,6 @@ namespace Interactive360
             {
                 
             }
-            //set the active scene to the next scene
-            activeScene = sceneToLoad;
         }
 
         IEnumerator FadeOutAndIn(string sceneToLoad)
@@ -88,7 +80,8 @@ namespace Interactive360
             fadeImage = fadeOverlay.GetComponent<Image>();
 
             //turn control UI off and loading UI on
-            ControlUI.SetActive(false);
+            BrandUI.SetActive(false);
+            CategoryUI.SetActive(false);
             LoadingUI.SetActive(true);
 
             //set FadeOut to true on the animator so our image will fade out
@@ -113,8 +106,8 @@ namespace Interactive360
             LoadingUI.SetActive(false);
             
             //if we have not destroyed the control UI, set it to active
-            if (ControlUI) 
-            ControlUI.SetActive(true);
+            if (BrandUI) 
+            BrandUI.SetActive(true);
 
             
 
