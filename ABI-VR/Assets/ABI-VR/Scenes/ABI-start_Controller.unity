@@ -360,11 +360,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 279025368}
   - component: {fileID: 279025367}
   m_Layer: 5
-  m_Name: Option 1
+  m_Name: Brewing_Process
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +545,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 279025370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!65 &279025368
@@ -625,7 +636,7 @@ GameObject:
   - component: {fileID: 305523990}
   - component: {fileID: 305523994}
   m_Layer: 5
-  m_Name: Option 6
+  m_Name: Hoegaarden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,8 +649,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305523988}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalRotation: {x: -0.000000009313226, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.20000108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2065333402}
@@ -649,7 +660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.6, y: -10}
+  m_AnchoredPosition: {x: 30.599997, y: -10.000004}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!65 &305523990
@@ -753,7 +764,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 305523992}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1796927006}
+        m_MethodName: SelectScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hoegaarden
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &351265761
@@ -841,6 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390645600}
   - component: {fileID: 390645599}
+  - component: {fileID: 390645601}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Untagged
@@ -879,6 +902,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390645601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390645598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17395f7a1cf833f4fa576df4b56d7c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &418849252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1149,11 +1184,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1262,7 +1297,7 @@ GameObject:
   - component: {fileID: 595949872}
   - component: {fileID: 595949871}
   m_Layer: 5
-  m_Name: Option 3
+  m_Name: Logistics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1727,11 +1762,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1768,7 +1803,7 @@ GameObject:
   - component: {fileID: 1109497889}
   - component: {fileID: 1109497888}
   m_Layer: 5
-  m_Name: Option 2
+  m_Name: Culture&Heritage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,7 +1947,7 @@ PrefabInstance:
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 3}
       propertyPath: scenesToLoad.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 3}
@@ -1963,6 +1998,31 @@ PrefabInstance:
         type: 3}
       propertyPath: scenesToLoad.Array.data[5]
       value: Hoegaarden
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: BrandUI
+      value: 
+      objectReference: {fileID: 1698642942}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: CategoryUI
+      value: 
+      objectReference: {fileID: 1754096325}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: scenesToLoad.Array.data[6]
+      value: Brewing_Process
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: scenesToLoad.Array.data[7]
+      value: Culture&Heritage
+      objectReference: {fileID: 0}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: scenesToLoad.Array.data[8]
+      value: Logistics
       objectReference: {fileID: 0}
     - target: {fileID: 4439305661080956, guid: cff31d6d73c6b684d9170ce0698a3b79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2176,7 +2236,7 @@ GameObject:
   - component: {fileID: 1297121260}
   - component: {fileID: 1297121259}
   m_Layer: 5
-  m_Name: Option 5
+  m_Name: Bosteels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,18 +2249,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297121257}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalRotation: {x: -0.000000009313226, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.20000108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1487384649}
   - {fileID: 85837278}
   m_Father: {fileID: 1698642943}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.6, y: -10}
+  m_AnchoredPosition: {x: 0.59999657, y: -10.00002}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!114 &1297121259
@@ -2242,7 +2302,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1297121262}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1796927006}
+        m_MethodName: SelectScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bosteels
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!65 &1297121260
@@ -3097,6 +3168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -3114,6 +3190,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1796927006}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stella
       objectReference: {fileID: 0}
     - target: {fileID: 224435842751171642, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
@@ -3488,6 +3594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -3505,6 +3616,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1796927006}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798339280549882, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Jupiler
       objectReference: {fileID: 0}
     - target: {fileID: 1076789141897016, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
       propertyPath: m_Layer
@@ -3520,6 +3661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -3537,6 +3683,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1796927006}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114013926979074614, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Hertog_Jan
       objectReference: {fileID: 0}
     - target: {fileID: 114846925161304214, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
@@ -3926,6 +4102,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384473369555074, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
+      propertyPath: m_Name
+      value: Hertog_Jan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068634850646158, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
+      propertyPath: m_Name
+      value: Stella
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595933678116662, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
+      propertyPath: m_Name
+      value: Jupiler
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114357651959190646, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
@@ -4481,6 +4669,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1796927006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+    type: 3}
+  m_PrefabInstance: {fileID: 1118971880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0daf72cb2e9afb3458e6dbbd836161c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1891560396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4496,7 +4696,7 @@ GameObject:
   - component: {fileID: 1891560399}
   - component: {fileID: 1891560398}
   m_Layer: 5
-  m_Name: Option 4
+  m_Name: Leffe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4516,7 +4716,7 @@ RectTransform:
   - {fileID: 1894523307}
   - {fileID: 2023558282}
   m_Father: {fileID: 1698642943}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4575,7 +4775,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1891560401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1796927006}
+        m_MethodName: SelectScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Leffe
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1891560400
@@ -4973,7 +5184,7 @@ PrefabInstance:
     - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
         type: 3}
       propertyPath: m_buttonsInScene.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
         type: 3}
@@ -5025,6 +5236,21 @@ PrefabInstance:
       propertyPath: m_categories
       value: 
       objectReference: {fileID: 1754096325}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
+      propertyPath: m_buttonsInScene.Array.data[6]
+      value: 
+      objectReference: {fileID: 279025367}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
+      propertyPath: m_buttonsInScene.Array.data[7]
+      value: 
+      objectReference: {fileID: 1109497889}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
+      propertyPath: m_buttonsInScene.Array.data[8]
+      value: 
+      objectReference: {fileID: 595949871}
     - target: {fileID: 224582745517928790, guid: 39475d556840902458f2711a3956c86b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5222,11 +5448,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
