@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Float : MonoBehaviour
 {
+
+    [Header("Float parametres")]
     public float amplitude;          //Set in Inspector 
     public float speed;                  //Set in Inspector 
     private float tempVal;
