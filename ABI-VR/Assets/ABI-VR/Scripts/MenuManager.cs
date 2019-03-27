@@ -9,9 +9,8 @@ namespace Interactive360
     {
         public static MenuManager instance = null;
         public Button[] m_buttonsInScene; //A reference to all the buttons in the scene that would load new scenes
-        public GameObject m_menu; //A reference to the menu being rendered
-        public GameObject m_playButton; //A reference to the button that toggles the video content to play
-        public GameObject m_pauseButton; //A reference to the button that toggle the video content to pause
+        public GameObject m_brands; //A reference to the menu being rendered
+        public GameObject m_categories; //A reference to the button that toggles the video content to play
 
         [SerializeField] string m_oculusMenuToggle = "Button4"; //The name of the oculus button input that will toggle the scene on and off
 
@@ -48,7 +47,19 @@ namespace Interactive360
         //if the menu is active, turn it off. If it is inactive, turn it on
         public void toggleMenu()
         {
-            m_menu.SetActive(!m_menu.activeInHierarchy);
+            if (m_brands.activeInHierarchy)
+            {
+                m_brands.SetActive(false);
+                m_categories.SetActive(true);
+            }
+            else if (m_categories.activeInHierarchy)
+            {
+                m_categories.SetActive(false);
+            }
+            else
+            {
+                m_brands.SetActive(true);
+            }
         }
 
         //If we detect input, call the toggleMenu method 
@@ -63,15 +74,6 @@ namespace Interactive360
                 if (m_menuToggleAudio)
                     m_menuToggleAudio.Play();
             }
-
-        }
-
-        //Toggle between showing play and pause button when once is pressed
-        public void toggleButton()
-        {
-
-            m_pauseButton.SetActive(!m_pauseButton.activeInHierarchy);
-            m_playButton.SetActive(!m_playButton.activeInHierarchy);
 
         }
 
