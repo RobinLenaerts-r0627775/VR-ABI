@@ -50,6 +50,9 @@ namespace Interactive360
         void Start()
         {
             scene = SceneManager.GetActiveScene();
+
+            //DEBUG
+            SelectScene("Leffe_Novice");
         }
 
 
@@ -66,10 +69,6 @@ namespace Interactive360
             else
             {
                 SceneManager.LoadScene(sceneToLoad);
-            }
-            if(sceneToLoad == "ABI-menu")
-            {
-                
             }
         }
 
@@ -90,16 +89,16 @@ namespace Interactive360
             yield return new WaitUntil(() => fadeImage.color.a == 1);
             SceneManager.LoadScene(sceneToLoad);
             Scene scene = SceneManager.GetSceneByName(sceneToLoad);
+            
             Debug.Log("loading scene:" + scene.name);
             yield return new WaitUntil(() => scene.isLoaded);
 
             // grab video and wait until it is loaded and prepared before starting the fade out
-            video = FindObjectOfType<VideoPlayer>();
-            if(video != null) yield return new WaitUntil(() => video.isPrepared);
+            /*video = FindObjectOfType<VideoPlayer>();
+            if(video != null) yield return new WaitUntil(() => video.isPrepared);*/
 
             //set FadeOUt to false on the animator so our image will fade back in 
             anim.SetBool("FadeOut", false);
-            Debug.Log(fadeImage.color.a);
             
             //wait until the fade image is completely transparent (alpha = 0) and then turn loading UI off and control UI back on
             yield return new WaitUntil(() => fadeImage.color.a == 0);
