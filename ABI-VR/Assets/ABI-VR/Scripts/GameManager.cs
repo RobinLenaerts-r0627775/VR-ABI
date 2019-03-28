@@ -52,7 +52,7 @@ namespace Interactive360
             scene = SceneManager.GetActiveScene();
 
             //DEBUG
-            SelectScene("Leffe_Novice");
+            //SelectScene("Leffe_Novice");
         }
 
 
@@ -94,8 +94,9 @@ namespace Interactive360
             yield return new WaitUntil(() => scene.isLoaded);
 
             // grab video and wait until it is loaded and prepared before starting the fade out
-            /*video = FindObjectOfType<VideoPlayer>();
-            if(video != null) yield return new WaitUntil(() => video.isPrepared);*/
+            video = FindObjectOfType<VideoPlayer>();
+            
+            if(video != null && scene.name != "Leffe_Novice") yield return new WaitUntil(() => video.isPrepared);
 
             //set FadeOUt to false on the animator so our image will fade back in 
             anim.SetBool("FadeOut", false);
