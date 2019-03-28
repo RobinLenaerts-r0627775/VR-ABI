@@ -1008,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 4731762634251928028, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
         type: 3}
       propertyPath: m_AspectRatio
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731762634251928028, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
         type: 3}
@@ -1023,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: 4731762634251928028, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731762634251928028, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
         type: 3}
@@ -1035,6 +1035,11 @@ PrefabInstance:
       propertyPath: m_TargetAudioSources.Array.data[0]
       value: 
       objectReference: {fileID: 1425040973}
+    - target: {fileID: 4549106106825061032, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6026499320246702788, guid: 1e4b0b246d8f30b478c93b3a3f3c6fcb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
