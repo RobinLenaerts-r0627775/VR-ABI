@@ -19,7 +19,9 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}"></TextBlock>
+                            <TextBlock Text="{Binding Code}" />
+                            <TextBlock Text="   " />
+                            <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -34,6 +36,12 @@
             <TextBlock Grid.Column="2" Name="textBlockA"></TextBlock>
             <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
         </StackPanel>
-        <Image Grid.Column="3" Source="{Binding Image, Mode=TwoWay}" />
+        <StackPanel Grid.Column="3">
+            <Image Source="{Binding Image, Mode=TwoWay}" />
+            <Label Content="{Binding ImageName}" Name="label"/>
+            <TextBox Text="{Binding ImageCode}" />
+            <Button Content="Change information" Click="Button_Click_Save"/>
+            <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
+        </StackPanel>
     </Grid>
 </Window>

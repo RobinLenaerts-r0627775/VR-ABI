@@ -25,7 +25,7 @@ namespace CMS
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private IDictionary<string, Image> dictionaryImages;
-        private ImageSource _img;
+        private BitmapImage _img;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -65,7 +65,7 @@ namespace CMS
             }
         }
 
-        public ImageSource Image
+        public BitmapImage Image
         { 
             get {
                 return _img;
@@ -77,6 +77,10 @@ namespace CMS
             }
         }
 
+        public string ImageName { get; set; }
+
+        public string ImageCode { get; set; }
+
         public List<Image> ListImages
         {
             get { return dictionaryImages.Values.ToList(); }
@@ -86,8 +90,12 @@ namespace CMS
         {
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
-            //textBlockI.Text += "\t" + fileName + "\n";
             System.IO.File.Copy(file, "C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName);
+            Image = new BitmapImage(new Uri("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName));
+            Image image = new Image(fileName, Image);
+            dictionaryImages[fileName] = image;
+            ListImages.Add(image);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }
 
         private void Button_Click_Videos(object sender, RoutedEventArgs e)
@@ -120,8 +128,31 @@ namespace CMS
             if (item != null)
             {
                 item = listbox.SelectedItem as Image;
-                Image = item.Source;
+                ImageName = item.Name;
+                ImageCode = item.Code;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageName)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             }
+        }
+
+        private void Button_Click_Save(object sender, RoutedEventArgs e)
+        {
+            string code = dictionaryImages[label.Content.ToString()].Code;
+            dictionaryImages[label.Content.ToString()].Code = ImageCode;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+        }
+
+        private void Button_Click_SaveToFile(object sender, RoutedEventArgs e)
+        {
+            // writing to txt file. VR app can look up code in this file and use the absolute path.
+            // later to be changed to .meta file (or other)
+            TextWriter tw = new StreamWriter("test.txt");
+            foreach (Image img in ListImages)
+            {
+                tw.WriteLine(img.Code + "   " + img.URI);
+            }
+            tw.Close();
         }
     }
 }
