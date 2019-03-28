@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Name="textBlockI"></TextBlock>
+            <ListBox Name="listbox" ItemsSource="{Binding ListImages}" PreviewMouseDown="listbox_PreviewMouseDown">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Content="Upload new file" Width="100" Click="Button_Click_Images"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock Name="textBlockV"></TextBlock>
+            <Button Content="Upload new file" Width="100" Click="Button_Click_Videos"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBlock Grid.Column="2" Name="textBlockA"></TextBlock>
+            <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
+        </StackPanel>
+        <Image Grid.Column="3" Source="{Binding Image, Mode=TwoWay}" />
     </Grid>
 </Window>
