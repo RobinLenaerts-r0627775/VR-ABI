@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
@@ -45,18 +46,25 @@ namespace Interactive360
         //if the menu is active, turn it off. If it is inactive, turn it on
         public void toggleMenu()
         {
+            var es = (EventSystem)FindObjectOfType(typeof(EventSystem));
             if (m_brands.activeInHierarchy)
             {
+                //set the categories menu
                 m_brands.SetActive(false);
                 m_categories.SetActive(true);
+                m_buttonsInScene[6].Select();
             }
             else if (m_categories.activeInHierarchy)
             {
+                //set the brands menu
                 m_categories.SetActive(false);
+                es.firstSelectedGameObject = null;
+
             }
             else
             {
                 m_brands.SetActive(true);
+                m_buttonsInScene[0].Select();
             }
         }
 

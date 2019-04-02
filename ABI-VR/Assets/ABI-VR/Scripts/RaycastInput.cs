@@ -62,16 +62,18 @@ namespace Interactive360
 
         void LookForInteractables()
         {
+
             //Generate a new ray at our input object facing forward
             ray = new Ray(transform.position, transform.forward);
 
+            
             //If we want, draw a debug line in the scene view
             if (drawDebugLine)
                 Debug.DrawLine(transform.position, transform.position + transform.forward * rayDistance, Color.red);
 
             //Cast the ray
             Physics.Raycast(ray, out rayHit, rayDistance, whatIsInteractable);
-
+            
             //Draw the ray so that the player can see it
             DrawLine();
 
@@ -83,6 +85,7 @@ namespace Interactive360
                 return;
             }
 
+            
             //We are looking at something, so record its data
             eventData.pointerCurrentRaycast = ConvertRaycastHitToRaycastResult(rayHit);
 

@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/ABI-start_Controller.unity
-    guid: 5171d86f6b4905847a8163dbbcf7591e
+    path: Assets/ABI-VR/Scenes/Spawn.unity
+    guid: a4ca80d8fd7ba2d4ab136bfb60823ced
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/TutorialScene.unity
+    guid: ed6303675a35f02438ce00957f7e656c
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler.unity
     guid: f0d5cfc3e4b1d2147b4e111ab87934a3
@@ -21,22 +24,22 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Logistics.unity
     guid: b148c5664a2d6a742ba1fcc1adf44d7b
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe.unity
     guid: 86aa501f6d801fa4d82131fea26719ee
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe_Hall.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe_Hall.unity
     guid: 1b3b7b647274f0b4c8634db9f9469ada
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe_Hall_2.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe_Hall_2.unity
     guid: c4438da465815d54c8999bfc4bc1860a
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe_ARoom.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe_ARoom.unity
     guid: 1997de2bee3ebe94783726fdd6939963
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe_Meeting.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe_Meeting.unity
     guid: 7df04a21be131bd4b966f004875a7b44
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Leffe_Novice.unity
+    path: Assets/ABI-VR/Scenes/Leffe/Leffe_Novice.unity
     guid: c0d99f868e3ba224abb97d413ab958ce
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Hoegaarden.unity
