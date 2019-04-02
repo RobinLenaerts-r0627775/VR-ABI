@@ -834,6 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
         type: 3}
+      propertyPath: m_menuScreens.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
       propertyPath: m_buttonsInScene.Array.data[0]
       value: 
       objectReference: {fileID: 997941250}
@@ -897,6 +902,16 @@ PrefabInstance:
       propertyPath: m_buttonsInScene.Array.data[8]
       value: 
       objectReference: {fileID: 997941233}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
+      propertyPath: m_menuScreens.Array.data[1]
+      value: 
+      objectReference: {fileID: 997941237}
+    - target: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+        type: 3}
+      propertyPath: m_menuScreens.Array.data[0]
+      value: 
+      objectReference: {fileID: 997941234}
     - target: {fileID: 224582745517928790, guid: 39475d556840902458f2711a3956c86b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1411,7 +1426,7 @@ PrefabInstance:
     - target: {fileID: 114759217999518512, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Stella
+      value: Stella_0_front
       objectReference: {fileID: 0}
     - target: {fileID: 224435842751171642, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
@@ -3291,10 +3306,10 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 4294967291
-  rayDistance: 500
+  rayDistance: 600
   drawDebugLine: 0
   line: {fileID: 1946954517}
-  defaultLineDistance: 500
+  defaultLineDistance: 600
 --- !u!114 &1946954517
 MonoBehaviour:
   m_ObjectHideFlags: 0

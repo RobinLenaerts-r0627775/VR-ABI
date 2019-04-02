@@ -12,14 +12,32 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/TutorialScene.unity
     guid: ed6303675a35f02438ce00957f7e656c
   - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_0_front.unity
+    guid: 4a8c788eaa987ef4cb1133a330fa4c77
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_1_reception.unity
+    guid: 26ab9f3f3fed98f47b52cc77d8e76a8e
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_2_history.unity
+    guid: f11ac36276757f24fbcf998d42e4aac4
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_3_kettles.unity
+    guid: 6be8f3d05ced7f7479369926c4945ab5
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_4_ingredients.unity
+    guid: b329ea28d51242b4cbe778983619d751
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_5_bottling.unity
+    guid: 030bf4fcca8034d4dac34f15094abf79
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Stella/Stella_6_thuis.unity
+    guid: 39cbebfded39d19418a0894e7135271f
+  - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler.unity
     guid: f0d5cfc3e4b1d2147b4e111ab87934a3
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Hertog_Jan.unity
     guid: 8feb821b3327e324fa5facb81a46d719
-  - enabled: 1
-    path: Assets/ABI-VR/Scenes/Stella_test.unity
-    guid: 6fdd6d1d6978e0b41922d459052833b5
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Logistics.unity
     guid: b148c5664a2d6a742ba1fcc1adf44d7b
