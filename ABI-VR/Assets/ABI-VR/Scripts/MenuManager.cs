@@ -49,9 +49,13 @@ namespace Interactive360
             m_menuScreens.Add(screen);
             screen.transform.parent = GameObject.FindGameObjectWithTag("MenuHolder").transform;
             Vector3 temppos = screen.transform.localPosition;
+            Quaternion temprot = screen.transform.localRotation;
             temppos.x = 0;
             temppos.y = 0;
             temppos.z = 0;
+            temprot.x = 0;
+            temprot.y = 0;
+            temprot.z = 0;
             screen.transform.localPosition = temppos;
             toggleMenu(screen);
 
