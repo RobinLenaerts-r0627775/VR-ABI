@@ -34,16 +34,31 @@ namespace CMS
             dictionaryImages = new Dictionary<string, Image>();
             InitializeComponent();
             this.DataContext = this;
+
             // THE IMAGES DIRECTORY
+            // First this, others will follow
             DirectoryInfo dirI = new DirectoryInfo("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\");
             FileInfo[] infoI = dirI.GetFiles();
             textBlockI.Text = "All Files from the images folder: \n";
-            foreach (FileInfo file in infoI)
+            /*foreach (FileInfo file in infoI)
             {
                 Image = new BitmapImage(new Uri("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + file.Name));
                 Image image = new Image(file.Name, Image);
                 dictionaryImages[file.Name] = image;
+            }*/
+
+            TextReader tr = new StreamReader("test.txt");
+            string len;
+            char[] split = new char[] { ',' };
+            while ((len = tr.ReadLine()) != null)
+            {
+                string[] array = len.Split(split);
+                string code = array[0];
+                Image = new BitmapImage(new Uri(array[1]));
+                Image image = new CMS.Image(array[0], Image);
+                dictionaryImages[code] = image;
             }
+            tr.Close();
             
 
             // THE VIDEOS DIRECTORY
@@ -92,8 +107,8 @@ namespace CMS
             string fileName = System.IO.Path.GetFileName(file);
             System.IO.File.Copy(file, "C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName);
             Image = new BitmapImage(new Uri("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName));
-            Image image = new Image(fileName, Image);
-            dictionaryImages[fileName] = image;
+            Image image = new Image("", Image);
+            dictionaryImages[""] = image;
             ListImages.Add(image);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }
@@ -128,6 +143,7 @@ namespace CMS
             if (item != null)
             {
                 item = listbox.SelectedItem as Image;
+                Image = new BitmapImage(item.URI);
                 ImageName = item.Name;
                 ImageCode = item.Code;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageName)));
@@ -137,8 +153,8 @@ namespace CMS
 
         private void Button_Click_Save(object sender, RoutedEventArgs e)
         {
-            string code = dictionaryImages[label.Content.ToString()].Code;
-            dictionaryImages[label.Content.ToString()].Code = ImageCode;
+            string code = ImageCode;
+            dictionaryImages[""].Code = code;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }
@@ -150,9 +166,19 @@ namespace CMS
             TextWriter tw = new StreamWriter("test.txt");
             foreach (Image img in ListImages)
             {
-                tw.WriteLine(img.Code + "   " + img.URI);
+                tw.WriteLine(img.Code + "," + img.URI);
             }
             tw.Close();
+        }
+
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)
+        {
+            String path = dictionaryImages[ImageCode].URI.LocalPath;
+            ListImages.Remove(dictionaryImages[ImageCode]);
+            dictionaryImages.Remove(ImageCode);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+            // Maybe shouldn't erase the file entirely
+            //System.IO.File.Delete(path);
         }
     }
 }

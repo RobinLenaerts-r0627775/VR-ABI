@@ -37,11 +37,12 @@
             <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
         </StackPanel>
         <StackPanel Grid.Column="3">
-            <Image Source="{Binding Image, Mode=TwoWay}" />
+            <Image Source="{Binding Image}" />
             <Label Content="{Binding ImageName}" Name="label"/>
             <TextBox Text="{Binding ImageCode}" />
             <Button Content="Change information" Click="Button_Click_Save"/>
             <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
+            <Button Content="Delete file" Click="Button_Click_Delete" />
         </StackPanel>
     </Grid>
 </Window>
