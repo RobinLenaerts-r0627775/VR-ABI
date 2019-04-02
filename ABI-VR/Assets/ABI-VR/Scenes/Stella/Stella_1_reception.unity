@@ -333,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 5043574967315567397, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Stella_1_history
+      value: Stella_2_history
       objectReference: {fileID: 0}
     - target: {fileID: 5043574965641894874, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
         type: 3}

@@ -52,7 +52,7 @@ namespace Interactive360
             scene = SceneManager.GetActiveScene();
 
             //DEBUG
-            //SelectScene("Leffe_Novice");
+           // SelectScene("Stella_2_history");
         }
 
 

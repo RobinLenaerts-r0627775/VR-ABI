@@ -47,10 +47,19 @@ namespace Interactive360
         public void addMenuScreen(GameObject screen)
         {
             m_menuScreens.Add(screen);
+            screen.transform.parent = GameObject.FindGameObjectWithTag("MenuHolder").transform;
+            Vector3 temppos = screen.transform.localPosition;
+            temppos.x = 0;
+            temppos.y = 0;
+            temppos.z = 0;
+            screen.transform.localPosition = temppos;
+            toggleMenu(screen);
+
         }
 
         public void popMenuScreen()
         {
+            m_menuScreens[m_menuScreens.Count - 1].SetActive(false);
             m_menuScreens.Remove(m_menuScreens[m_menuScreens.Count - 1]);
         }
 
@@ -63,6 +72,10 @@ namespace Interactive360
                 menu.SetActive(false);
             }
 
+            if (screen == null)
+            {
+                return;
+            }
             if (screen == m_menuScreens[0]) 
             {
                 m_menuScreens[0].SetActive(true);
@@ -88,13 +101,14 @@ namespace Interactive360
             //check for input from specified Oculus Touch button or the App button on Google Daydream Controller
             if (Input.GetButtonDown(m_oculusMenuToggle))
             {
-                int menuindex = m_menuScreens.IndexOf(activemenu) +1;
-                if (menuindex >= m_menuScreens.Count) menuindex -= m_menuScreens.Count;
+                int menuindex = m_menuScreens.IndexOf(activemenu) + 1;
+                if (menuindex == m_menuScreens.Count)
+                {
+                    toggleMenu(null);
+                    return;
+                }
+                if (menuindex > m_menuScreens.Count) menuindex -= m_menuScreens.Count;
                 toggleMenu(m_menuScreens[menuindex]);
-
-                //if we have an audio source to play with menu toggle, play it now
-                if (m_menuToggleAudio)
-                    m_menuToggleAudio.Play();
             }
         }
     }
