@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: scenesToLoad.Array.data[8]
       value: Logistics
       objectReference: {fileID: 0}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4439305661080956, guid: cff31d6d73c6b684d9170ce0698a3b79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1074,7 +1079,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928959106}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceea98851b377c041a1fc06a4346bef5, type: 3}
   m_Name: 
@@ -3190,7 +3195,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1873898668}
   - component: {fileID: 1873898665}
-  - component: {fileID: 1873898667}
   - component: {fileID: 1873898666}
   m_Layer: 0
   m_Name: Main Camera
@@ -3243,14 +3247,6 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!81 &1873898666
 AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873898664}
-  m_Enabled: 1
---- !u!124 &1873898667
-Behaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
