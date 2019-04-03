@@ -5,18 +5,28 @@ using UnityEngine;
 
 public class SceneManagerScript : MonoBehaviour
 {
+
+    GameObject voiceoverControl;
+    MenuManager mm;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject voiceoverControl = GameObject.Find("/VoiceOverControl");
-        MenuManager mm = (MenuManager)FindObjectOfType(typeof(MenuManager));
+        voiceoverControl = GameObject.Find("/VoiceOverControl");
+        mm = (MenuManager)FindObjectOfType(typeof(MenuManager));
         mm.addMenuScreen(voiceoverControl);
+        voiceoverControl.SetActive(false);
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        mm.popMenuScreen();
+        Destroy(voiceoverControl);
     }
 }

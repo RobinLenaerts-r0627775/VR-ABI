@@ -57,6 +57,7 @@ namespace Interactive360
             temprot.y = 0;
             temprot.z = 0;
             screen.transform.localPosition = temppos;
+            screen.transform.localRotation = temprot;
             toggleMenu(screen);
 
         }
