@@ -27,6 +27,8 @@ namespace Interactive360
         public GameObject fadeOverlay;
         public GameObject BrandUI;
         public GameObject CategoryUI;
+        public GameObject ControlUI;
+        public MenuManager MenuManager;
         public GameObject LoadingUI;
 
 
@@ -52,7 +54,7 @@ namespace Interactive360
             scene = SceneManager.GetActiveScene();
 
             //DEBUG
-           //SelectScene("Stella_2_history");
+           SelectScene("Stella_2_history");
         }
 
 
@@ -79,6 +81,7 @@ namespace Interactive360
             fadeImage = fadeOverlay.GetComponent<Image>();
 
             //turn control UI off and loading UI on
+            
             BrandUI.SetActive(false);
             CategoryUI.SetActive(false);
             LoadingUI.SetActive(true);
@@ -104,10 +107,8 @@ namespace Interactive360
             //wait until the fade image is completely transparent (alpha = 0) and then turn loading UI off and control UI back on
             yield return new WaitUntil(() => fadeImage.color.a == 0);
             LoadingUI.SetActive(false);
-            
-            //if we have not destroyed the control UI, set it to active
-            if (BrandUI) 
-            BrandUI.SetActive(true);
+
+            MenuManager.activemenu.SetActive(true);
 
             
 
