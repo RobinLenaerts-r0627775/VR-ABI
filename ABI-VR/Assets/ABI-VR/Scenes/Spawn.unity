@@ -636,7 +636,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ControlUI
       value: 
-      objectReference: {fileID: 997941234}
+      objectReference: {fileID: 1846687583}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 3}
       propertyPath: fadeOverlay
@@ -707,6 +707,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
+        type: 3}
+      propertyPath: MenuManager
+      value: 
+      objectReference: {fileID: 2020896433}
     - target: {fileID: 4439305661080956, guid: cff31d6d73c6b684d9170ce0698a3b79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1224,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 9035085015622276177, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2773099075612926325, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
@@ -2352,17 +2357,17 @@ PrefabInstance:
     - target: {fileID: 6851778830961014967, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 689302093381322150, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6255006313523475086, guid: 0bb541a1d14271746bfc5f6354e5c5f7,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1586510824630982, guid: 0bb541a1d14271746bfc5f6354e5c5f7, type: 3}
       propertyPath: m_Layer
@@ -3339,7 +3344,7 @@ MonoBehaviour:
   rayDistance: 600
   drawDebugLine: 0
   line: {fileID: 1946954517}
-  defaultLineDistance: 600
+  defaultLineDistance: 10
 --- !u!114 &1946954517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3353,11 +3358,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Positions: []
-  m_ColorStart: {r: 1, g: 1, b: 1, a: 1}
-  m_ColorEnd: {r: 1, g: 1, b: 1, a: 1}
+  m_ColorStart: {r: 1, g: 0, b: 0, a: 1}
+  m_ColorEnd: {r: 1, g: 0, b: 0, a: 1}
   m_WidthStart: 0.05
-  m_WidthEnd: 0.1
-  m_WorldSpaceData: 0
+  m_WidthEnd: 0.05
+  m_WorldSpaceData: 1
 --- !u!23 &1946954518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3403,3 +3408,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946954515}
   m_Mesh: {fileID: 126896141}
+--- !u!114 &2020896433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114292572646183326, guid: 39475d556840902458f2711a3956c86b,
+    type: 3}
+  m_PrefabInstance: {fileID: 720877340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a28bd632d44324fa26c57ae3c73d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
