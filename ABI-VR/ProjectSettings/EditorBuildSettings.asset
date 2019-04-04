@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/TutorialScene.unity
     guid: ed6303675a35f02438ce00957f7e656c
   - enabled: 1
+    path: Assets/ABI-VR/Scenes/TestScene.unity
+    guid: 4f4b94fb302862748817874a9bdf084b
+  - enabled: 1
     path: Assets/ABI-VR/Scenes/Stella/Stella_0_front.unity
     guid: 4a8c788eaa987ef4cb1133a330fa4c77
   - enabled: 1
