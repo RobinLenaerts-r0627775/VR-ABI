@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 77a023bc8ca5195428859508bb614047, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c3059ef12281eac44b2b9ad8b579dcdc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.40604836, g: 0.38622406, b: 0.33616596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,11 +137,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869013586}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 638aabfbec7db97409be8aa84d725b27, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 22b1d3728b1b05b47b9c9011488cda44, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: f9426c2b0cce3c64088c7d2b9dd4cad7, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: fddb9bc20a0b5c54c95d0a64974a194d, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -160,7 +160,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!4 &869013588
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseControl: 1
-  camSpeed: 30
+  camSpeed: 60
   movementSpeed: 3
 --- !u!1 &1990923067
 GameObject:

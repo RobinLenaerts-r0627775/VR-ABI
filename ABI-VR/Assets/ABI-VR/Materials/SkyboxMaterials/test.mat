@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 2D_3840x1920
+  m_Name: test
   m_Shader: {fileID: 108, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT
   m_LightmapFlags: 4
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: f9426c2b0cce3c64088c7d2b9dd4cad7, type: 2}
+        m_Texture: {fileID: 8400000, guid: fddb9bc20a0b5c54c95d0a64974a194d, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -65,7 +65,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _ImageType: 0
-    - _Layout: 0
+    - _Layout: 2
     - _Mapping: 1
     - _Metallic: 0
     - _MirrorOnBack: 0
