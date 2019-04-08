@@ -47,7 +47,7 @@ namespace CMS
                 dictionaryImages[file.Name] = image;
             }*/
 
-            TextReader tr = new StreamReader("test.txt");
+            TextReader tr = new StreamReader("CMS.txt");
             string len;
             char[] split = new char[] { ',' };
             while ((len = tr.ReadLine()) != null)
@@ -163,7 +163,7 @@ namespace CMS
         {
             // writing to txt file. VR app can look up code in this file and use the absolute path.
             // later to be changed to .meta file (or other)
-            TextWriter tw = new StreamWriter("test.txt");
+            TextWriter tw = new StreamWriter("CMS.txt");
             foreach (Image img in ListImages)
             {
                 tw.WriteLine(img.Code + "," + img.URI);
