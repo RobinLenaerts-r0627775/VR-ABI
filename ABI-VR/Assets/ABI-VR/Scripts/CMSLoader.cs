@@ -7,17 +7,26 @@ using UnityEngine.UI;
 
 public class CMSLoader : MonoBehaviour
 {
-    private int _counter = 0;
     private string _path = "Assets/ABI-VR/CMS/CMS.txt";
     private Dictionary<string, string> dictionary = new Dictionary<string, string>();
-    private int _index = -1;
 
     IEnumerator Start()
     {
         // LOAD ALL IMAGES
         GetImages(_path);
 
-        // LOOP
+        // GET CANVAS
+        var canvas = GameObject.FindWithTag("Canvas");
+
+        // CREATE BUTTONS USING CUBES
+        for (int i = 0; i <= dictionary.Count - 1; i++)
+        {
+            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.localPosition = new Vector3(-500, -500, -500);
+            cube.transform.localScale = new Vector2(1000, 1000);
+        }
+
+        // LOOP IMAGES
         for (int i = 0; i <= dictionary.Count - 1; i++)
         {
             string code = dictionary.Keys.ElementAt(i);
@@ -46,9 +55,7 @@ public class CMSLoader : MonoBehaviour
             var codeComp = codeGO.GetComponent<Text>();
             codeComp.text = "Code : " + code;
 
-            Debug.Log("Wait");
-            yield return new WaitForSeconds(0.1f);
-            Debug.Log("Go");
+            yield return new WaitForSecondsRealtime(2.0f);
         }
     }
 
