@@ -19,7 +19,7 @@ public class CMSLoader : MonoBehaviour
         // GET CANVAS
         var canvas = GameObject.FindWithTag("Canvas");
 
-        // CREATE BUTTON
+        // CREATE BUTTONS
         for (int i = 0; i <= dictionary.Count - 1; i++)
         {
             string code = dictionary.Keys.ElementAt(i);
@@ -29,13 +29,16 @@ public class CMSLoader : MonoBehaviour
             yield return www;
             www.LoadImageIntoTexture(texture);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(100 * i, 0, 0);
+            gob.transform.localPosition = new Vector3(120 * i, 0, 0);
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
             var image = gob.AddComponent<Image>();
-            image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+            // SPRITES DOESN'T WORK
+            //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+            //image.sprite = Resources.GetBuiltinResource<Sprite>("unity_builtin_extra/UISprite");
+            //image.sprite = Resources.Load<Sprite>("sprite");
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.text = code;
@@ -43,13 +46,21 @@ public class CMSLoader : MonoBehaviour
             text.color = Color.black;
             text.fontSize = 50;
             text.alignment = TextAnchor.MiddleCenter;
-            button.onClick.AddListener(() => Test());
+            button.onClick.AddListener(() => StartCoroutine(Test(code)));
         }
     }
 
-    void Test()
+    IEnumerator Test(string code)
     {
-        Debug.Log("Joepie");
+        string file = dictionary[code];
+        Texture2D texture = LoadImage(file);
+        WWW www = new WWW(file);
+        yield return www;
+        www.LoadImageIntoTexture(texture);
+        var go = GameObject.FindWithTag("Image");
+        var image = go.GetComponent<RawImage>();
+        image.transform.localScale = new Vector2(texture.width / 200, texture.height / 200);
+        image.texture = texture;
     }
 
     // Update is called once per frame
