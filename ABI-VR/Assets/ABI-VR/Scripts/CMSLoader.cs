@@ -35,7 +35,7 @@ public class CMSLoader : MonoBehaviour
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
             var image = gob.AddComponent<Image>();
-            image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+          //  image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.text = code;
