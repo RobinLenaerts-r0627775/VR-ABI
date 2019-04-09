@@ -54,7 +54,11 @@ namespace Interactive360
             scene = SceneManager.GetActiveScene();
 
             //DEBUG
+<<<<<<< HEAD
             SelectScene("AvatarGrab");
+=======
+           //SelectScene("GHQ_Belgium");
+>>>>>>> 69d1c4f6d21c98c2c859e4385f2b7148e941c180
         }
 
 
@@ -103,8 +107,6 @@ namespace Interactive360
 
             //set FadeOUt to false on the animator so our image will fade back in 
             anim.SetBool("FadeOut", false);
-            Debug.Log(anim.GetBool("FadeOut"));
-            Debug.Log("fade out now");
             
             //wait until the fade image is completely transparent (alpha = 0) and then turn loading UI off and control UI back on
             yield return new WaitUntil(() => fadeImage.color.a == 0);
