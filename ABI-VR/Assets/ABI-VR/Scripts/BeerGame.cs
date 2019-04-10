@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class BeerGame : MonoBehaviour
 {
+
+    [Header("Ingredients in the right order")]
     [SerializeField] List<GameObject> ingredients;
     [SerializeField] GameObject container;
+    [SerializeField] GameObject reward;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource Boo;
+    [SerializeField] AudioSource Yay;
     GameObject nextIngredient;
 
 
@@ -17,6 +24,7 @@ public class BeerGame : MonoBehaviour
 
     public bool addIngredient(GameObject i){
         if(nextIngredient == i){
+            Yay.Play();
             if(ingredients.IndexOf(nextIngredient) == ingredients.Count -1){
                 endGame();
                 return true;
@@ -24,10 +32,11 @@ public class BeerGame : MonoBehaviour
             nextIngredient = ingredients[ingredients.IndexOf(nextIngredient) + 1];
             return true;
         }
+        Boo.Play();
         return false;
     }
 
     public void endGame(){
-        Debug.Log("end game");
+        reward.SetActive(true);
     }
 }
