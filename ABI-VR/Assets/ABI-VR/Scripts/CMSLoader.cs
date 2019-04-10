@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class CMSLoader : MonoBehaviour
 {
-    private string _path = "Assets/ABI-VR/CMS/CMS.txt";
+    private string _path = "E:\\CMS\\CMS.txt";
     private Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
     IEnumerator Start()

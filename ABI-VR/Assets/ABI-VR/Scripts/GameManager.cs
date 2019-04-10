@@ -54,8 +54,9 @@ namespace Interactive360
             scene = SceneManager.GetActiveScene();
 
             //DEBUG
-            SelectScene("AvatarGrab");
-           //SelectScene("GHQ_Belgium");
+            //SelectScene("ImageTest");
+            //SelectScene("AvatarGrab");
+            //SelectScene("GHQ_Belgium");
         }
 
 

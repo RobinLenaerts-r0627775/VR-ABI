@@ -141,9 +141,9 @@ PlayerSettings:
       depthFormat: 1
       depthBufferSharingEnabled: 0
     oculus:
-      sharedDepthBuffer: 0
+      sharedDepthBuffer: 1
       dashSupport: 1
-    enable360StereoCapture: 0
+    enable360StereoCapture: 1
   protectGraphicsMemory: 0
   enableFrameTimingStats: 0
   useHDRDisplay: 0
@@ -647,7 +647,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 0
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -668,10 +668,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: dbde38fa-1b81-42da-9b8e-25ea4c30b2f0
+  cloudProjectId: c5225924-54c0-4d62-80f1-4d75f6858383
   framebufferDepthMemorylessMode: 0
-  projectName: ABI-VR
-  organizationId: robin_lenaerts2011
+  projectName: ABI-VR (1)
+  organizationId: hermanscedric
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
