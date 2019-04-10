@@ -35,14 +35,11 @@ public class CMSLoader : MonoBehaviour
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
             var image = gob.AddComponent<Image>();
-<<<<<<< HEAD
             // SPRITES DOESN'T WORK
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             //image.sprite = Resources.GetBuiltinResource<Sprite>("unity_builtin_extra/UISprite");
             //image.sprite = Resources.Load<Sprite>("sprite");
-=======
-          //  image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
->>>>>>> 69d1c4f6d21c98c2c859e4385f2b7148e941c180
+            //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.text = code;
