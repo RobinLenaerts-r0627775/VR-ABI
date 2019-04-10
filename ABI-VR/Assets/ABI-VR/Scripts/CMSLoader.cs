@@ -39,7 +39,10 @@ public class CMSLoader : MonoBehaviour
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             //image.sprite = Resources.GetBuiltinResource<Sprite>("unity_builtin_extra/UISprite");
             //image.sprite = Resources.Load<Sprite>("sprite");
+<<<<<<< HEAD
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
+=======
+>>>>>>> 39afecb3a861ae4edac52088403e4d671ccf913c
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.text = code;

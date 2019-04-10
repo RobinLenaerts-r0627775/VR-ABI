@@ -398,7 +398,6 @@ healthchecksdb
 
 #ignore imported asset packs
 Interactive360/
-Oculus/
 Resources/
 TextMesh Pro/
 Hologram/
