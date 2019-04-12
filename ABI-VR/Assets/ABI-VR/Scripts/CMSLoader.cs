@@ -29,7 +29,7 @@ public class CMSLoader : MonoBehaviour
             yield return www;
             www.LoadImageIntoTexture(texture);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(120 * i, 0, 0);
+            gob.transform.localPosition = new Vector3(0.5f * i, 0, 0);
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
@@ -39,10 +39,7 @@ public class CMSLoader : MonoBehaviour
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             //image.sprite = Resources.GetBuiltinResource<Sprite>("unity_builtin_extra/UISprite");
             //image.sprite = Resources.Load<Sprite>("sprite");
-<<<<<<< HEAD
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
-=======
->>>>>>> 39afecb3a861ae4edac52088403e4d671ccf913c
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.text = code;
@@ -63,8 +60,9 @@ public class CMSLoader : MonoBehaviour
         www.LoadImageIntoTexture(texture);
         var go = GameObject.FindWithTag("Image");
         var image = go.GetComponent<RawImage>();
-        image.transform.localScale = new Vector2(texture.width / 200, texture.height / 200);
+        image.transform.localScale = new Vector2(texture.width / 1000, texture.height / 1000);
         image.texture = texture;
+        Debug.Log(code);
     }
 
     // Update is called once per frame

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameContainer : MonoBehaviour
 {
+    private BeerGame gm;
     // Start is called before the first frame update
     void Start(){
         gm = (BeerGame)FindObjectOfType(typeof(BeerGame));
