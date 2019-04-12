@@ -30,13 +30,17 @@ public class CMSLoader : MonoBehaviour
             yield return www;
             www.LoadImageIntoTexture(texture);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(0.9f * i, 0, 0);
+            gob.transform.localPosition = new Vector3(0.9f * i, 0, 2);
+            gob.layer = 5;
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
-            button.transform.localScale = new Vector2(0.007f, 0.007f);
-            //button.GetComponent<RectTransform>().sizeDelta = new Vector2(0.2f, 0.2f);
+            //button.transform.localScale = new Vector2(0.007f, 0.007f);
+            ColorBlock colorVar = button.colors;
+            colorVar.highlightedColor = Color.blue;
+            button.colors = colorVar;
+            var rect = gob.AddComponent<RectTransform>().sizeDelta = new Vector2(0.5f, 0.5f);
             var image = gob.AddComponent<Image>();
             // SPRITES DOESN'T WORK
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
@@ -45,25 +49,25 @@ public class CMSLoader : MonoBehaviour
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
+            text.transform.localScale = new Vector2(0.007f, 0.007f);
             text.text = code;
             text.font = Font.CreateDynamicFontFromOSFont("Arial", 50);
             text.color = Color.black;
             text.fontSize = 50;
             text.alignment = TextAnchor.MiddleCenter;
-            button.onClick.AddListener(() => StartCoroutine(Test(code)));
-            button.onClick.AddListener(() => Testje());
+            button.onClick.AddListener(() => Wrapper(code));
             var script = gob.AddComponent<VRInteractiveItem>();
             var box = gob.AddComponent<BoxCollider>();
-            var mesh = gob.AddComponent<MeshRenderer>();
+            box.size = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
 
-    public void Testje()
+    public void Wrapper(string code)
     {
-        StartCoroutine(Test("T1"));
+        StartCoroutine(DisplayImage(code));
     }
 
-    public IEnumerator Test(string code)
+    public IEnumerator DisplayImage(string code)
     {
         string file = dictionary[code];
         Texture2D texture = LoadImage(file);
@@ -72,7 +76,7 @@ public class CMSLoader : MonoBehaviour
         www.LoadImageIntoTexture(texture);
         var go = GameObject.FindWithTag("Image");
         var image = go.GetComponent<RawImage>();
-        image.transform.localScale = new Vector2(texture.width / 1000, texture.height / 1000);
+        image.transform.localScale = new Vector2(texture.width / 800, texture.height / 800);
         image.texture = texture;
         Debug.Log(code);
     }
