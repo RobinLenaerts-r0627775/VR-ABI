@@ -30,12 +30,12 @@ public class CMSLoader : MonoBehaviour
             yield return www;
             www.LoadImageIntoTexture(texture);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(0.5f * i, 0, 0);
+            gob.transform.localPosition = new Vector3(0.9f * i, 0, 0);
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
-            button.transform.localScale = new Vector2(0.001f, 0.001f);
+            button.transform.localScale = new Vector2(0.007f, 0.007f);
             //button.GetComponent<RectTransform>().sizeDelta = new Vector2(0.2f, 0.2f);
             var image = gob.AddComponent<Image>();
             // SPRITES DOESN'T WORK
@@ -60,7 +60,7 @@ public class CMSLoader : MonoBehaviour
 
     public void Testje()
     {
-        Debug.Log("TEST");
+        StartCoroutine(Test("T1"));
     }
 
     public IEnumerator Test(string code)
