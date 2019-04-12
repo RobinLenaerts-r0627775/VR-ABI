@@ -1708,6 +1708,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 1149911844543530, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024884972974288, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939930605203838, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389663680309098, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
 --- !u!4 &1617400992 stripped

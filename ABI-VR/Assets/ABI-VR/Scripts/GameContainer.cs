@@ -21,6 +21,10 @@ public class GameContainer : MonoBehaviour
         Debug.Log("Stay");
         Debug.Log(other.name);
 
+        if(bg.tag == "GameController"){
+            return;
+        }
+
         if(bg.addIngredient(other.gameObject)){
             other.gameObject.SetActive(false);
         } else {
