@@ -19,9 +19,10 @@ public class GameContainer : MonoBehaviour
     // called every time there is a collider in the trigger zone
     void OnTriggerStay(Collider other){
         Debug.Log("Stay");
-        Debug.Log(other.name);
+        Debug.Log(other.tag);
 
-        if(bg.tag == "GameController"){
+        if(other.tag == "GameController"){
+            Debug.Log("gamecontroller");
             return;
         }
 
