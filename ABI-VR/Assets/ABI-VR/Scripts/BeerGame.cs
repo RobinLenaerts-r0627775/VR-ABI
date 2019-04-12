@@ -4,17 +4,39 @@ using UnityEngine;
 
 public class BeerGame : MonoBehaviour
 {
-    [SerializeField] GameObject[] ingredients;
+
+    [Header("Ingredients in the right order")]
+    [SerializeField] List<GameObject> ingredients;
     [SerializeField] GameObject container;
+    [SerializeField] GameObject reward;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource Boo;
+    [SerializeField] AudioSource Yay;
+    GameObject nextIngredient;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        nextIngredient = ingredients[0];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public bool addIngredient(GameObject i){
+        if(nextIngredient == i){
+            Yay.Play();
+            if(ingredients.IndexOf(nextIngredient) == ingredients.Count -1){
+                endGame();
+                return true;
+            }
+            nextIngredient = ingredients[ingredients.IndexOf(nextIngredient) + 1];
+            return true;
+        }
+        Boo.Play();
+        return false;
+    }
+
+    public void endGame(){
+        reward.SetActive(true);
     }
 }

@@ -81,19 +81,7 @@ namespace Interactive360
             {
                 return;
             }
-            if (screen == m_menuScreens[0]) 
-            {
-                m_menuScreens[0].SetActive(true);
-                m_buttonsInScene[0].Select();
-            }
-
-            else if (screen == m_menuScreens[1])
-            {
-                //set the categories menu
-                m_menuScreens[1].SetActive(true);
-                m_buttonsInScene[6].Select();
-
-            }
+        
             else
             {
                 screen.SetActive(true);

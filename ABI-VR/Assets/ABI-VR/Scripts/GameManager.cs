@@ -25,8 +25,6 @@ namespace Interactive360
 
         public bool useFade;
         public GameObject fadeOverlay;
-        public GameObject BrandUI;
-        public GameObject CategoryUI;
         public GameObject ControlUI;
         public MenuManager MenuManager;
         public GameObject LoadingUI;
@@ -58,6 +56,7 @@ namespace Interactive360
             //SelectScene("AvatarGrab");
             //SelectScene("GHQ_Belgium");
             //SelectScene("AvatarGrab");
+            //SelectScene("TestScene");
         }
 
 
@@ -84,9 +83,9 @@ namespace Interactive360
             fadeImage = fadeOverlay.GetComponent<Image>();
 
             //turn control UI off and loading UI on
-            
-            BrandUI.SetActive(false);
-            CategoryUI.SetActive(false);
+            foreach(Transform g in ControlUI.GetComponentInChildren<Transform>()){
+                g.gameObject.SetActive(false);
+            }
             LoadingUI.SetActive(true);
 
             //set FadeOut to true on the animator so our image will fade out
