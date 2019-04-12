@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Interactive360.Utils;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,6 +35,8 @@ public class CMSLoader : MonoBehaviour
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
+            button.transform.localScale = new Vector2(0.001f, 0.001f);
+            //button.GetComponent<RectTransform>().sizeDelta = new Vector2(0.2f, 0.2f);
             var image = gob.AddComponent<Image>();
             // SPRITES DOESN'T WORK
             //image.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/UISprite.psd");
@@ -48,10 +51,19 @@ public class CMSLoader : MonoBehaviour
             text.fontSize = 50;
             text.alignment = TextAnchor.MiddleCenter;
             button.onClick.AddListener(() => StartCoroutine(Test(code)));
+            button.onClick.AddListener(() => Testje());
+            var script = gob.AddComponent<VRInteractiveItem>();
+            var box = gob.AddComponent<BoxCollider>();
+            var mesh = gob.AddComponent<MeshRenderer>();
         }
     }
 
-    IEnumerator Test(string code)
+    public void Testje()
+    {
+        Debug.Log("TEST");
+    }
+
+    public IEnumerator Test(string code)
     {
         string file = dictionary[code];
         Texture2D texture = LoadImage(file);
