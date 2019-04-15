@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4654153
       objectReference: {fileID: 0}
+    - target: {fileID: 5043574967315567397, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stella_2_Kettles
+      objectReference: {fileID: 0}
     - target: {fileID: 5043574966817835872, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
         type: 3}
       propertyPath: m_Text
@@ -516,6 +521,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.46744773
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043574967315567397, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stella_0_front
       objectReference: {fileID: 0}
     - target: {fileID: 5043574966817835872, guid: 58e5724c8d4e2c8468e701147c0f5b3b,
         type: 3}
