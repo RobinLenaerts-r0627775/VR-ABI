@@ -13,6 +13,9 @@ public class BeerGame : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource Boo;
     [SerializeField] AudioSource Yay;
+    [SerializeField] ParticleSystem Particle;
+
+    [Header("Particles")]
     GameObject nextIngredient;
 
 
@@ -38,5 +41,6 @@ public class BeerGame : MonoBehaviour
 
     public void endGame(){
         reward.SetActive(true);
+        Particle.Play();
     }
 }
