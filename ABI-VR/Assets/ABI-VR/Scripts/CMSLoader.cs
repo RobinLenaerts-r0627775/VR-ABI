@@ -92,10 +92,6 @@ public class CMSLoader : MonoBehaviour
         WWW www = new WWW(file);
         yield return www;
         www.LoadImageIntoTexture(texture);
-        var go = GameObject.FindWithTag("Image");
-        var image = go.GetComponent<RawImage>();
-        image.transform.localScale = new Vector2(texture.width / 800, texture.height / 800);
-        image.texture = texture;
         Material mat = new Material(Shader.Find("Skybox/Panoramic"));
         //mat.SetFloat("3D Layout", 2);
         //mat.SetFloat("_Layout", 2f);
