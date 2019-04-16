@@ -20,9 +20,16 @@ public class CMSLoader : MonoBehaviour
         // GET CANVAS
         var canvas = GameObject.FindWithTag("Canvas");
 
-        // CREATE BUTTONS
+        float row = 0;
+        float column = -0.9f;
+        // CREATE BUTTONS IN GRID
         for (int i = 0; i <= dictionary.Count - 1; i++)
         {
+            if (i != 0 && i % 3 == 0)
+            {
+                row -= 0.9f;
+                column = -0.9f;
+            }
             string code = dictionary.Keys.ElementAt(i);
             string file = dictionary.Values.ElementAt(i);
             Texture2D texture = LoadImage(file);
@@ -30,7 +37,8 @@ public class CMSLoader : MonoBehaviour
             yield return www;
             www.LoadImageIntoTexture(texture);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(0.9f * i, 0, 2);
+            gob.transform.localPosition = new Vector3(column, row, 2);
+            column += 0.9f;
             gob.layer = 5;
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
@@ -78,6 +86,11 @@ public class CMSLoader : MonoBehaviour
         var image = go.GetComponent<RawImage>();
         image.transform.localScale = new Vector2(texture.width / 800, texture.height / 800);
         image.texture = texture;
+        Material mat = new Material(Shader.Find("Skybox/Panoramic"));
+        var shader = Shader.Find("Skybox/Panoramic");
+        mat.SetFloat("3D Layout", 2);
+        mat.mainTexture = texture;
+        RenderSettings.skybox = mat;
         Debug.Log(code);
     }
 
