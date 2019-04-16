@@ -67,6 +67,16 @@ public class CMSLoader : MonoBehaviour
             var script = gob.AddComponent<VRInteractiveItem>();
             var box = gob.AddComponent<BoxCollider>();
             box.size = new Vector3(0.5f, 0.5f, 0.5f);
+            if (code.Equals("T4"))
+            {
+                Material mat = new Material(Shader.Find("Skybox/Panoramic"));
+                //mat.SetFloat("3D Layout", 2);
+                //mat.SetFloat("_Layout", 2f);
+                mat.EnableKeyword("_Layout");
+                mat.SetFloat("_Layout", 2f);
+                mat.mainTexture = texture;
+                RenderSettings.skybox = mat;
+            }
         }
     }
 
@@ -87,11 +97,12 @@ public class CMSLoader : MonoBehaviour
         image.transform.localScale = new Vector2(texture.width / 800, texture.height / 800);
         image.texture = texture;
         Material mat = new Material(Shader.Find("Skybox/Panoramic"));
-        var shader = Shader.Find("Skybox/Panoramic");
-        mat.SetFloat("3D Layout", 2);
+        //mat.SetFloat("3D Layout", 2);
+        //mat.SetFloat("_Layout", 2f);
+        mat.EnableKeyword("_Layout");
+        mat.SetFloat("_Layout", 2f);
         mat.mainTexture = texture;
         RenderSettings.skybox = mat;
-        Debug.Log(code);
     }
 
     // Update is called once per frame
