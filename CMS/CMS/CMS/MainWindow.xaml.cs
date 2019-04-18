@@ -49,7 +49,11 @@ namespace CMS
                 string[] array = len.Split(split);
                 string code = array[0];
                 Image = new BitmapImage(new Uri(array[1]));
-                Image image = new CMS.Image(array[0], Image, true);
+                string type = array[2];
+                bool typeBool = false;
+                if (type.Equals("3D"))
+                    typeBool = true;
+                Image image = new CMS.Image(array[0], Image, typeBool);
                 dictionaryImages[code] = image;
             }
             tr.Close();
@@ -124,6 +128,7 @@ namespace CMS
             string fileName = System.IO.Path.GetFileName(file);
             textBlockA.Text += "\t" + fileName + "\n";
             System.IO.File.Copy(file, "E:\\CMS\\audios\\" + fileName);
+            
         }
 
         private string GetFile()
@@ -143,8 +148,10 @@ namespace CMS
                 Image = new BitmapImage(item.URI);
                 ImageName = item.Name;
                 ImageCode = item.Code;
+                ImageType = item.Type;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageName)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageType)));
             }
         }
 
@@ -152,7 +159,10 @@ namespace CMS
         {
             string name = ImageName;
             string code = ImageCode;
-            dictionaryImages[name].Code = code;
+            bool type = ImageType;
+            var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+            dictionaryImages[key].Code = code;
+            dictionaryImages[key].Type = type;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }

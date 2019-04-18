@@ -42,7 +42,7 @@
             <TextBox Text="{Binding ImageCode}" />
             <StackPanel Orientation="Horizontal">
                 <Label Content="3D" />
-                <CheckBox />
+                <CheckBox IsChecked="{Binding ImageType}"/>
             </StackPanel>
             <Button Content="Change information" Click="Button_Click_Save"/>
             <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
