@@ -37,17 +37,11 @@ namespace CMS
 
             // THE IMAGES DIRECTORY
             // First this, others will follow
-            DirectoryInfo dirI = new DirectoryInfo("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\");
+            DirectoryInfo dirI = new DirectoryInfo("E:\\CMS\\images\\");
             FileInfo[] infoI = dirI.GetFiles();
             textBlockI.Text = "All Files from the images folder: \n";
-            /*foreach (FileInfo file in infoI)
-            {
-                Image = new BitmapImage(new Uri("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + file.Name));
-                Image image = new Image(file.Name, Image);
-                dictionaryImages[file.Name] = image;
-            }*/
 
-            TextReader tr = new StreamReader("C:\\Users\\Cedric Hermans\\Desktop\\AB Inbev\\VR-ABI\\ABI-VR\\Assets\\ABI-VR\\CMS\\CMS.txt");
+            TextReader tr = new StreamReader("E:\\CMS\\CMS.txt");
             string len;
             char[] split = new char[] { ',' };
             while ((len = tr.ReadLine()) != null)
@@ -55,14 +49,14 @@ namespace CMS
                 string[] array = len.Split(split);
                 string code = array[0];
                 Image = new BitmapImage(new Uri(array[1]));
-                Image image = new CMS.Image(array[0], Image);
+                Image image = new CMS.Image(array[0], Image, true);
                 dictionaryImages[code] = image;
             }
             tr.Close();
-            
+
 
             // THE VIDEOS DIRECTORY
-            DirectoryInfo dirV = new DirectoryInfo("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\videos\\");
+            DirectoryInfo dirV = new DirectoryInfo("E:\\CMS\\videos\\");
             FileInfo[] infoV = dirV.GetFiles();
             textBlockV.Text = "All Files from the videos folder: \n";
             foreach (FileInfo file in infoV)
@@ -71,7 +65,7 @@ namespace CMS
             }
 
             // THE AUDIOS DIRECTORY
-            DirectoryInfo dirA = new DirectoryInfo("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\audios\\");
+            DirectoryInfo dirA = new DirectoryInfo("E:\\CMS\\audios\\");
             FileInfo[] infoA = dirA.GetFiles();
             textBlockA.Text = "All Files from the audios folder: \n";
             foreach (FileInfo file in infoA)
@@ -81,8 +75,9 @@ namespace CMS
         }
 
         public BitmapImage Image
-        { 
-            get {
+        {
+            get
+            {
                 return _img;
             }
             set
@@ -96,6 +91,8 @@ namespace CMS
 
         public string ImageCode { get; set; }
 
+        public bool ImageType { get; set; }
+
         public List<Image> ListImages
         {
             get { return dictionaryImages.Values.ToList(); }
@@ -105,10 +102,10 @@ namespace CMS
         {
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
-            System.IO.File.Copy(file, "C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName);
-            Image = new BitmapImage(new Uri("C:\\Users\\Cedric Hermans\\Desktop\\CMS\\images\\" + fileName));
-            Image image = new Image("", Image);
-            dictionaryImages[""] = image;
+            System.IO.File.Copy(file, "E:\\CMS\\images\\" + fileName);
+            Image = new BitmapImage(new Uri("E:\\CMS\\images\\" + fileName));
+            Image image = new Image(fileName, Image, true);
+            dictionaryImages[fileName] = image;
             ListImages.Add(image);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }
@@ -118,7 +115,7 @@ namespace CMS
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
             textBlockV.Text += "\t" + fileName + "\n";
-            System.IO.File.Copy(file, "C:\\Users\\Cedric Hermans\\Desktop\\CMS\\videos\\" + fileName);
+            System.IO.File.Copy(file, "E:\\CMS\\videos\\" + fileName);
         }
 
         private void Button_Click_Audios(object sender, RoutedEventArgs e)
@@ -126,7 +123,7 @@ namespace CMS
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
             textBlockA.Text += "\t" + fileName + "\n";
-            System.IO.File.Copy(file, "C:\\Users\\Cedric Hermans\\Desktop\\CMS\\audios\\" + fileName);
+            System.IO.File.Copy(file, "E:\\CMS\\audios\\" + fileName);
         }
 
         private string GetFile()
@@ -153,8 +150,9 @@ namespace CMS
 
         private void Button_Click_Save(object sender, RoutedEventArgs e)
         {
+            string name = ImageName;
             string code = ImageCode;
-            dictionaryImages[""].Code = code;
+            dictionaryImages[name].Code = code;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
         }
@@ -163,10 +161,13 @@ namespace CMS
         {
             // writing to txt file. VR app can look up code in this file and use the absolute path.
             // later to be changed to .meta file (or other)
-            TextWriter tw = new StreamWriter("C:\\Users\\Cedric Hermans\\Desktop\\AB Inbev\\VR-ABI\\ABI-VR\\Assets\\ABI-VR\\CMS\\CMS.txt");
+            TextWriter tw = new StreamWriter("E:\\CMS\\CMS.txt");
             foreach (Image img in ListImages)
             {
-                tw.WriteLine(img.Code + "," + img.URI);
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + "," + img.URI + "," + type);
             }
             tw.Close();
         }

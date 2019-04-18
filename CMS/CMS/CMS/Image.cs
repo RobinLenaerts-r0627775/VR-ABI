@@ -10,7 +10,7 @@ namespace CMS
 {
     public class Image
     {
-        public Image(string code, BitmapImage source)
+        public Image(string code, BitmapImage source, bool type)
         {
             // Temporary, could leave it empty
             Code = code;
@@ -23,5 +23,6 @@ namespace CMS
         public ImageSource Source { get; set; }
         public String Code { get; set; }
         public Uri URI { get; set; }
+        public bool Type { get; set; }
     }
 }

@@ -40,6 +40,10 @@
             <Image Source="{Binding Image}" />
             <Label Content="{Binding ImageName}" Name="label"/>
             <TextBox Text="{Binding ImageCode}" />
+            <StackPanel Orientation="Horizontal">
+                <Label Content="3D" />
+                <CheckBox />
+            </StackPanel>
             <Button Content="Change information" Click="Button_Click_Save"/>
             <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
             <Button Content="Delete file" Click="Button_Click_Delete" />

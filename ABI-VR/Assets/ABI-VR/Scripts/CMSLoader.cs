@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class CMSLoader : MonoBehaviour
 {
     private string _path = "E:\\CMS\\CMS.txt";
-    private Dictionary<string, string> dictionary = new Dictionary<string, string>();
+    private Dictionary<string, Content> dictionary = new Dictionary<string, Content>();
 
     IEnumerator Start()
     {
@@ -22,7 +22,10 @@ public class CMSLoader : MonoBehaviour
 
         float row = 0;
         float column = -0.9f;
-        // CREATE BUTTONS IN GRID
+
+        Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
+        RenderSettings.skybox = yourMaterial;
+        // CREATE BUTTONS IN GRID FOR IMAGES AND VIDEOS
         for (int i = 0; i <= dictionary.Count - 1; i++)
         {
             if (i != 0 && i % 3 == 0)
@@ -31,7 +34,8 @@ public class CMSLoader : MonoBehaviour
                 column = -0.9f;
             }
             string code = dictionary.Keys.ElementAt(i);
-            string file = dictionary.Values.ElementAt(i);
+            string file = dictionary.Values.ElementAt(i).File;
+            string tag = dictionary.Values.ElementAt(i).Tag;
             Texture2D texture = LoadImage(file);
             WWW www = new WWW(file);
             yield return www;
@@ -63,48 +67,56 @@ public class CMSLoader : MonoBehaviour
             text.color = Color.black;
             text.fontSize = 50;
             text.alignment = TextAnchor.MiddleCenter;
-            button.onClick.AddListener(() => Wrapper(code));
+            button.onClick.AddListener(() => Wrapper(code, tag));
             var script = gob.AddComponent<VRInteractiveItem>();
             var box = gob.AddComponent<BoxCollider>();
             box.size = new Vector3(0.5f, 0.5f, 0.5f);
-            if (code.Equals("T4"))
+            if (code.Equals("T5"))
             {
-                Material mat = new Material(Shader.Find("Skybox/Panoramic"));
-                //mat.SetFloat("3D Layout", 2);
-                //mat.SetFloat("_Layout", 2f);
-                mat.EnableKeyword("_Layout");
-                mat.SetFloat("_Layout", 2f);
-                mat.mainTexture = texture;
-                RenderSettings.skybox = mat;
+                var vobj = GameObject.FindWithTag("Video");
+                var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
+                videoplayer.url = "E:\\CMS\\videos\\START.mp4";
             }
         }
     }
 
-    public void Wrapper(string code)
+    public void Wrapper(string code, string tag)
     {
-        StartCoroutine(DisplayImage(code));
+        StartCoroutine(DisplayImage(code, tag));
     }
 
-    public IEnumerator DisplayImage(string code)
+    public IEnumerator DisplayImage(string code, string tag)
     {
-        string file = dictionary[code];
-        Texture2D texture = LoadImage(file);
-        WWW www = new WWW(file);
-        yield return www;
-        www.LoadImageIntoTexture(texture);
-        Material mat = new Material(Shader.Find("Skybox/Panoramic"));
-        //mat.SetFloat("3D Layout", 2);
-        //mat.SetFloat("_Layout", 2f);
-        mat.EnableKeyword("_Layout");
-        mat.SetFloat("_Layout", 2f);
-        mat.mainTexture = texture;
-        RenderSettings.skybox = mat;
+        if (code.Equals("T5"))
+        {
+            Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
+            RenderSettings.skybox = yourMaterial;
+            var vobj = GameObject.FindWithTag("Video");
+            var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
+            videoplayer.url = dictionary[code].File;
+        }
+        else
+        {
+            string file = dictionary[code].File;
+            Texture2D texture = LoadImage(file);
+            WWW www = new WWW(file);
+            yield return www;
+            www.LoadImageIntoTexture(texture);
+            Material mat = new Material(Shader.Find("Skybox/Panoramic"));
+            if (tag.Equals("3D"))
+            {
+                mat.EnableKeyword("_Layout");
+                mat.SetFloat("_Layout", 2f);
+            }
+            mat.mainTexture = texture;
+            RenderSettings.skybox = mat;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public Texture2D LoadImage(string path)
@@ -132,8 +144,24 @@ public class CMSLoader : MonoBehaviour
             string[] array = len.Split(split);
             string code = array[0];
             result = array[1].Replace("file:///", "");
-            dictionary[code] = result;
+            string tag = array[2];
+            var content = new Content(code, result, tag);
+            dictionary[code] = content;
         }
         tr.Close();
     }
+}
+
+public class Content
+{
+    public Content(string code, string file, string tag)
+    {
+        Code = code;
+        File = file;
+        Tag = tag;
+    }
+
+    public string Code { get; set; }
+    public string File { get; set; }
+    public string Tag { get; set; }
 }
