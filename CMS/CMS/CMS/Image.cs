@@ -12,11 +12,11 @@ namespace CMS
     {
         public Image(string code, BitmapImage source, bool type)
         {
-            // Temporary, could leave it empty
             Code = code;
             Source = source;
             URI = source.UriSource;
             Name = System.IO.Path.GetFileName(URI.LocalPath);
+            Type = type;
         }
 
         public String Name { get; set; }
