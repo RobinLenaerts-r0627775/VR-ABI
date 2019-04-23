@@ -21,8 +21,9 @@ public class CMSLoader : MonoBehaviour
         var canvas = GameObject.FindWithTag("Canvas");
 
         // GRID
-        float row = 0;
-        float column = -0.9f;
+        float rowImages = 1.5f;
+        float rowVideos = 1.5f;
+        float rowAudios = 1.5f;
 
         // DEFAULT SKYBOX IS NEEDED FOR VIDEO
         Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
@@ -31,11 +32,6 @@ public class CMSLoader : MonoBehaviour
         // CREATE BUTTONS IN GRID FOR IMAGES AND VIDEOS
         for (int i = 0; i <= dictionary.Count - 1; i++)
         {
-            if (i != 0 && i % 3 == 0)
-            {
-                row -= 0.9f;
-                column = -0.9f;
-            }
             string code = dictionary.Keys.ElementAt(i);
             string file = dictionary.Values.ElementAt(i).File;
             string tag = dictionary.Values.ElementAt(i).Tag;
@@ -55,8 +51,21 @@ public class CMSLoader : MonoBehaviour
                 www.LoadImageIntoTexture(texture);
             }
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(column, row, 2);
-            column += 1.9f;
+            if (file.Split('.').Last().Equals("jpg"))
+            {
+                gob.transform.localPosition = new Vector3(-1.9f, rowImages, 2);
+                rowImages -= 0.9f;
+            }
+            else if (file.Split('.').Last().Equals("wav"))
+            {
+                gob.transform.localPosition = new Vector3(0f, rowAudios, 2);
+                rowAudios -= 0.9f;
+            }
+            else if (file.Split('.').Last().Equals("mp4"))
+            {
+                gob.transform.localPosition = new Vector3(1.9f, rowVideos, 2);
+                rowVideos -= 0.9f;
+            }
             gob.layer = 5;
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
@@ -87,9 +96,6 @@ public class CMSLoader : MonoBehaviour
         var vobj = GameObject.FindWithTag("Video");
         var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
         videoplayer.url = "E:\\CMS\\videos\\START.mp4";
-
-        // CREATE AUDIOPLAYER
-
     }
 
     public void Wrapper(string code, string tag)
@@ -107,7 +113,8 @@ public class CMSLoader : MonoBehaviour
             var vobj = GameObject.FindWithTag("Video");
             var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
             videoplayer.url = dictionary[code].File;
-        } else if (code.Equals("SOUND"))
+        }
+        else if (code.Equals("SOUND"))
         {
             string file = dictionary[code].File;
             WWW www = new WWW(file);
