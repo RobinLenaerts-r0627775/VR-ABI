@@ -39,4 +39,8 @@ public class GameContainer : MonoBehaviour
     void OnTriggerExit(Collider c){
         Debug.Log("Leave");
     }
+
+    void OnParticleTrigger(){
+        Debug.Log("contrainertrigger");
+    }
 }
