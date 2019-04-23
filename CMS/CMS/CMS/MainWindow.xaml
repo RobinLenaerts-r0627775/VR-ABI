@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock Name="textBlockI"></TextBlock>
-            <ListBox Name="listbox" ItemsSource="{Binding ListImages}" PreviewMouseDown="listbox_PreviewMouseDown">
+            <ListBox Name="listboxI" ItemsSource="{Binding ListImages}" PreviewMouseDown="listbox_PreviewMouseDown">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -30,10 +30,32 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock Name="textBlockV"></TextBlock>
+            <ListBox Name="listboxV" ItemsSource="{Binding ListVideos}" PreviewMouseDown="listbox_PreviewMouseDown">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Code}" />
+                            <TextBlock Text="   " />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <Button Content="Upload new file" Width="100" Click="Button_Click_Videos"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock Grid.Column="2" Name="textBlockA"></TextBlock>
+            <ListBox Name="listboxA" ItemsSource="{Binding ListAudios}" PreviewMouseDown="listbox_PreviewMouseDown">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Code}" />
+                            <TextBlock Text="   " />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
         </StackPanel>
         <StackPanel Grid.Column="3">

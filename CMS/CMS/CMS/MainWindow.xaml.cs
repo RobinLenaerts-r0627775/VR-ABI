@@ -25,6 +25,8 @@ namespace CMS
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private IDictionary<string, Image> dictionaryImages;
+        private IDictionary<string, Image> dictionaryVideos;
+        private IDictionary<string, Image> dictionaryAudio;
         private BitmapImage _img;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -32,6 +34,9 @@ namespace CMS
         public MainWindow()
         {
             dictionaryImages = new Dictionary<string, Image>();
+            dictionaryVideos = new Dictionary<string, Image>();
+            dictionaryAudio = new Dictionary<string, Image>();
+
             InitializeComponent();
             this.DataContext = this;
 
@@ -40,6 +45,8 @@ namespace CMS
             DirectoryInfo dirI = new DirectoryInfo("E:\\CMS\\images\\");
             FileInfo[] infoI = dirI.GetFiles();
             textBlockI.Text = "All Files from the images folder: \n";
+            textBlockV.Text = "All Files from the videos folder: \n";
+            textBlockA.Text = "All Files from the audios folder: \n";
 
             TextReader tr = new StreamReader("E:\\CMS\\CMS.txt");
             string len;
@@ -48,34 +55,32 @@ namespace CMS
             {
                 string[] array = len.Split(split);
                 string code = array[0];
-                Image = new BitmapImage(new Uri(array[1]));
-                string type = array[2];
-                bool typeBool = false;
-                if (type.Equals("3D"))
-                    typeBool = true;
-                Image image = new CMS.Image(array[0], Image, typeBool);
-                dictionaryImages[code] = image;
+                if (code.Equals("B"))
+                {
+                    string name = array[1];
+                    var brewery = new Brewery(name);
+                }
+                else
+                {
+                    Image = new BitmapImage(new Uri(array[1]));
+                    string type = array[2];
+                    bool typeBool = false;
+                    if (type.Equals("3D"))
+                        typeBool = true;
+                    Image image = new CMS.Image(array[0], Image, typeBool);
+                    if (image.Name.Split('.').Last().Equals("jpg"))
+                    {
+                        dictionaryImages[code] = image;
+                    } else if (image.Name.Split('.').Last().Equals("mp4"))
+                    {
+                        dictionaryVideos[code] = image;
+                    } else if (image.Name.Split('.').Last().Equals("wav"))
+                    {
+                        dictionaryAudio[code] = image;
+                    }
+                }
             }
             tr.Close();
-
-
-            // THE VIDEOS DIRECTORY
-            DirectoryInfo dirV = new DirectoryInfo("E:\\CMS\\videos\\");
-            FileInfo[] infoV = dirV.GetFiles();
-            textBlockV.Text = "All Files from the videos folder: \n";
-            foreach (FileInfo file in infoV)
-            {
-                textBlockV.Text += "\t" + file.Name + "\n";
-            }
-
-            // THE AUDIOS DIRECTORY
-            DirectoryInfo dirA = new DirectoryInfo("E:\\CMS\\audios\\");
-            FileInfo[] infoA = dirA.GetFiles();
-            textBlockA.Text = "All Files from the audios folder: \n";
-            foreach (FileInfo file in infoA)
-            {
-                textBlockA.Text += "\t" + file.Name + "\n";
-            }
         }
 
         public BitmapImage Image
@@ -102,6 +107,16 @@ namespace CMS
             get { return dictionaryImages.Values.ToList(); }
         }
 
+        public List<Image> ListVideos
+        {
+            get { return dictionaryVideos.Values.ToList(); }
+        }
+
+        public List<Image> ListAudios
+        {
+            get { return dictionaryAudio.Values.ToList(); }
+        }
+
         private void Button_Click_Images(object sender, RoutedEventArgs e)
         {
             string file = GetFile();
@@ -118,17 +133,25 @@ namespace CMS
         {
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
-            textBlockV.Text += "\t" + fileName + "\n";
             System.IO.File.Copy(file, "E:\\CMS\\videos\\" + fileName);
+            Image = new BitmapImage(new Uri("E:\\CMS\\images\\video_placeholder.jpg"));      
+            Image image = new Image(fileName, Image, true);
+            image.Name = fileName;
+            dictionaryVideos[fileName] = image;
+            ListVideos.Add(image);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
         }
 
         private void Button_Click_Audios(object sender, RoutedEventArgs e)
         {
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
-            textBlockA.Text += "\t" + fileName + "\n";
             System.IO.File.Copy(file, "E:\\CMS\\audios\\" + fileName);
-            
+            Image = new BitmapImage(new Uri("E:\\CMS\\images\\audio_placeholder.jpg"));
+            Image image = new Image(fileName, Image, true);
+            dictionaryAudio[fileName] = image;
+            ListAudios.Add(image);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
         }
 
         private string GetFile()
@@ -140,11 +163,11 @@ namespace CMS
 
         private void listbox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            // works after 2 clicks
+            var listbox = e.Source as ListBox;
             var item = listbox.SelectedItem as Image;
             if (item != null)
             {
-                item = listbox.SelectedItem as Image;
+                //item = listboxI.SelectedItem as Image;
                 Image = new BitmapImage(item.URI);
                 ImageName = item.Name;
                 ImageCode = item.Code;
@@ -160,11 +183,23 @@ namespace CMS
             string name = ImageName;
             string code = ImageCode;
             bool type = ImageType;
-            var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-            dictionaryImages[key].Code = code;
-            dictionaryImages[key].Type = type;
+            if (name.Split('.').Last().Equals("mp4"))
+            {
+                var key = dictionaryVideos.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                dictionaryVideos[key].Code = code;
+                dictionaryVideos[key].Type = type;
+
+            }
+            else
+            { 
+                var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                dictionaryImages[key].Code = code;
+                dictionaryImages[key].Type = type;
+            }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
         }
 
         private void Button_Click_SaveToFile(object sender, RoutedEventArgs e)
@@ -173,6 +208,21 @@ namespace CMS
             // later to be changed to .meta file (or other)
             TextWriter tw = new StreamWriter("E:\\CMS\\CMS.txt");
             foreach (Image img in ListImages)
+            {
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + "," + img.URI + "," + type);
+
+            }
+            foreach (Image img in ListVideos)
+            {
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + "," + img.URI + "," + type);
+            }
+            foreach (Image img in ListAudios)
             {
                 string type = "3D";
                 if (!img.Type)
