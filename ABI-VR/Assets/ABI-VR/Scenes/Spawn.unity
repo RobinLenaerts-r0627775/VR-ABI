@@ -2949,37 +2949,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406066061}
   m_CullTransparentMesh: 0
---- !u!1 &429321666
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 429321667}
-  m_Layer: 0
-  m_Name: ControlUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &429321667
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429321666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 536656938}
-  m_Father: {fileID: 4948056796574248}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &536656937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +2961,7 @@ GameObject:
   - component: {fileID: 536656941}
   - component: {fileID: 536656940}
   - component: {fileID: 536656939}
+  - component: {fileID: 536656942}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -3008,10 +2978,10 @@ RectTransform:
   m_GameObject: {fileID: 536656937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58983994, y: 0.5898398, z: 0.58983976}
+  m_LocalScale: {x: 0.5898396, y: 0.5898393, z: 0.5898391}
   m_Children:
   - {fileID: 1645990953}
-  m_Father: {fileID: 429321667}
+  m_Father: {fileID: 4948056796574248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3079,6 +3049,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!114 &536656942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536656937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &575111551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4203582537342656, guid: efe266538a8dcda4dbd04fbff7997053,
@@ -3491,7 +3473,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ControlUI
       value: 
-      objectReference: {fileID: 429321666}
+      objectReference: {fileID: 1152968763433604}
     - target: {fileID: 114578560821517222, guid: cff31d6d73c6b684d9170ce0698a3b79,
         type: 3}
       propertyPath: fadeOverlay
@@ -4151,9 +4133,9 @@ GameObject:
   - component: {fileID: 1645990953}
   - component: {fileID: 1645990958}
   - component: {fileID: 1645990957}
-  - component: {fileID: 1645990956}
   - component: {fileID: 1645990955}
   - component: {fileID: 1645990954}
+  - component: {fileID: 1645990956}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -4244,7 +4226,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: TutorialScene
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1645990956
@@ -5521,7 +5503,7 @@ Transform:
   m_LocalPosition: {x: -0.0117, y: 0.123, z: -0.0255}
   m_LocalScale: {x: 0.008641114, y: 0.008641102, z: 0.008641112}
   m_Children:
-  - {fileID: 429321667}
+  - {fileID: 536656938}
   m_Father: {fileID: 22240744}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -14.418, y: -90.00001, z: 0}

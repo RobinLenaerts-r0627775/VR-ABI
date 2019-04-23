@@ -12,6 +12,7 @@ public class WaterTrigger : MonoBehaviour
     [SerializeField] private GameObject Game;
     [SerializeField] private GameObject Water;
     [SerializeField] private GameObject Container;
+    private ParticleSystem.MainModule pMain;
     private bool pour;
     private int count = 0;
 
@@ -33,6 +34,9 @@ public class WaterTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pMain = ParticleSystem.main;
+        pMain.startSize = Down.transform.position.y - Up.transform.position.y;
+        Debug.Log(pMain.startSize);
         if(pour){
             if (Up.transform.position.y >= Down.transform.position.y){
                 pour = false;
