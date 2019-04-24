@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -27,6 +31,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
             <Button Content="Upload new file" Width="100" Click="Button_Click_Images"/>
+            <TextBlock Name="errorImages"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock Name="textBlockV"></TextBlock>
@@ -70,5 +75,6 @@
             <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
             <Button Content="Delete file" Click="Button_Click_Delete" />
         </StackPanel>
+        <TextBlock Name="logs" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20">LOG:</TextBlock>
     </Grid>
 </Window>

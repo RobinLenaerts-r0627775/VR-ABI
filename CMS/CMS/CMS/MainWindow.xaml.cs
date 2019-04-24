@@ -64,6 +64,11 @@ namespace CMS
                     Image = new BitmapImage(new Uri("E:\\CMS\\images\\video_placeholder.jpg"));
                     image = new CMS.Image(array[0], Image, typeBool);
                     image.Name = array[1].Replace("file:///E:/CMS/videos/", "");
+                } else if (array[1].Split('.').Last().Equals("wav"))
+                {
+                    Image = new BitmapImage(new Uri("E:\\CMS\\images\\audio_placeholder.jpg"));
+                    image = new CMS.Image(array[0], Image, typeBool);
+                    image.Name = array[1].Replace("file:///E:/CMS/audios/", "");
                 }
                 else
                 {
@@ -121,13 +126,24 @@ namespace CMS
         private void Button_Click_Images(object sender, RoutedEventArgs e)
         {
             string file = GetFile();
-            string fileName = System.IO.Path.GetFileName(file);
-            System.IO.File.Copy(file, "E:\\CMS\\images\\" + fileName);
-            Image = new BitmapImage(new Uri("E:\\CMS\\images\\" + fileName));
-            Image image = new Image(fileName, Image, true);
-            dictionaryImages[fileName] = image;
-            ListImages.Add(image);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+            Debug.WriteLine(file);
+            if (!file.Equals(""))
+            {
+                string fileName = System.IO.Path.GetFileName(file);
+                if (!File.Exists("E:\\CMS\\images\\" + fileName))
+                {
+                    System.IO.File.Copy(file, "E:\\CMS\\images\\" + fileName);
+                    Image = new BitmapImage(new Uri("E:\\CMS\\images\\" + fileName));
+                    Image image = new Image(fileName, Image, true);
+                    dictionaryImages[fileName] = image;
+                    ListImages.Add(image);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                }
+                else
+                {
+                    errorImages.Text = "This file already exists in CMS";
+                }
+            }
         }
 
         private void Button_Click_Videos(object sender, RoutedEventArgs e)
@@ -150,6 +166,7 @@ namespace CMS
             System.IO.File.Copy(file, "E:\\CMS\\audios\\" + fileName);
             Image = new BitmapImage(new Uri("E:\\CMS\\images\\audio_placeholder.jpg"));
             Image image = new Image(fileName, Image, true);
+            image.Name = fileName;
             dictionaryAudio[fileName] = image;
             ListAudios.Add(image);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
@@ -168,7 +185,6 @@ namespace CMS
             var item = listbox.SelectedItem as Image;
             if (item != null)
             {
-                //item = listboxI.SelectedItem as Image;
                 Image = new BitmapImage(item.URI);
                 ImageName = item.Name;
                 ImageCode = item.Code;
@@ -191,6 +207,12 @@ namespace CMS
                 dictionaryVideos[key].Type = type;
 
             }
+            else if (name.Split('.').Last().Equals("wav"))
+            {
+                var key = dictionaryAudio.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                dictionaryAudio[key].Code = code;
+                dictionaryAudio[key].Type = type;
+            }
             else
             { 
                 var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
@@ -201,6 +223,7 @@ namespace CMS
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
+            logs.Text += "\n\tFile is saved";
         }
 
         private void Button_Click_SaveToFile(object sender, RoutedEventArgs e)
@@ -228,13 +251,15 @@ namespace CMS
                 string type = "3D";
                 if (!img.Type)
                     type = "2D";
-                tw.WriteLine(img.Code + "," + img.URI + "," + type);
+                tw.WriteLine(img.Code + ",file:///E:/CMS/audios/" + img.Name + "," + type);
             }
             tw.Close();
+            logs.Text += "\n\tWriting to file complete";
         }
 
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
+            // todo: needs some rework
             String path = dictionaryImages[ImageCode].URI.LocalPath;
             ListImages.Remove(dictionaryImages[ImageCode]);
             dictionaryImages.Remove(ImageCode);

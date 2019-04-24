@@ -106,7 +106,6 @@ public class CMSLoader : MonoBehaviour
 
     public IEnumerator DisplayImage(string code, string tag, string media)
     {
-        // JUST A TEST CODE
         if (media.Equals("mp4"))
         {
             Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
