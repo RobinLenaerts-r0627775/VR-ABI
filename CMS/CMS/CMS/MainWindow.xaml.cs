@@ -42,8 +42,6 @@ namespace CMS
 
             // THE IMAGES DIRECTORY
             // First this, others will follow
-            DirectoryInfo dirI = new DirectoryInfo("E:\\CMS\\images\\");
-            FileInfo[] infoI = dirI.GetFiles();
             textBlockI.Text = "All Files from the images folder: \n";
             textBlockV.Text = "All Files from the videos folder: \n";
             textBlockA.Text = "All Files from the audios folder: \n";
@@ -53,31 +51,34 @@ namespace CMS
             char[] split = new char[] { ',' };
             while ((len = tr.ReadLine()) != null)
             {
+                Image image = null;
                 string[] array = len.Split(split);
                 string code = array[0];
-                if (code.Equals("B"))
+                string type = array[2];
+                bool typeBool = false;
+                if (type.Equals("3D"))
+                    typeBool = true;
+
+                if (array[1].Split('.').Last().Equals("mp4"))
                 {
-                    string name = array[1];
-                    var brewery = new Brewery(name);
+                    Image = new BitmapImage(new Uri("E:\\CMS\\images\\video_placeholder.jpg"));
+                    image = new CMS.Image(array[0], Image, typeBool);
+                    image.Name = array[1].Replace("file:///E:/CMS/videos/", "");
                 }
                 else
                 {
                     Image = new BitmapImage(new Uri(array[1]));
-                    string type = array[2];
-                    bool typeBool = false;
-                    if (type.Equals("3D"))
-                        typeBool = true;
-                    Image image = new CMS.Image(array[0], Image, typeBool);
-                    if (image.Name.Split('.').Last().Equals("jpg"))
-                    {
-                        dictionaryImages[code] = image;
-                    } else if (image.Name.Split('.').Last().Equals("mp4"))
-                    {
-                        dictionaryVideos[code] = image;
-                    } else if (image.Name.Split('.').Last().Equals("wav"))
-                    {
-                        dictionaryAudio[code] = image;
-                    }
+                    image = new CMS.Image(array[0], Image, typeBool);
+                }
+                if (image.Name.Split('.').Last().Equals("jpg"))
+                {
+                    dictionaryImages[code] = image;
+                } else if (image.Name.Split('.').Last().Equals("mp4"))
+                {
+                    dictionaryVideos[code] = image;
+                } else if (image.Name.Split('.').Last().Equals("wav"))
+                {
+                    dictionaryAudio[code] = image;
                 }
             }
             tr.Close();
@@ -220,7 +221,7 @@ namespace CMS
                 string type = "3D";
                 if (!img.Type)
                     type = "2D";
-                tw.WriteLine(img.Code + "," + img.URI + "," + type);
+                tw.WriteLine(img.Code + ",file:///E:/CMS/videos/" + img.Name + "," + type);
             }
             foreach (Image img in ListAudios)
             {

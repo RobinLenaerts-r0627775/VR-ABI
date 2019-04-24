@@ -35,10 +35,11 @@ public class CMSLoader : MonoBehaviour
             string code = dictionary.Keys.ElementAt(i);
             string file = dictionary.Values.ElementAt(i).File;
             string tag = dictionary.Values.ElementAt(i).Tag;
+            string media = file.Split('.').Last();
             Texture2D texture = LoadImage(file);
             WWW www = new WWW(file);
             yield return www;
-            if (code.Equals("SOUND"))
+            if (media.Equals("wav"))
             {
                 var sound = www.GetAudioClip(false, false);
                 var aobj = GameObject.FindWithTag("Audio");
@@ -51,17 +52,17 @@ public class CMSLoader : MonoBehaviour
                 www.LoadImageIntoTexture(texture);
             }
             GameObject gob = new GameObject("Button");
-            if (file.Split('.').Last().Equals("jpg"))
+            if (media.Equals("jpg"))
             {
                 gob.transform.localPosition = new Vector3(-1.9f, rowImages, 2);
                 rowImages -= 0.9f;
             }
-            else if (file.Split('.').Last().Equals("wav"))
+            else if (media.Equals("wav"))
             {
                 gob.transform.localPosition = new Vector3(0f, rowAudios, 2);
                 rowAudios -= 0.9f;
             }
-            else if (file.Split('.').Last().Equals("mp4"))
+            else if (media.Equals("mp4"))
             {
                 gob.transform.localPosition = new Vector3(1.9f, rowVideos, 2);
                 rowVideos -= 0.9f;
@@ -86,7 +87,7 @@ public class CMSLoader : MonoBehaviour
             text.color = Color.black;
             text.fontSize = 50;
             text.alignment = TextAnchor.MiddleCenter;
-            button.onClick.AddListener(() => Wrapper(code, tag));
+            button.onClick.AddListener(() => Wrapper(code, tag, media));
             var script = gob.AddComponent<VRInteractiveItem>();
             var box = gob.AddComponent<BoxCollider>();
             box.size = new Vector3(0.5f, 0.5f, 0.5f);
@@ -98,15 +99,15 @@ public class CMSLoader : MonoBehaviour
         videoplayer.url = "E:\\CMS\\videos\\START.mp4";
     }
 
-    public void Wrapper(string code, string tag)
+    public void Wrapper(string code, string tag, string media)
     {
-        StartCoroutine(DisplayImage(code, tag));
+        StartCoroutine(DisplayImage(code, tag, media));
     }
 
-    public IEnumerator DisplayImage(string code, string tag)
+    public IEnumerator DisplayImage(string code, string tag, string media)
     {
         // JUST A TEST CODE
-        if (code.Equals("VIDEO"))
+        if (media.Equals("mp4"))
         {
             Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
             RenderSettings.skybox = yourMaterial;
@@ -114,7 +115,7 @@ public class CMSLoader : MonoBehaviour
             var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
             videoplayer.url = dictionary[code].File;
         }
-        else if (code.Equals("SOUND"))
+        else if (media.Equals("wav"))
         {
             string file = dictionary[code].File;
             WWW www = new WWW(file);
