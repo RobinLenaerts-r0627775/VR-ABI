@@ -36,7 +36,6 @@ public class WaterTrigger : MonoBehaviour
     {
         pMain = ParticleSystem.main;
         pMain.startSize = Down.transform.position.y - Up.transform.position.y;
-        Debug.Log(pMain.startSize);
         if(pour){
             if (Up.transform.position.y >= Down.transform.position.y){
                 pour = false;
