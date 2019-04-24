@@ -114,7 +114,9 @@ namespace OVRTouchSample
                 m_collisionScaleCurrent = Mathf.Min(COLLIDER_SCALE_MAX, m_collisionScaleCurrent + Time.deltaTime * COLLIDER_SCALE_PER_SECOND);
                 for (int i = 0; i < m_colliders.Length; ++i)
                 {
+                    
                     Collider collider = m_colliders[i];
+                    if(collider.gameObject.name == "button") continue;
                     collider.transform.localScale = new Vector3(m_collisionScaleCurrent, m_collisionScaleCurrent, m_collisionScaleCurrent);
                 }
             }
@@ -217,6 +219,7 @@ namespace OVRTouchSample
                 for (int i = 0; i < m_colliders.Length; ++i)
                 {
                     Collider collider = m_colliders[i];
+                    if(collider.gameObject.name == "button") continue;
                     collider.transform.localScale = new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
                     collider.enabled = true;
                 }
@@ -226,7 +229,8 @@ namespace OVRTouchSample
                 m_collisionScaleCurrent = COLLIDER_SCALE_MAX;
                 for (int i = 0; i < m_colliders.Length; ++i)
                 {
-                    Collider collider = m_colliders[i];
+                    Collider collider = m_colliders[i];                    
+                    if(collider.gameObject.name == "button") continue;
                     collider.enabled = false;
                     collider.transform.localScale = new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
                 }

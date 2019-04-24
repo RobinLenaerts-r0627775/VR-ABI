@@ -13,13 +13,35 @@ public class BeerGame : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource Boo;
     [SerializeField] AudioSource Yay;
+    [SerializeField] ParticleSystem Particle;
+
+    [Header("Particles")]
     GameObject nextIngredient;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        nextIngredient = ingredients[0];
+        List<Renderer> results = new List<Renderer>();
+        container.GetComponentsInChildren(true, results);
+        foreach(Renderer child in results){
+            child.material.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
+            GL.PushMatrix();
+            GL.LoadOrtho();
+
+            // activate the first shader pass (in this case we know it is the only pass)
+            child.material.SetPass(0);
+            // draw a quad over whole screen
+            GL.Begin(GL.QUADS);
+            GL.Vertex3(0, 0, 0);
+            GL.Vertex3(1, 0, 0);
+            GL.Vertex3(1, 1, 0);
+            GL.Vertex3(0, 1, 0);
+            GL.End();
+        }
+
+        GL.PopMatrix();
+            nextIngredient = ingredients[0];
     }
 
     public bool addIngredient(GameObject i){
@@ -38,5 +60,6 @@ public class BeerGame : MonoBehaviour
 
     public void endGame(){
         reward.SetActive(true);
+        Particle.Play();
     }
 }

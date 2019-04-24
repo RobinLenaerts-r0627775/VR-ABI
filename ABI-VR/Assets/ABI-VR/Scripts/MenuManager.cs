@@ -102,6 +102,8 @@ namespace Interactive360
                 }
                 if (menuindex > m_menuScreens.Count) menuindex -= m_menuScreens.Count;
                 toggleMenu(m_menuScreens[menuindex]);
+                Button toselect = activemenu.GetComponentInChildren<Button>();
+                toselect.Select();
             }
         }
     }

@@ -365,7 +365,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 1374997276}
+      objectReference: {fileID: 127812790}
     - target: {fileID: 6819708611300793109, guid: 38c1849f93d3d42479e175d81a37d007,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r

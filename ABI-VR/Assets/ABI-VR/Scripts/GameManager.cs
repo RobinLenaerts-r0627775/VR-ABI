@@ -96,7 +96,7 @@ namespace Interactive360
 
             // grab video and wait until it is loaded and prepared before starting the fade out
             video = FindObjectOfType<VideoPlayer>();
-            
+            if(video != null && scene.name != "Leffe_Novice") Debug.Log(video.name);
             if(video != null && scene.name != "Leffe_Novice") yield return new WaitUntil(() => video.isPrepared);
 
             //set FadeOUt to false on the animator so our image will fade back in 

@@ -53,6 +53,15 @@ ModelImporter:
     4300012: Plane
     4300014: Boddy
     4300016: Up
+    6400000: Boddy
+    6400002: Boddy.001
+    6400004: Boddy.002
+    6400006: Boddy.003
+    6400008: Plane
+    6400010: Up
+    6400012: Up.001
+    6400014: Up.002
+    6400016: Up.003
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,12 +95,12 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -109,7 +118,7 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

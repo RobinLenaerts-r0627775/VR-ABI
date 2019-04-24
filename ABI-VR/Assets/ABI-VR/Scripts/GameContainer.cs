@@ -19,9 +19,8 @@ public class GameContainer : MonoBehaviour
     // called every time there is a collider in the trigger zone
     void OnTriggerStay(Collider other){
         Debug.Log("Stay");
-        Debug.Log(other.name);
 
-        if(bg.tag == "GameController"){
+        if(other.tag == "GameController"){
             return;
         }
 
@@ -39,5 +38,9 @@ public class GameContainer : MonoBehaviour
     //called when a collider exits the trigger zone
     void OnTriggerExit(Collider c){
         Debug.Log("Leave");
+    }
+
+    void OnParticleTrigger(){
+        Debug.Log("contrainertrigger");
     }
 }
