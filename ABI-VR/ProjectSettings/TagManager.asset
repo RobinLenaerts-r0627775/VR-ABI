@@ -10,6 +10,7 @@ TagManager:
   - Canvas
   - Video
   - Audio
+  - CODE
   layers:
   - Default
   - TransparentFX

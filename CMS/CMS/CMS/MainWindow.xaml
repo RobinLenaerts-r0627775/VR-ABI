@@ -75,6 +75,8 @@
             <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
             <Button Content="Delete file" Click="Button_Click_Delete" />
         </StackPanel>
-        <TextBlock Name="logs" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20">LOG:</TextBlock>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4">
+            <TextBlock Name="logs" FontSize="20">LOG:</TextBlock>
+        </ScrollViewer>
     </Grid>
 </Window>

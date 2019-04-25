@@ -203,27 +203,31 @@ namespace CMS
             if (name.Split('.').Last().Equals("mp4"))
             {
                 var key = dictionaryVideos.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                dictionaryVideos[key].Code = code;
-                dictionaryVideos[key].Type = type;
-
+                var video = dictionaryVideos[key];
+                video.Code = code;
+                video.Type = type;
+                logs.Text += "\n\tFile " + video.Name + " is saved with code " + video.Code;
             }
             else if (name.Split('.').Last().Equals("wav"))
             {
                 var key = dictionaryAudio.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                dictionaryAudio[key].Code = code;
-                dictionaryAudio[key].Type = type;
+                var sound = dictionaryAudio[key];
+                sound.Code = code;
+                sound.Type = type;
+                logs.Text += "\n\tFile " + sound.Name + " is saved with code " + sound.Code;
             }
             else
             { 
                 var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                dictionaryImages[key].Code = code;
-                dictionaryImages[key].Type = type;
+                var image = dictionaryImages[key];
+                image.Code = code;
+                image.Type = type;
+                logs.Text += "\n\tFile " + image.Name + " is saved with code " + image.Code;
             }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
-            logs.Text += "\n\tFile is saved";
         }
 
         private void Button_Click_SaveToFile(object sender, RoutedEventArgs e)
@@ -265,7 +269,7 @@ namespace CMS
             dictionaryImages.Remove(ImageCode);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
             // Maybe shouldn't erase the file entirely
-            //System.IO.File.Delete(path);
+            System.IO.File.Delete(path);
         }
     }
 }
