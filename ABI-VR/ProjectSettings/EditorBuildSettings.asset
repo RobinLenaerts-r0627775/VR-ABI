@@ -24,8 +24,50 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Budweiser.unity
     guid: 885c7aa3c6c4cf64e8fba22ecb8b4459
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Jupiler/Jup_Start.unity
-    guid: 61600ae1eb07ddc43aa89769c0d85891
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Barrel.unity
+    guid: 9994911ac61c3c84cb36e0f02c7f8ed9
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Barrel_Pour.unity
+    guid: 174f4c346df90d740babca36d86e2315
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Between.unity
+    guid: 36766bdb0355c08449189417db9de056
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Bottling_1.unity
+    guid: e1ce03e2c0873e24192de1b098b072dc
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Bottling_2.unity
+    guid: 2f901dd81a47b544d8a17b11fb54ee76
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Cellar.unity
+    guid: ba54889c27d156241b99d70209d7dbca
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Cold.unity
+    guid: c6e0e3ee12fab3c4eadf19bbda9c9f2f
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Ferm_Down.unity
+    guid: a3c7c1c37ebb7fa438d93646fd1f7fbf
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Ferm_Up.unity
+    guid: 31ac99fe70abfbe48a4fe2c1f1cd7290
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Hops.unity
+    guid: bddbc7b6436ea6e45b17028342efbfc6
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Kettles.unity
+    guid: 150fc4b6b87b143448f8ae71ecda92e2
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Outside.unity
+    guid: 04f6b931d8f15fa4d87196a2f664c80f
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Shop.unity
+    guid: 31f583d51326e324eaab422ba5f61fae
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Start.unity
+    guid: 6506f101206c4184eab32e327e3682fe
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Welcome.unity
+    guid: de25bbd95168f2a4994836e20cab6e4e
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Bottles_1.unity
     guid: 139a0de98cb76124683ec92ff72dc15a
@@ -41,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Crates.unity
     guid: 206e6ab7c56562a4692e42d88131e303
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Jupiler/Jup_Drop.unity
+    guid: a2ce6f692555a33439e7dbe7a28bfd79
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Ferm_1.unity
     guid: c924d2b3ae3ec364184fb78dcfea5f9d
@@ -65,6 +110,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Robots.unity
     guid: 55e3251412efd1c418295d2a936991f0
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Jupiler/Jup_Start.unity
+    guid: 61600ae1eb07ddc43aa89769c0d85891
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Wall.unity
     guid: 98aa52a4160d277418e2222f166d5771
@@ -183,6 +231,9 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Testing Scenes/ImageTest.unity
     guid: a8922ca9ced08c240bcbed9259f93f0b
   - enabled: 1
-    path: Assets/AVProVideo/Demos/Scenes/13_Demo_360StereoSpatialAudio.unity
-    guid: 8f1720b718ee073438d125521c6f96e8
+    path: Assets/ABI-VR/Scenes/Testing Scenes/AVPro test 1.unity
+    guid: 327ae27f5d98c6045880a95bcaea5cf4
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Testing Scenes/AVPro test 2.unity
+    guid: 5ba912a7bca00b643aadca2d016bcb01
   m_configObjects: {}
