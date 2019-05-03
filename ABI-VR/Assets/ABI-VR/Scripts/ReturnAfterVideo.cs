@@ -7,6 +7,7 @@ public class ReturnAfterVideo : MonoBehaviour
 {
 
     [SerializeField] private VideoPlayer video;
+    [SerializeField] private SceneChanger SceneChanger;
     [SerializeField] private string JumpTo;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,6 @@ public class ReturnAfterVideo : MonoBehaviour
 
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
-        SceneChanger sc = new SceneChanger();
-        sc.ChangeScene(JumpTo);
+        SceneChanger.ChangeScene(JumpTo);
     }
 }

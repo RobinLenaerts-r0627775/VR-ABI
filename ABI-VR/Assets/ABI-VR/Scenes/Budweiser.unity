@@ -191,6 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355640068}
   - component: {fileID: 1355640067}
+  - component: {fileID: 1355640070}
   - component: {fileID: 1355640069}
   m_Layer: 0
   m_Name: Video Player
@@ -260,7 +261,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 1355640067}
+  SceneChanger: {fileID: 1355640070}
   JumpTo: TutorialScene
+--- !u!114 &1355640070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355640066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014da9981f7a1bb41a38e60f2c77be2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2007263322
 GameObject:
   m_ObjectHideFlags: 0
