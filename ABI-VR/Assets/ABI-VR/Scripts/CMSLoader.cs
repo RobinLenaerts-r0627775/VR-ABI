@@ -21,29 +21,35 @@ public class CMSLoader : MonoBehaviour
 
         // DEFAULT SKYBOX IS NEEDED FOR VIDEO
         Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
+        yourMaterial.EnableKeyword("_Layout");
+        yourMaterial.SetFloat("_Layout", 2f);
         RenderSettings.skybox = yourMaterial;
 
         // GET CANVAS
         var canvas = GameObject.FindWithTag("Canvas");
 
-        float column = -1.9f;
+        float row = -2f;
         // CREATE BUTTONS IN GRID FOR IMAGES AND VIDEOS
         for (int i = 0; i <= categories.Count - 1; i++)
         {
             var categorie = categories.ElementAt(i);
             GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(column, -2, 2);
-            column += 1.9f;
+            gob.transform.localPosition = new Vector3(-3.9f, row, 2);
+            gob.transform.Rotate(new Vector3(0, -40, 0));
+            row += 0.9f;
             gob.layer = 5;
             GameObject tob = new GameObject("Text");
             gob.transform.SetParent(canvas.transform, false);
             tob.transform.SetParent(gob.transform, false);
             var button = gob.AddComponent<Button>();
             ColorBlock colorVar = button.colors;
-            colorVar.highlightedColor = Color.blue;
+            colorVar.highlightedColor = Color.green;
+            colorVar.normalColor = new Color(255, 255, 255, 0.3f);
+            colorVar.selectedColor = Color.green;
             button.colors = colorVar;
             var rect = gob.AddComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 0.5f);
             var image = gob.AddComponent<Image>();
+            button.targetGraphic = image;
             image.type = Image.Type.Sliced;
             var text = tob.AddComponent<Text>();
             text.transform.localScale = new Vector2(0.002f, 0.002f);
@@ -52,7 +58,8 @@ public class CMSLoader : MonoBehaviour
             text.verticalOverflow = VerticalWrapMode.Overflow;
             text.font = Font.CreateDynamicFontFromOSFont("Arial", 15);
             text.color = Color.black;
-            text.fontSize = 50;
+            text.fontStyle = FontStyle.Bold;
+            text.fontSize = 60;
             text.alignment = TextAnchor.MiddleCenter;
             button.onClick.AddListener(() => WrapperDisplayButtons(categorie));
             var script = gob.AddComponent<VRInteractiveItem>();
@@ -81,6 +88,16 @@ public class CMSLoader : MonoBehaviour
         if (media.Equals("mp4"))
         {
             Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
+            if (tag.Equals("3D"))
+            {
+                yourMaterial.EnableKeyword("_Layout");
+                yourMaterial.SetFloat("_Layout", 2f);
+            }
+            else
+            {
+                yourMaterial.EnableKeyword("_Layout");
+                yourMaterial.SetFloat("_Layout", 0f);
+            }
             RenderSettings.skybox = yourMaterial;
             var vobj = GameObject.FindWithTag("Video");
             var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
@@ -156,17 +173,17 @@ public class CMSLoader : MonoBehaviour
                 gob.tag = "CODE";
                 if (media.Equals("jpg"))
                 {
-                    gob.transform.localPosition = new Vector3(-1.9f, rowImages, 2);
+                    gob.transform.localPosition = new Vector3(-1.9f, rowImages, 2.5f);
                     rowImages -= 0.9f;
                 }
                 else if (media.Equals("wav"))
                 {
-                    gob.transform.localPosition = new Vector3(0f, rowAudios, 2);
+                    gob.transform.localPosition = new Vector3(0f, rowAudios, 2.5f);
                     rowAudios -= 0.9f;
                 }
                 else if (media.Equals("mp4"))
                 {
-                    gob.transform.localPosition = new Vector3(1.9f, rowVideos, 2);
+                    gob.transform.localPosition = new Vector3(1.9f, rowVideos, 2.5f);
                     rowVideos -= 0.9f;
                 }
                 gob.layer = 5;
@@ -175,10 +192,13 @@ public class CMSLoader : MonoBehaviour
                 tob.transform.SetParent(gob.transform, false);
                 var button = gob.AddComponent<Button>();
                 ColorBlock colorVar = button.colors;
-                colorVar.highlightedColor = Color.blue;
+                colorVar.highlightedColor = Color.green;
+                colorVar.normalColor = new Color(255, 255, 255, 0.3f);
+                colorVar.selectedColor = Color.green;
                 button.colors = colorVar;
                 var rect = gob.AddComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 0.5f);
                 var image = gob.AddComponent<Image>();
+                button.targetGraphic = image;
                 image.type = Image.Type.Sliced;
                 var text = tob.AddComponent<Text>();
                 text.transform.localScale = new Vector2(0.002f, 0.002f);
@@ -187,7 +207,8 @@ public class CMSLoader : MonoBehaviour
                 text.verticalOverflow = VerticalWrapMode.Overflow;
                 text.font = Font.CreateDynamicFontFromOSFont("Arial", 15);
                 text.color = Color.black;
-                text.fontSize = 50;
+                text.fontStyle = FontStyle.Bold;
+                text.fontSize = 60;
                 text.alignment = TextAnchor.MiddleCenter;
                 button.onClick.AddListener(() => Wrapper(code, tag, media));
                 var script = gob.AddComponent<VRInteractiveItem>();
