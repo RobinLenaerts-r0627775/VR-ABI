@@ -28,6 +28,7 @@ namespace CMS
         private IDictionary<string, Image> dictionaryVideos;
         private IDictionary<string, Image> dictionaryAudio;
         private BitmapImage _img;
+        private BackgroundWorker worker = new BackgroundWorker();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -87,6 +88,27 @@ namespace CMS
                 }
             }
             tr.Close();
+
+            worker.WorkerSupportsCancellation = true;
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += worker_DoWork;
+            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
+            worker.ProgressChanged += worker_ProgressChanged;
+        }
+
+        private void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            
+        }
+
+        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
         }
 
         public BitmapImage Image
@@ -146,17 +168,26 @@ namespace CMS
             }
         }
 
-        private void Button_Click_Videos(object sender, RoutedEventArgs e)
+        private async void Button_Click_Videos(object sender, RoutedEventArgs e)
         {
             string file = GetFile();
             string fileName = System.IO.Path.GetFileName(file);
-            System.IO.File.Copy(file, "E:\\CMS\\videos\\" + fileName);
+            logs.Text += "\n\t Start copying file ...";
+            using (FileStream SourceStream = File.Open(file, FileMode.Open))
+            {
+                using (FileStream DestinationStream = File.Create("E:\\CMS\\videos\\" + fileName))
+                {
+                    await SourceStream.CopyToAsync(DestinationStream);
+                }
+            }
+            logs.Text += "\n\t Copying done";
             Image = new BitmapImage(new Uri("E:\\CMS\\images\\video_placeholder.jpg"));      
             Image image = new Image(fileName, Image, true);
             image.Name = fileName;
             dictionaryVideos[fileName] = image;
             ListVideos.Add(image);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+            //System.IO.File.Copy(file, "E:\\CMS\\videos\\" + fileName);
         }
 
         private void Button_Click_Audios(object sender, RoutedEventArgs e)
