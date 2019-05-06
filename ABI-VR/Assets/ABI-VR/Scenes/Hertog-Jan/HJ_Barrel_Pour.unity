@@ -273,6 +273,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1870128231}
   - component: {fileID: 1870128230}
+  - component: {fileID: 1870128233}
+  - component: {fileID: 1870128232}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -328,3 +330,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870128232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870128229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014da9981f7a1bb41a38e60f2c77be2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1870128233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870128229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ca79d7059a69a4889bf9611d1cd432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  video: {fileID: 1870128230}
+  SceneChanger: {fileID: 1870128232}
+  JumpTo: HJ_Barrel
