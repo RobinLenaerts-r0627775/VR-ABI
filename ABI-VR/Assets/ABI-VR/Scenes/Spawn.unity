@@ -991,6 +991,36 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 126896141}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorStart.r
+      value: 0.08395338
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorStart.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorStart.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorEnd.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorEnd.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243821939962888, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_ColorEnd.b
+      value: 0.11986828
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28b14f52b1a0c64196742a376e8473e, type: 3}
 --- !u!224 &3518975366295516732
