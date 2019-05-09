@@ -6,7 +6,8 @@ public class BeerGame : MonoBehaviour
 {
 
     [Header("Ingredients in the right order")]
-    [SerializeField] List<GameObject> ingredients;
+    [SerializeField] List<Recipe> Recipes;
+    private Recipe selectedRecipe;
     [SerializeField] GameObject container;
     [SerializeField] GameObject reward;
 
@@ -22,36 +23,25 @@ public class BeerGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        selectedRecipe = Recipes[0];
         List<Renderer> results = new List<Renderer>();
         container.GetComponentsInChildren(true, results);
-        foreach(Renderer child in results){
-            child.material.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
-            GL.PushMatrix();
-            GL.LoadOrtho();
+    }
 
-            // activate the first shader pass (in this case we know it is the only pass)
-            child.material.SetPass(0);
-            // draw a quad over whole screen
-            GL.Begin(GL.QUADS);
-            GL.Vertex3(0, 0, 0);
-            GL.Vertex3(1, 0, 0);
-            GL.Vertex3(1, 1, 0);
-            GL.Vertex3(0, 1, 0);
-            GL.End();
-        }
-
-        GL.PopMatrix();
-            nextIngredient = ingredients[0];
+    public void SelectRecipe(Recipe Recipe){
+        if (selectedRecipe != Recipe) selectedRecipe = Recipe;
     }
 
     public bool addIngredient(GameObject i){
-        if(nextIngredient == i){
+        GameObject res;
+        res = selectedRecipe.addIngredient(i);
+        if(res == null){
             Yay.Play();
-            if(ingredients.IndexOf(nextIngredient) == ingredients.Count -1){
-                endGame();
-                return true;
-            }
-            nextIngredient = ingredients[ingredients.IndexOf(nextIngredient) + 1];
+            endGame();
+            return true;
+        }
+        if(res != i){
+            Yay.Play();
             return true;
         }
         Boo.Play();
