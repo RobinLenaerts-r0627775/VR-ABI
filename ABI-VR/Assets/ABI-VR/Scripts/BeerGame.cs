@@ -7,9 +7,11 @@ public class BeerGame : MonoBehaviour
 
     [Header("Ingredients in the right order")]
     [SerializeField] List<Recipe> Recipes;
+
+    [Header("Rewards (same order as recipes)")]
+    [SerializeField] List<GameObject> rewards;
     private Recipe selectedRecipe;
     [SerializeField] GameObject container;
-    [SerializeField] GameObject reward;
 
     [Header("Audio")]
     [SerializeField] AudioSource Boo;
@@ -18,6 +20,10 @@ public class BeerGame : MonoBehaviour
 
     [Header("Particles")]
     GameObject nextIngredient;
+
+    [Header("UI")]
+    [SerializeField] GameObject Gametext;
+    [SerializeField] GameObject Wintext;
 
 
     // Start is called before the first frame update
@@ -49,7 +55,9 @@ public class BeerGame : MonoBehaviour
     }
 
     public void endGame(){
-        reward.SetActive(true);
+        Gametext.SetActive(false);
+        Wintext.SetActive(true);
+        rewards[Recipes.IndexOf(selectedRecipe)].SetActive(true);
         Particle.Play();
     }
 }

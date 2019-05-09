@@ -7,6 +7,9 @@ public class Board : MonoBehaviour
     [SerializeField] List<GameObject> Recipes;
     [SerializeField] BeerGame BeerGame;
     [SerializeField] GameObject Ingredients;
+    [SerializeField] GameObject Recipetext;
+    [SerializeField] GameObject Gametext;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class Board : MonoBehaviour
                 if(c.gameObject == rec)continue;
                 rec.SetActive(false);
             }
+            Recipetext.SetActive(false);
+            Gametext.SetActive(true);
         }  
     }
 
