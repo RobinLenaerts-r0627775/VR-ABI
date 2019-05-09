@@ -5,8 +5,9 @@ using UnityEngine;
 public class BeerGame : MonoBehaviour
 {
 
-    [Header("Ingredients in the right order")]
+    [Header("Ingredients in the right order + parent object")]
     [SerializeField] List<Recipe> Recipes;
+    [SerializeField] GameObject Ingredients;
 
     [Header("Rewards (same order as recipes)")]
     [SerializeField] List<GameObject> rewards;
@@ -55,6 +56,7 @@ public class BeerGame : MonoBehaviour
     }
 
     public void endGame(){
+        Ingredients.SetActive(false);
         Gametext.SetActive(false);
         Wintext.SetActive(true);
         rewards[Recipes.IndexOf(selectedRecipe)].SetActive(true);
