@@ -123,7 +123,6 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.obj
 *.iobj
 *.pch
 *.ipdb
@@ -397,13 +396,7 @@ healthchecksdb
 # End of https://www.gitignore.io/api/unity,visualstudio,visualstudiocode
 
 #ignore imported asset packs
-Interactive360/
-TextMesh Pro/
-Hologram/
-ErbGameArt/
-VRTK/
-QS/
+
 
 
 #ignore the plugins folder
-Plugins/

@@ -5,10 +5,14 @@ using UnityEngine;
 public class BeerGame : MonoBehaviour
 {
 
-    [Header("Ingredients in the right order")]
-    [SerializeField] List<GameObject> ingredients;
+    [Header("Ingredients in the right order + parent object")]
+    [SerializeField] List<Recipe> Recipes;
+    [SerializeField] GameObject Ingredients;
+
+    [Header("Rewards (same order as recipes)")]
+    [SerializeField] List<GameObject> rewards;
+    private Recipe selectedRecipe;
     [SerializeField] GameObject container;
-    [SerializeField] GameObject reward;
 
     [Header("Audio")]
     [SerializeField] AudioSource Boo;
@@ -18,40 +22,33 @@ public class BeerGame : MonoBehaviour
     [Header("Particles")]
     GameObject nextIngredient;
 
+    [Header("UI")]
+    [SerializeField] GameObject Gametext;
+    [SerializeField] GameObject Wintext;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        selectedRecipe = Recipes[0];
         List<Renderer> results = new List<Renderer>();
         container.GetComponentsInChildren(true, results);
-        foreach(Renderer child in results){
-            child.material.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
-            GL.PushMatrix();
-            GL.LoadOrtho();
+    }
 
-            // activate the first shader pass (in this case we know it is the only pass)
-            child.material.SetPass(0);
-            // draw a quad over whole screen
-            GL.Begin(GL.QUADS);
-            GL.Vertex3(0, 0, 0);
-            GL.Vertex3(1, 0, 0);
-            GL.Vertex3(1, 1, 0);
-            GL.Vertex3(0, 1, 0);
-            GL.End();
-        }
-
-        GL.PopMatrix();
-            nextIngredient = ingredients[0];
+    public void SelectRecipe(Recipe Recipe){
+        if (selectedRecipe != Recipe) selectedRecipe = Recipe;
     }
 
     public bool addIngredient(GameObject i){
-        if(nextIngredient == i){
+        GameObject res;
+        res = selectedRecipe.addIngredient(i);
+        if(res == null){
             Yay.Play();
-            if(ingredients.IndexOf(nextIngredient) == ingredients.Count -1){
-                endGame();
-                return true;
-            }
-            nextIngredient = ingredients[ingredients.IndexOf(nextIngredient) + 1];
+            endGame();
+            return true;
+        }
+        if(res != i){
+            Yay.Play();
             return true;
         }
         Boo.Play();
@@ -59,7 +56,10 @@ public class BeerGame : MonoBehaviour
     }
 
     public void endGame(){
-        reward.SetActive(true);
+        Ingredients.SetActive(false);
+        Gametext.SetActive(false);
+        Wintext.SetActive(true);
+        rewards[Recipes.IndexOf(selectedRecipe)].SetActive(true);
         Particle.Play();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class WaterTrigger : MonoBehaviour
 {
 
@@ -15,7 +15,8 @@ public class WaterTrigger : MonoBehaviour
     private ParticleSystem.MainModule pMain;
     private bool pour;
     private int count = 0;
-
+    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
+    List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,16 @@ public class WaterTrigger : MonoBehaviour
                 ParticleSystem.Play();
             }
         }
+    }
+
+    void OnParticleTrigger(){
+        Debug.Log("yeyeyeyey");
+        if(count++ >= 300){
+                count = 0;
+                if(Game.GetComponent<BeerGame>().addIngredient(Water)){
+                    ParticleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                }
+            }
     }
     void OnParticleCollision(GameObject other){
         if(other == Container){
