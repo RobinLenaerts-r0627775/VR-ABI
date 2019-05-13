@@ -175,17 +175,17 @@ public class CMSLoader : MonoBehaviour
                 gob.tag = "CODE";
                 if (media.Equals("jpg"))
                 {
-                    gob.transform.localPosition = new Vector3(-1.9f, rowImages, 2.5f);
+                    gob.transform.localPosition = new Vector3(-1.9f, rowImages, 4f);
                     rowImages -= 0.9f;
                 }
                 else if (media.Equals("wav"))
                 {
-                    gob.transform.localPosition = new Vector3(0f, rowAudios, 2.5f);
+                    gob.transform.localPosition = new Vector3(0f, rowAudios, 4f);
                     rowAudios -= 0.9f;
                 }
                 else if (media.Equals("mp4"))
                 {
-                    gob.transform.localPosition = new Vector3(1.9f, rowVideos, 2.5f);
+                    gob.transform.localPosition = new Vector3(1.9f, rowVideos, 4f);
                     rowVideos -= 0.9f;
                 }
                 gob.layer = 5;
