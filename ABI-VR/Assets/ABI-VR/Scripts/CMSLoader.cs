@@ -1,4 +1,5 @@
 ﻿using Interactive360.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -9,13 +10,14 @@ using UnityEngine.UI;
 
 public class CMSLoader : MonoBehaviour
 {
-    private string _path = "E:\\CMS\\CMS.txt";
+    private string _computer = Environment.UserName;
     private Dictionary<string, Content> dictionary = new Dictionary<string, Content>();
     private List<string> categories = new List<string>();
 
     void Start()
     {
         // LOAD ALL IMAGES
+        string _path = "C:\\Users\\" + _computer + "\\Desktop\\CMS.txt";
         GetImages(_path);
         int count = CountCategories();
 
@@ -70,7 +72,7 @@ public class CMSLoader : MonoBehaviour
         // GET VIDEOPLAYER WITH DEFAULT VIDEO
         var vobj = GameObject.FindWithTag("Video");
         var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
-        videoplayer.url = "E:\\CMS\\videos\\START.mp4";
+        videoplayer.url = "C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\START.mp4";
     }
 
     public void Wrapper(string code, string tag, string media)
@@ -247,7 +249,7 @@ public class CMSLoader : MonoBehaviour
         TextReader tr = new StreamReader(path);
         string len;
         char[] split = new char[] { ',' };
-        while ((len = tr.ReadLine()) != null)
+        while ((len = tr.ReadLine()) != null && !len.Equals(""))
         {
             string[] array = len.Split(split);
             string code = array[0];
