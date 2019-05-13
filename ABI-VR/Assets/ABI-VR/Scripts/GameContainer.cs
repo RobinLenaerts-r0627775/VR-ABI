@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameContainer : MonoBehaviour
 {
+    private BeerGame gm;
 
     BeerGame bg;
     // Start is called before the first frame update

@@ -8,6 +8,9 @@ TagManager:
   - Image
   - Code
   - Canvas
+  - Video
+  - Audio
+  - CODE
   layers:
   - Default
   - TransparentFX

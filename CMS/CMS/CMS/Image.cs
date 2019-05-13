@@ -10,18 +10,19 @@ namespace CMS
 {
     public class Image
     {
-        public Image(string code, BitmapImage source)
+        public Image(string code, BitmapImage source, bool type)
         {
-            // Temporary, could leave it empty
             Code = code;
             Source = source;
             URI = source.UriSource;
             Name = System.IO.Path.GetFileName(URI.LocalPath);
+            Type = type;
         }
 
         public String Name { get; set; }
         public ImageSource Source { get; set; }
         public String Code { get; set; }
         public Uri URI { get; set; }
+        public bool Type { get; set; }
     }
 }
