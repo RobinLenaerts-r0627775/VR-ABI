@@ -17,7 +17,7 @@ public class CMSLoader : MonoBehaviour
     void Start()
     {
         // LOAD ALL IMAGES
-        string _path = "C:\\Users\\" + _computer + "\\Desktop\\CMS.txt";
+        string _path = "C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt";
         GetImages(_path);
         int count = CountCategories();
 
