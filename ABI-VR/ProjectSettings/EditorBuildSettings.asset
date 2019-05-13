@@ -129,9 +129,6 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Budweiser.unity
     guid: f57a80ed2f4d71548bd19d335ae50caa
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/GHQ/GHQ_Corona_Left.unity
-    guid: 8b1b9cc259f8c8542a7421f93123bb74
-  - enabled: 1
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Corona_Right.unity
     guid: 6551e311ad89f084aba6aa418ae5374d
   - enabled: 1
@@ -140,6 +137,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Grab_And_Go_Down.unity
     guid: 674431889f1b47d4196b6f1da3695543
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/GHQ/GHQ_Corona_Left.unity
+    guid: 8b1b9cc259f8c8542a7421f93123bb74
   - enabled: 1
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Grab_And_Go_Up.unity
     guid: 36a5744ae847eff4b9adfc9c003fbc2d

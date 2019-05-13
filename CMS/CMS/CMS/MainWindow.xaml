@@ -5,44 +5,100 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="800">
+        Title="MainWindow" Height="635" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock Name="textBlockI"></TextBlock>
-            <ListBox Name="listbox" ItemsSource="{Binding ListImages}" PreviewMouseDown="listbox_PreviewMouseDown">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Code}" />
-                            <TextBlock Text="   " />
-                            <TextBlock Text="{Binding Name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Button Content="Upload new file" Width="100" Click="Button_Click_Images"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Gold">
+        <Image Grid.Row="0" Grid.Column="0" Margin="30,0,0,0" Source="logo.png" Width="200" Height="140"></Image>
+        <Label Grid.Row="0" VerticalAlignment="Center" Margin="70,0,0,0" FontSize="30" Content="VR Content Management System" />
         </StackPanel>
-        <StackPanel Grid.Column="1">
-            <TextBlock Name="textBlockV"></TextBlock>
-            <Button Content="Upload new file" Width="100" Click="Button_Click_Videos"/>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock Grid.Column="2" Name="textBlockA"></TextBlock>
-            <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
-        </StackPanel>
-        <StackPanel Grid.Column="3">
+        <TabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Images" />
+                </TabItem.Header>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <ListBox Name="listboxI" ItemsSource="{Binding ListImages}" PreviewMouseDown="listbox_PreviewMouseDown">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" FontWeight="Bold"/>
+                                <TextBlock Text="   " />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Upload new file" Width="100" Click="Button_Click_Images"/>
+                <TextBlock Name="errorImages"></TextBlock>
+            </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Videos" />
+                </TabItem.Header>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <ListBox Name="listboxV" ItemsSource="{Binding ListVideos}" PreviewMouseDown="listbox_PreviewMouseDown">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}" FontWeight="Bold"/>
+                                <TextBlock Text="   " />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Upload new file" Width="100" Click="Button_Click_Videos"/>
+            </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Audios" />
+                </TabItem.Header>
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <ListBox Name="listboxA" ItemsSource="{Binding ListAudios}" PreviewMouseDown="listbox_PreviewMouseDown">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Code}" FontWeight="Bold"/>
+                                    <TextBlock Text="   " />
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Content="Upload new file" Width="100" Click="Button_Click_Audios"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Grid.Column="3">
             <Image Source="{Binding Image}" />
             <Label Content="{Binding ImageName}" Name="label"/>
             <TextBox Text="{Binding ImageCode}" />
-            <Button Content="Change information" Click="Button_Click_Save"/>
-            <Button Content="Write to file " Click="Button_Click_SaveToFile"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="3D" />
+                <CheckBox IsChecked="{Binding ImageType}" RenderTransformOrigin="0.688,5.321" Width="27" Height="14"/>
+            </StackPanel>
+            <Button Content="Save code" Click="Button_Click_Save"/>
+            <Button Content="Write to CMS " Click="Button_Click_SaveToFile"/>
             <Button Content="Delete file" Click="Button_Click_Delete" />
         </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
+            <Label Content="STATUS: " FontSize="15" />
+            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Name="logs" FontSize="15"></TextBlock>
+        </StackPanel>
+        <ProgressBar Name="progress" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"></ProgressBar>
     </Grid>
 </Window>
