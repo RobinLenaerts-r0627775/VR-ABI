@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Testing Scenes/Video_test.unity
     guid: 6fdd6d1d6978e0b41922d459052833b5
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Testing Scenes/TestScene.unity
+    path: Assets/ABI-VR/Scenes/BrewGame.unity
     guid: 4f4b94fb302862748817874a9bdf084b
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Budweiser.unity
