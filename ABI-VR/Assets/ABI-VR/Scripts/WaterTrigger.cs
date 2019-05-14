@@ -51,16 +51,9 @@ public class WaterTrigger : MonoBehaviour
         }
     }
 
-    void OnParticleTrigger(){
-        if(count++ >= 300){
-                count = 0;
-                if(Game.GetComponent<BeerGame>().addIngredient(Water)){
-                    ParticleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-                }
-            }
-    }
     void OnParticleCollision(GameObject other){
         if(other == Container){
+            Debug.Log("collision with container");
             if(count++ >= 300){
                 count = 0;
                 if(Game.GetComponent<BeerGame>().addIngredient(Water)){

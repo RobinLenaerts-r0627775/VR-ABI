@@ -1062,6 +1062,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3026243820835482142, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243820343761571, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243820835500312, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3026243821898881781, guid: a28b14f52b1a0c64196742a376e8473e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a28b14f52b1a0c64196742a376e8473e, type: 3}

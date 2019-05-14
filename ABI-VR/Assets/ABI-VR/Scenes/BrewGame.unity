@@ -648,6 +648,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ketel
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6fc2e66d38cdd424aa7a8e4b5de9c79c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6fc2e66d38cdd424aa7a8e4b5de9c79c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6fc2e66d38cdd424aa7a8e4b5de9c79c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.496
@@ -4581,7 +4589,7 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 1
-    collisionShape0: {fileID: 1677974646}
+    collisionShape0: {fileID: 1677974647}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
@@ -4589,9 +4597,9 @@ ParticleSystem:
     collisionShape5: {fileID: 0}
     inside: 1
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
-    radiusScale: 1
+    radiusScale: 0.0001
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -10650,7 +10658,7 @@ MonoBehaviour:
   - {fileID: 277844403}
   - {fileID: 1241907982}
   - {fileID: 117734040}
-  container: {fileID: 1636694730}
+  container: {fileID: 1677974645}
   Boo: {fileID: 1723202738}
   Yay: {fileID: 1688754266}
   Particle: {fileID: 423103079}
@@ -11336,6 +11344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925158507}
   - component: {fileID: 925158506}
+  - component: {fileID: 925158505}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: EditorOnly
@@ -11343,6 +11352,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &925158505
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925158504}
+  m_Enabled: 1
 --- !u!20 &925158506
 Camera:
   m_ObjectHideFlags: 0
@@ -11911,6 +11928,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034794955}
   m_CullTransparentMesh: 0
+--- !u!1 &1038953849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038953850}
+  - component: {fileID: 1038953851}
+  m_Layer: 0
+  m_Name: containerWithoutTrigger
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038953850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038953849}
+  m_LocalRotation: {x: -0, y: -0.93834555, z: -0, w: 0.34569886}
+  m_LocalPosition: {x: 1.496, y: -0.9484304, z: -1.29}
+  m_LocalScale: {x: 5.719986, y: 2.295005, z: 5.719986}
+  m_Children: []
+  m_Father: {fileID: 2052175812}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1038953851
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038953849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: df9be8923975c9644bd51e0e7a8d37be, type: 3}
 --- !u!1 &1042250922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: a747684951119a744bfedb8d36d822f7,
@@ -14164,7 +14226,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &1636694735
+--- !u!114 &1636694734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14187,7 +14249,7 @@ GameObject:
   - component: {fileID: 1677974646}
   - component: {fileID: 1677974647}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14200,9 +14262,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677974645}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.058, z: 0}
-  m_LocalScale: {x: 3.2, y: 0.77789986, z: 3.2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.05799999, z: 0}
+  m_LocalScale: {x: 3.200004, y: 0.7778999, z: 3.200004}
   m_Children: []
   m_Father: {fileID: 1636694731}
   m_RootOrder: 1
@@ -14467,7 +14529,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 1714722364}
   Game: {fileID: 587964933}
   Water: {fileID: 1898264157}
-  Container: {fileID: 1677974645}
+  Container: {fileID: 1038953849}
 --- !u!199 &1714722363
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18238,8 +18300,8 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
-    collisionShape0: {fileID: 1677974646}
+    enabled: 0
+    collisionShape0: {fileID: 1677974647}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
@@ -18247,7 +18309,7 @@ ParticleSystem:
     collisionShape5: {fileID: 0}
     inside: 1
     outside: 0
-    enter: 2
+    enter: 0
     exit: 0
     radiusScale: 1
   SubModule:
@@ -20327,6 +20389,7 @@ Transform:
   - {fileID: 916122459}
   - {fileID: 1189205358}
   - {fileID: 1256833325}
+  - {fileID: 1038953850}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
