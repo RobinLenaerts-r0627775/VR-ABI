@@ -56,7 +56,9 @@ public class BeerGame : MonoBehaviour
     }
 
     public void endGame(){
+        Debug.Log("disabling ingredients");
         Ingredients.SetActive(false);
+        Debug.Log("disabling gametext");
         Gametext.SetActive(false);
         Wintext.SetActive(true);
         rewards[Recipes.IndexOf(selectedRecipe)].SetActive(true);

@@ -11336,7 +11336,6 @@ GameObject:
   m_Component:
   - component: {fileID: 925158507}
   - component: {fileID: 925158506}
-  - component: {fileID: 925158505}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: EditorOnly
@@ -11344,14 +11343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &925158505
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925158504}
-  m_Enabled: 1
 --- !u!20 &925158506
 Camera:
   m_ObjectHideFlags: 0
@@ -12124,6 +12115,7 @@ MonoBehaviour:
   Ingredients: {fileID: 2021670636}
   Recipetext: {fileID: 1034794955}
   Gametext: {fileID: 1034550185}
+  triggerBox: {fileID: 1063036908}
 --- !u!1 &1117390925
 GameObject:
   m_ObjectHideFlags: 0
@@ -14062,15 +14054,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.37602
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.37602
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.37602
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14115,6 +14107,18 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.37602
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37602
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.37602
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0700372d126f30d4cb7eda92c4fb2dd6, type: 3}
@@ -19510,7 +19514,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TestScene
+          m_StringArgument: BrewGame
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

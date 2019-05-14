@@ -52,7 +52,6 @@ public class WaterTrigger : MonoBehaviour
     }
 
     void OnParticleTrigger(){
-        Debug.Log("yeyeyeyey");
         if(count++ >= 300){
                 count = 0;
                 if(Game.GetComponent<BeerGame>().addIngredient(Water)){
@@ -62,7 +61,6 @@ public class WaterTrigger : MonoBehaviour
     }
     void OnParticleCollision(GameObject other){
         if(other == Container){
-            Debug.Log("trigger");
             if(count++ >= 300){
                 count = 0;
                 if(Game.GetComponent<BeerGame>().addIngredient(Water)){
