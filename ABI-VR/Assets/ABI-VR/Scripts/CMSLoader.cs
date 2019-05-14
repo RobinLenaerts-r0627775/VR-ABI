@@ -18,61 +18,70 @@ public class CMSLoader : MonoBehaviour
     {
         // LOAD ALL IMAGES
         string _path = "C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt";
-        GetImages(_path);
-        int count = CountCategories();
-
-        // DEFAULT SKYBOX IS NEEDED FOR VIDEO
-        Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
-        yourMaterial.EnableKeyword("_Layout");
-        yourMaterial.SetFloat("_Layout", 2f);
-        RenderSettings.skybox = yourMaterial;
-
-        // GET CANVAS
-        var canvas = GameObject.FindWithTag("Canvas");
-
-        float row = -2f;
-        // CREATE BUTTONS IN GRID FOR IMAGES AND VIDEOS
-        for (int i = 0; i <= categories.Count - 1; i++)
+        if (!File.Exists(_path))
         {
-            var categorie = categories.ElementAt(i);
-            GameObject gob = new GameObject("Button");
-            gob.transform.localPosition = new Vector3(-3.9f, row, 2);
-            gob.transform.Rotate(new Vector3(0, -40, 0));
-            row += 0.9f;
-            gob.layer = 5;
-            GameObject tob = new GameObject("Text");
-            gob.transform.SetParent(canvas.transform, false);
-            tob.transform.SetParent(gob.transform, false);
-            var button = gob.AddComponent<Button>();
-            ColorBlock colorVar = button.colors;
-            colorVar.highlightedColor = Color.green;
-            colorVar.normalColor = new Color(255, 255, 255, 0.3f);
-            colorVar.selectedColor = Color.green;
-            button.colors = colorVar;
-            var rect = gob.AddComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 0.5f);
-            var image = gob.AddComponent<Image>();
-            button.targetGraphic = image;
-            image.type = Image.Type.Sliced;
-            var text = tob.AddComponent<Text>();
-            text.transform.localScale = new Vector2(0.002f, 0.002f);
-            text.text = categorie;
-            text.horizontalOverflow = HorizontalWrapMode.Overflow;
-            text.verticalOverflow = VerticalWrapMode.Overflow;
-            text.font = Font.CreateDynamicFontFromOSFont("Arial", 15);
-            text.color = Color.black;
-            text.fontStyle = FontStyle.Bold;
-            text.fontSize = 60;
-            text.alignment = TextAnchor.MiddleCenter;
-            button.onClick.AddListener(() => WrapperDisplayButtons(categorie));
-            var script = gob.AddComponent<VRInteractiveItem>();
-            var box = gob.AddComponent<BoxCollider>();
-            box.size = new Vector3(0.5f, 0.5f, 0.5f);
+            var eo = GameObject.FindWithTag("Error");
+            var error = eo.GetComponent<Text>();
+            error.text = "Could not find CMS file in the folder CMS on your desktop";
         }
+        else
+        {
+            GetImages(_path);
+            int count = CountCategories();
 
-        // GET VIDEOPLAYER WITH DEFAULT VIDEO
-        var vobj = GameObject.FindWithTag("Video");
-        var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
-        videoplayer.url = "C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\START.mp4";
+            // DEFAULT SKYBOX IS NEEDED FOR VIDEO
+            Material yourMaterial = (Material)Resources.Load("3D_Stella_Filter_1", typeof(Material));
+            yourMaterial.EnableKeyword("_Layout");
+            yourMaterial.SetFloat("_Layout", 2f);
+            RenderSettings.skybox = yourMaterial;
+
+            // GET CANVAS
+            var canvas = GameObject.FindWithTag("Canvas");
+
+            float row = -2f;
+            // CREATE BUTTONS IN GRID FOR IMAGES AND VIDEOS
+            for (int i = 0; i <= categories.Count - 1; i++)
+            {
+                var categorie = categories.ElementAt(i);
+                GameObject gob = new GameObject("Button");
+                gob.transform.localPosition = new Vector3(-3.9f, row, 2);
+                gob.transform.Rotate(new Vector3(0, -40, 0));
+                row += 0.9f;
+                gob.layer = 5;
+                GameObject tob = new GameObject("Text");
+                gob.transform.SetParent(canvas.transform, false);
+                tob.transform.SetParent(gob.transform, false);
+                var button = gob.AddComponent<Button>();
+                ColorBlock colorVar = button.colors;
+                colorVar.highlightedColor = Color.green;
+                colorVar.normalColor = new Color(255, 255, 255, 0.3f);
+                colorVar.selectedColor = Color.green;
+                button.colors = colorVar;
+                var rect = gob.AddComponent<RectTransform>().sizeDelta = new Vector2(1.5f, 0.5f);
+                var image = gob.AddComponent<Image>();
+                button.targetGraphic = image;
+                image.type = Image.Type.Sliced;
+                var text = tob.AddComponent<Text>();
+                text.transform.localScale = new Vector2(0.002f, 0.002f);
+                text.text = categorie;
+                text.horizontalOverflow = HorizontalWrapMode.Overflow;
+                text.verticalOverflow = VerticalWrapMode.Overflow;
+                text.font = Font.CreateDynamicFontFromOSFont("Arial", 15);
+                text.color = Color.black;
+                text.fontStyle = FontStyle.Bold;
+                text.fontSize = 60;
+                text.alignment = TextAnchor.MiddleCenter;
+                button.onClick.AddListener(() => WrapperDisplayButtons(categorie));
+                var script = gob.AddComponent<VRInteractiveItem>();
+                var box = gob.AddComponent<BoxCollider>();
+                box.size = new Vector3(0.5f, 0.5f, 0.5f);
+            }
+
+            // GET VIDEOPLAYER WITH DEFAULT VIDEO
+            var vobj = GameObject.FindWithTag("Video");
+            var videoplayer = vobj.GetComponent<UnityEngine.Video.VideoPlayer>();
+            videoplayer.url = "C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\START.mp4";
+        }
     }
 
     public void Wrapper(string code, string tag, string media)

@@ -11,6 +11,7 @@ TagManager:
   - Video
   - Audio
   - CODE
+  - Error
   layers:
   - Default
   - TransparentFX
