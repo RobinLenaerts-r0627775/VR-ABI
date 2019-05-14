@@ -817,7 +817,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 392217934}
   Game: {fileID: 587964933}
   Water: {fileID: 67797556}
-  Container: {fileID: 1677974645}
+  Container: {fileID: 1038953849}
 --- !u!199 &392217933
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4588,7 +4588,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
+    enabled: 0
     collisionShape0: {fileID: 1677974647}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
