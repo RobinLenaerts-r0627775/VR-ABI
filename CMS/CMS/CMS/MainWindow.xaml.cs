@@ -44,52 +44,82 @@ namespace CMS
             dictionaryVideos = new Dictionary<string, Image>();
             dictionaryAudio = new Dictionary<string, Image>();
 
-            TextReader tr = new StreamReader("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt");
-            string len;
-            char[] split = new char[] { ',' };
-            while ((len = tr.ReadLine()) != null && !len.Equals(""))
+            if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt"))
             {
-                Image image = null;
-                string[] array = len.Split(split);
-                string code = array[0];
-                string type = array[2];
-                bool typeBool = false;
-                if (type.Equals("3D"))
-                    typeBool = true;
-
-                if (array[1].Split('.').Last().Equals("mp4"))
-                {
-                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
-                    image = new CMS.Image(array[0], Image, typeBool);
-                    image.Name = array[1].Replace("file:///C:/Users/" + _computer + "/Desktop/CMS/videos/", "");
-                } else if (array[1].Split('.').Last().Equals("wav"))
-                {
-                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
-                    image = new CMS.Image(array[0], Image, typeBool);
-                    image.Name = array[1].Replace("file:///C:/Users/" + _computer + "/Desktop/CMS/audios/", "");
-                }
-                else
-                {
-                    Image = new BitmapImage();
-                    Image.BeginInit();
-                    Image.UriSource = new Uri(array[1]);
-                    Image.CacheOption = BitmapCacheOption.OnLoad;
-                    Image.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                    Image.EndInit();
-                    image = new CMS.Image(array[0], Image, typeBool);
-                }
-                if (image.Name.Split('.').Last().Equals("jpg"))
-                {
-                    dictionaryImages[code] = image;
-                } else if (image.Name.Split('.').Last().Equals("mp4"))
-                {
-                    dictionaryVideos[code] = image;
-                } else if (image.Name.Split('.').Last().Equals("wav"))
-                {
-                    dictionaryAudio[code] = image;
-                }
+                logs.Text = "The CMS file does not exist.";
+                createButton.Visibility = Visibility.Visible;
             }
-            tr.Close();
+            else
+            {
+                TextReader tr = new StreamReader("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt");
+                string len;
+                char[] split = new char[] { ',' };
+                while ((len = tr.ReadLine()) != null && !len.Equals(""))
+                {
+                    Image image = null;
+                    string[] array = len.Split(split);
+                    string code = array[0];
+                    string type = array[2];
+                    bool typeBool = false;
+                    if (type.Equals("3D"))
+                        typeBool = true;
+                    if (!array[1].Split('/').ElementAt(5).Equals(_computer))
+                    {
+                        logs.Text = "The found CMS file is from a different computer (" + array[1].Split('/').ElementAt(5) + ")";
+                        convertButton.Visibility = Visibility.Visible;
+                        if (array[1].Split('.').Last().Equals("mp4"))
+                        {
+                            Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            image.Name = array[1].Split('/').Last();
+                            dictionaryVideos[code] = image;
+                        }
+                        else if (array[1].Split('.').Last().Equals("wav"))
+                        {
+                            Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            image.Name = array[1].Split('/').Last();
+                            dictionaryAudio[code] = image;
+                        } 
+                        else
+                        {
+                            Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\image_placeholder.jpg"));
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            image.Name = array[1].Split('/').Last();
+                            dictionaryImages[code] = image;
+                        }
+                    }
+                    else
+                    {
+                        if (array[1].Split('.').Last().Equals("mp4"))
+                        {
+                            Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            image.Name = array[1].Replace("file:///C:/Users/" + _computer + "/Desktop/CMS/videos/", "");
+                            dictionaryVideos[code] = image;
+                        }
+                        else if (array[1].Split('.').Last().Equals("wav"))
+                        {
+                            Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            image.Name = array[1].Replace("file:///C:/Users/" + _computer + "/Desktop/CMS/audios/", "");
+                            dictionaryAudio[code] = image;
+                        }
+                        else
+                        {
+                            Image = new BitmapImage();
+                            Image.BeginInit();
+                            Image.UriSource = new Uri(array[1]);
+                            Image.CacheOption = BitmapCacheOption.OnLoad;
+                            Image.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                            Image.EndInit();
+                            image = new CMS.Image(array[0], Image, typeBool);
+                            dictionaryImages[code] = image;
+                        }
+                    }
+                }
+                tr.Close();
+            }
         }
 
         public BitmapImage Image
@@ -334,6 +364,44 @@ namespace CMS
                 System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + name);
                 logs.Text = "Image deleted";
             }
+        }
+
+        private void createButton_Click_CreateCMS(object sender, RoutedEventArgs e)
+        {
+            File.Create("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt");
+            logs.Text = "";
+            createButton.Visibility = Visibility.Hidden;
+        }
+
+        private void convertButton_Click_ConvertCMS(object sender, RoutedEventArgs e)
+        {
+            TextWriter tw = new StreamWriter("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt");
+            foreach (Image img in ListImages)
+            {
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + ",file:///C:/Users/" + _computer + "/Desktop/CMS/Images/" + img.Name + "," + type);
+
+            }
+            foreach (Image img in ListVideos)
+            {
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + ",file:///C:/Users/" + _computer + "/Desktop/CMS/videos/" + img.Name + "," + type);
+            }
+            foreach (Image img in ListAudios)
+            {
+                string type = "3D";
+                if (!img.Type)
+                    type = "2D";
+                tw.WriteLine(img.Code + ",file:///C:/Users/" + _computer + "/Desktop/CMS/audios/" + img.Name + "," + type);
+            }
+            tw.Close();
+
+            logs.Text = "Conversion complete";
+            convertButton.Visibility = Visibility.Hidden;
         }
     }
 }

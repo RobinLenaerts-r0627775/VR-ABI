@@ -98,6 +98,8 @@
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal">
             <Label Content="STATUS: " FontSize="15" />
             <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Name="logs" FontSize="15"></TextBlock>
+            <Button Content="Create CMS file" Name="createButton" Visibility="Hidden" Click="createButton_Click_CreateCMS"></Button>
+            <Button Content="Convert CMS" Name="convertButton" Visibility="Hidden" Click="convertButton_Click_ConvertCMS"></Button>
         </StackPanel>
         <ProgressBar Name="progress" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"></ProgressBar>
     </Grid>
