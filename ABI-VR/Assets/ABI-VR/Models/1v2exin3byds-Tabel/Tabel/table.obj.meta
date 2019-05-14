@@ -1,8 +1,17 @@
 fileFormatVersion: 2
-guid: dfd3708e99d76284e92b03e6be8ab0a4
+guid: 292088c329ae7094cbe4df114992dd26
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: Mat.1
+    2100002: Mat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -31,7 +40,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
+<<<<<<< HEAD
     isReadable: 0
+=======
+    isReadable: 1
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -45,6 +58,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+<<<<<<< HEAD
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -52,12 +66,23 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+=======
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
+=======
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -66,11 +91,18 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+<<<<<<< HEAD
   referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
+=======
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     human: []
     skeleton: []
     armTwist: 0.5
@@ -80,7 +112,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+<<<<<<< HEAD
     globalScale: 1
+=======
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

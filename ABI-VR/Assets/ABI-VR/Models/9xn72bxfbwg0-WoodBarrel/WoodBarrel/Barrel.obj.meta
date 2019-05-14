@@ -1,8 +1,18 @@
 fileFormatVersion: 2
-guid: 64aee0559740e7947bda74f63ea9aa41
+guid: 287a232c8b1809047824c63f772e1ae7
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: default
+    400000: //RootNode
+    400002: default
+    2100000: Material.001
+    2100002: Text
+    2300000: default
+    3300000: default
+    4300000: default
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -31,7 +41,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
+<<<<<<< HEAD
     isReadable: 0
+=======
+    isReadable: 1
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -45,6 +59,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+<<<<<<< HEAD
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -52,12 +67,23 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+=======
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
+=======
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -66,11 +92,18 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+<<<<<<< HEAD
   referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
+=======
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     human: []
     skeleton: []
     armTwist: 0.5
@@ -80,7 +113,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+<<<<<<< HEAD
     globalScale: 1
+=======
+>>>>>>> 22e93c0b844a5569a8c7b73551c53df5b2e5394e
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
