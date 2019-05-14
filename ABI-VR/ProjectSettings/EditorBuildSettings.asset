@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/TutorialScene.unity
     guid: ed6303675a35f02438ce00957f7e656c
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Testing Scenes/AvatarGrab.unity
-    guid: 941c413af7c367d40aab0725f5a59530
-  - enabled: 1
     path: Assets/ABI-VR/Scenes/Testing Scenes/Video_test.unity
     guid: 6fdd6d1d6978e0b41922d459052833b5
   - enabled: 1
@@ -141,9 +138,6 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Corona_Left.unity
     guid: 8b1b9cc259f8c8542a7421f93123bb74
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/GHQ/GHQ_Grab_And_Go_Up.unity
-    guid: 36a5744ae847eff4b9adfc9c003fbc2d
-  - enabled: 1
     path: Assets/ABI-VR/Scenes/GHQ/GHQ_Hoegaarden.unity
     guid: 7b5a59d04241fd64d8c91909144bd1bc
   - enabled: 1
@@ -237,14 +231,20 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Bosteels/12_HotRoom.unity
     guid: e60ce0c345035fb429b5ff1739f80f0a
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Jupiler.unity
-    guid: f0d5cfc3e4b1d2147b4e111ab87934a3
+    path: Assets/ABI-VR/Scenes/Breda/Breda_1_Office1.unity
+    guid: af492bbb447722641ad84bbabc373743
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Hertog_Jan.unity
-    guid: 8feb821b3327e324fa5facb81a46d719
+    path: Assets/ABI-VR/Scenes/Breda/Breda_2_Office2.unity
+    guid: dd5731ccf84ca2f4dbc1c864e0e88c02
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Logistics.unity
-    guid: b148c5664a2d6a742ba1fcc1adf44d7b
+    path: Assets/ABI-VR/Scenes/Breda/Breda_3_Coffee.unity
+    guid: 657e72fe35e506143aee9d362835462c
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Breda/Breda_4_TeleVer.unity
+    guid: ff03e14bc71b4fb40814ee825c5dc47e
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Breda/Breda_5_OpenBar.unity
+    guid: 0121f84a0607d1943969d3435d992c65
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Leffe/Leffe.unity
     guid: 86aa501f6d801fa4d82131fea26719ee
@@ -264,27 +264,9 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Leffe/Leffe_Novice.unity
     guid: c0d99f868e3ba224abb97d413ab958ce
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Hoegaarden.unity
-    guid: f39e2f7e48cba5d4e82c642b950789cf
-  - enabled: 1
-    path: Assets/ABI-VR/Scenes/Culture&Heritage.unity
-    guid: 01d9c26bb93d849458891457e699769e
-  - enabled: 1
     path: Assets/ABI-VR/Scenes/Logistics_Ride.unity
     guid: ce0cc4ffda0a3a0448d2181f8e3b3a68
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Brewery_Process.unity
-    guid: f99e3b9d1a246dd489486851394df4c2
-  - enabled: 1
-    path: Assets/ABI-VR/Scenes/Bosteels.unity
-    guid: 19b76f66937300e449fb2d65860ed001
-  - enabled: 1
     path: Assets/ABI-VR/Scenes/Testing Scenes/ImageTest.unity
     guid: a8922ca9ced08c240bcbed9259f93f0b
-  - enabled: 1
-    path: Assets/ABI-VR/Scenes/Testing Scenes/AVPro test 1.unity
-    guid: 327ae27f5d98c6045880a95bcaea5cf4
-  - enabled: 1
-    path: Assets/ABI-VR/Scenes/Testing Scenes/AVPro test 2.unity
-    guid: 5ba912a7bca00b643aadca2d016bcb01
   m_configObjects: {}
