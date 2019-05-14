@@ -1037,7 +1037,33 @@ PrefabInstance:
       propertyPath: m_parentHeldObject
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3024693263725763124, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025187865822184254, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243820343539395, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243820835500846, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026243820343531347, guid: a28b14f52b1a0c64196742a376e8473e,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3026243821898881781, guid: a28b14f52b1a0c64196742a376e8473e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a28b14f52b1a0c64196742a376e8473e, type: 3}
 --- !u!224 &3518975366295516732
 RectTransform:
