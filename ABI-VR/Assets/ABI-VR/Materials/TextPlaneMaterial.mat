@@ -73,15 +73,15 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowSpeed: 10
-    - _GlowTiling: 0.01
+    - _GlowSpeed: -0.5
+    - _GlowTiling: 0.593
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 10
-    - _ScanSpeed: -1.35
-    - _ScanTiling: 1.72
+    - _RimPower: 1.29
+    - _ScanSpeed: -0.09
+    - _ScanTiling: 5.49
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
