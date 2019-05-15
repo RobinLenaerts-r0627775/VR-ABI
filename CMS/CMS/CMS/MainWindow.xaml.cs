@@ -162,6 +162,14 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
+                bool exists = false;
+                foreach (Image img in dictionaryImages.Values)
+                {
+                    if (img.Name.Equals(fileName))
+                    {
+                        exists = true;
+                    }
+                }
                 if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName))
                 {
                     logs.Text = "Copying " + fileName + " to folder ";
@@ -176,9 +184,18 @@ namespace CMS
                     ListImages.Add(image);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
                 }
+                else if (File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName) && !exists)
+                {
+                    logs.Text = "This file is already in the CMS, but not in the list. Please do not forget to write it to the file";
+                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName));
+                    Image image = new Image(fileName, Image, true);
+                    dictionaryImages[fileName] = image;
+                    ListImages.Add(image);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "This file is already in the CMS";
                 }
             }
         }
@@ -189,6 +206,14 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
+                bool exists = false;
+                foreach (Image img in dictionaryVideos.Values)
+                {
+                    if (img.Name.Equals(fileName))
+                    {
+                        exists = true;
+                    }
+                }
                 if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
                 {
                     logs.Text = "Copying " + fileName + " to folder ";
@@ -203,9 +228,19 @@ namespace CMS
                     ListVideos.Add(image);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
                 }
+                else if (File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName) && !exists)
+                {
+                    logs.Text = "This file is already in the CMS, but not in the list. Please do not forget to write it to the file";
+                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
+                    Image image = new Image(fileName, Image, true);
+                    image.Name = fileName;
+                    dictionaryVideos[fileName] = image;
+                    ListVideos.Add(image);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+                }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "This file is already in the CMS";
                 }
             }
         }
@@ -216,7 +251,15 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
-                if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
+                bool exists = false;
+                foreach (Image img in dictionaryAudio.Values)
+                {
+                    if (img.Name.Equals(fileName))
+                    {
+                        exists = true;
+                    }
+                }
+                if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + fileName))
                 {
                     logs.Text = "Copying " + fileName + " to folder ";
                     WebClient wc = new WebClient();
@@ -230,9 +273,19 @@ namespace CMS
                     ListAudios.Add(image);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
                 }
+                else if (File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + fileName) && !exists)
+                {
+                    logs.Text = "This file is already in the CMS, but not in the list. Please do not forget to write it to the file";
+                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
+                    Image image = new Image(fileName, Image, true);
+                    image.Name = fileName;
+                    dictionaryAudio[fileName] = image;
+                    ListAudios.Add(image);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
+                }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "This file is already in the CMS";
                 }
             }
         }
@@ -400,7 +453,7 @@ namespace CMS
             }
             tw.Close();
 
-            logs.Text = "Conversion complete";
+            logs.Text = "Conversion complete. Please restart the application to reload. Do not write to file.";
             convertButton.Visibility = Visibility.Hidden;
         }
     }
