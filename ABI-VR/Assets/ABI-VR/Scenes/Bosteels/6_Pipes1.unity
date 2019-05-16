@@ -221,15 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextHologram
       objectReference: {fileID: 0}
-    - target: {fileID: 5220321347268313435, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.94
+      value: -2.111
       objectReference: {fileID: 0}
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
@@ -239,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.64
+      value: -0.245
       objectReference: {fileID: 0}
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
@@ -295,6 +290,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0079596
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220321347268313435, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
@@ -623,7 +623,6 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 258
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -650,6 +649,7 @@ MonoBehaviour:
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
@@ -664,12 +664,9 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
