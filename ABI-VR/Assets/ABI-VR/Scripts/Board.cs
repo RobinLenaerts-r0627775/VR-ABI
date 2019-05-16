@@ -24,18 +24,14 @@ public class Board : MonoBehaviour
             Debug.Log("Enter board");
             // enable the ingredients
             Ingredients.SetActive(true); 
-            Debug.Log(" parent = " + c.gameObject.GetComponentInParent<OVRGrabber>());
             //make sure the recipe is in the right place and no longer being grabbed by the player
-            ((OVRGrabber) FindObjectOfType(typeof(OVRGrabber))).ForceRelease(c.gameObject.GetComponent<OVRGrabbable>());
+            c.gameObject.GetComponent<OVRGrabbable>().enabled = false;
             BeerGame.SelectRecipe(c.gameObject.GetComponent<Recipe>());
             c.attachedRigidbody.isKinematic = true; //recipe stuck to the wall
-            c.gameObject.transform.eulerAngles = new Vector3(90,(float) -219.4,0);
-            /* Vector3 newpos = c.gameObject.transform.position;
-            newpos.x = (float) -1.001; 
-            newpos.y = (float) 1.533;
-            newpos.z = (float) 0.527;*/
-            c.gameObject.transform.localPosition = new Vector3((float) -1.001, (float) 1.553, (float) 0.527);
-            Debug.Log("pos is: " + c.gameObject.transform.localPosition + " ::::: " + c.gameObject.transform.position);
+            c.gameObject.transform.eulerAngles = new Vector3(90,90,0);
+            Vector3 newpos = c.gameObject.transform.position;
+            newpos.x = (float) -1.19; 
+            c.gameObject.transform.position = newpos;
             c.attachedRigidbody.freezeRotation = true;
             foreach(GameObject rec in Recipes){
                 if(c.gameObject == rec)continue;
