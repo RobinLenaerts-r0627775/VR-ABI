@@ -279,7 +279,7 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Bosteels.unity
     guid: 19b76f66937300e449fb2d65860ed001
   - enabled: 1
-    path: Assets/ABI-VR/Scenes/Testing Scenes/ImageTest.unity
+    path: Assets/ABI-VR/Scenes/CMS.unity
     guid: a8922ca9ced08c240bcbed9259f93f0b
   - enabled: 1
     path: Assets/ABI-VR/Scenes/Testing Scenes/AVPro test 1.unity
