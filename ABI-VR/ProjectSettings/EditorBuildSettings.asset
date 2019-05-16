@@ -66,6 +66,33 @@ EditorBuildSettings:
     path: Assets/ABI-VR/Scenes/Hertog-Jan/HJ_Welcome.unity
     guid: de25bbd95168f2a4994836e20cab6e4e
   - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_1_Warehouse.unity
+    guid: 9731d7f0b8d86c54dbb14c4f0f958f44
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_2_Warehouse2.unity
+    guid: 9d863d7513543b74e87ea8874599ebfe
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_3_Warehouse3.unity
+    guid: 19c1f82578d79eb47983059bd40f5605
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_4_Robots.unity
+    guid: 351e150d785136d4e92f19ec3ce5707c
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_5_Elevator.unity
+    guid: 5a3ed768d0c4b93458321102c1764c0a
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_6_Forks.unity
+    guid: 5a35068f85289834a84fd4c6dd544fd0
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_7_Forks2.unity
+    guid: 7a1af54fc27aa96428b6b20a1108f3a7
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_8_Drop.unity
+    guid: e043b71f61b80814cb8445edd48a123b
+  - enabled: 1
+    path: Assets/ABI-VR/Scenes/Logistics/Log_9_Wall.unity
+    guid: d6912f1c5b842ec429ce7d9028557c50
+  - enabled: 1
     path: Assets/ABI-VR/Scenes/Jupiler/Jup_Bottles_1.unity
     guid: 139a0de98cb76124683ec92ff72dc15a
   - enabled: 1
