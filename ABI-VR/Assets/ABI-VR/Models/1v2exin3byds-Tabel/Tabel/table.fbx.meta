@@ -1,82 +1,230 @@
 fileFormatVersion: 2
-guid: a39fc57830ac5244b9e96386dbc31386
+guid: 611c3535d51166d419e4e552bfbc153f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bein
-    100002: Bein_2
-    100004: Bein_3
-    100006: Bein_4
-    100008: CINEMA_4D_Editor
-    100010: Linseneffekt_Quelle
-    100012: Mond
-    100014: Mondlicht
-    100016: Physikalischer_Himmel
-    100018: Platte
-    100020: Schattenebene
-    100022: Sky_Dome
-    100024: Sky_Null
-    100026: Sonne
-    100028: Sonnenlicht
-    100030: "St\xFCtze"
-    100032: "St\xFCtze_2"
-    100034: "St\xFCtze_3"
-    100036: //RootNode
-    400000: Bein
-    400002: Bein_2
-    400004: Bein_3
-    400006: Bein_4
-    400008: CINEMA_4D_Editor
-    400010: Linseneffekt_Quelle
-    400012: Mond
-    400014: Mondlicht
-    400016: Physikalischer_Himmel
-    400018: Platte
-    400020: Schattenebene
-    400022: Sky_Dome
-    400024: Sky_Null
-    400026: Sonne
-    400028: Sonnenlicht
-    400030: "St\xFCtze"
-    400032: "St\xFCtze_2"
-    400034: "St\xFCtze_3"
-    400036: //RootNode
-    2000000: CINEMA_4D_Editor
-    2100000: Mat.1
-    2100002: Mat.1.1
-    2100004: Mat.1.2
-    2100006: Mat
-    2100008: Mat.1.5
-    2100010: Mat.5
-    2300000: Bein
-    2300002: Bein_2
-    2300004: Bein_3
-    2300006: Bein_4
-    2300008: Platte
-    2300010: "St\xFCtze"
-    2300012: "St\xFCtze_2"
-    2300014: "St\xFCtze_3"
-    3300000: Bein
-    3300002: Bein_2
-    3300004: Bein_3
-    3300006: Bein_4
-    3300008: Platte
-    3300010: "St\xFCtze"
-    3300012: "St\xFCtze_2"
-    3300014: "St\xFCtze_3"
-    4300000: "St\xFCtze"
-    4300002: "St\xFCtze_2"
-    4300004: "St\xFCtze_3"
-    4300006: Platte
-    4300008: Bein
-    4300010: Bein_2
-    4300012: Bein_3
-    4300014: Bein_4
-    10800000: Linseneffekt_Quelle
-    10800002: Mondlicht
-    10800004: Sky_Dome
-    10800006: Sonnenlicht
-    2186277476908879412: ImportLogs
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bein
+  - first:
+      1: 100002
+    second: Bein_2
+  - first:
+      1: 100004
+    second: Bein_3
+  - first:
+      1: 100006
+    second: Bein_4
+  - first:
+      1: 100008
+    second: CINEMA_4D_Editor
+  - first:
+      1: 100010
+    second: Linseneffekt_Quelle
+  - first:
+      1: 100012
+    second: Mond
+  - first:
+      1: 100014
+    second: Mondlicht
+  - first:
+      1: 100016
+    second: Physikalischer_Himmel
+  - first:
+      1: 100018
+    second: Platte
+  - first:
+      1: 100020
+    second: Schattenebene
+  - first:
+      1: 100022
+    second: Sky_Dome
+  - first:
+      1: 100024
+    second: Sky_Null
+  - first:
+      1: 100026
+    second: Sonne
+  - first:
+      1: 100028
+    second: Sonnenlicht
+  - first:
+      1: 100030
+    second: "St\xFCtze"
+  - first:
+      1: 100032
+    second: "St\xFCtze_2"
+  - first:
+      1: 100034
+    second: "St\xFCtze_3"
+  - first:
+      1: 100036
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Bein
+  - first:
+      4: 400002
+    second: Bein_2
+  - first:
+      4: 400004
+    second: Bein_3
+  - first:
+      4: 400006
+    second: Bein_4
+  - first:
+      4: 400008
+    second: CINEMA_4D_Editor
+  - first:
+      4: 400010
+    second: Linseneffekt_Quelle
+  - first:
+      4: 400012
+    second: Mond
+  - first:
+      4: 400014
+    second: Mondlicht
+  - first:
+      4: 400016
+    second: Physikalischer_Himmel
+  - first:
+      4: 400018
+    second: Platte
+  - first:
+      4: 400020
+    second: Schattenebene
+  - first:
+      4: 400022
+    second: Sky_Dome
+  - first:
+      4: 400024
+    second: Sky_Null
+  - first:
+      4: 400026
+    second: Sonne
+  - first:
+      4: 400028
+    second: Sonnenlicht
+  - first:
+      4: 400030
+    second: "St\xFCtze"
+  - first:
+      4: 400032
+    second: "St\xFCtze_2"
+  - first:
+      4: 400034
+    second: "St\xFCtze_3"
+  - first:
+      4: 400036
+    second: //RootNode
+  - first:
+      20: 2000000
+    second: CINEMA_4D_Editor
+  - first:
+      21: 2100000
+    second: Mat.1
+  - first:
+      21: 2100002
+    second: Mat.1.1
+  - first:
+      21: 2100004
+    second: Mat.1.2
+  - first:
+      21: 2100006
+    second: Mat
+  - first:
+      21: 2100008
+    second: Mat.1.5
+  - first:
+      21: 2100010
+    second: Mat.5
+  - first:
+      23: 2300000
+    second: Bein
+  - first:
+      23: 2300002
+    second: Bein_2
+  - first:
+      23: 2300004
+    second: Bein_3
+  - first:
+      23: 2300006
+    second: Bein_4
+  - first:
+      23: 2300008
+    second: Platte
+  - first:
+      23: 2300010
+    second: "St\xFCtze"
+  - first:
+      23: 2300012
+    second: "St\xFCtze_2"
+  - first:
+      23: 2300014
+    second: "St\xFCtze_3"
+  - first:
+      33: 3300000
+    second: Bein
+  - first:
+      33: 3300002
+    second: Bein_2
+  - first:
+      33: 3300004
+    second: Bein_3
+  - first:
+      33: 3300006
+    second: Bein_4
+  - first:
+      33: 3300008
+    second: Platte
+  - first:
+      33: 3300010
+    second: "St\xFCtze"
+  - first:
+      33: 3300012
+    second: "St\xFCtze_2"
+  - first:
+      33: 3300014
+    second: "St\xFCtze_3"
+  - first:
+      43: 4300000
+    second: "St\xFCtze"
+  - first:
+      43: 4300002
+    second: "St\xFCtze_2"
+  - first:
+      43: 4300004
+    second: "St\xFCtze_3"
+  - first:
+      43: 4300006
+    second: Platte
+  - first:
+      43: 4300008
+    second: Bein
+  - first:
+      43: 4300010
+    second: Bein_2
+  - first:
+      43: 4300012
+    second: Bein_3
+  - first:
+      43: 4300014
+    second: Bein_4
+  - first:
+      108: 10800000
+    second: Linseneffekt_Quelle
+  - first:
+      108: 10800002
+    second: Mondlicht
+  - first:
+      108: 10800004
+    second: Sky_Dome
+  - first:
+      108: 10800006
+    second: Sonnenlicht
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -119,18 +267,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -139,10 +288,11 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -152,6 +302,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

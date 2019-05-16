@@ -1,61 +1,167 @@
 fileFormatVersion: 2
-guid: a478243668b8fba44869019f13020593
+guid: 6cdec30e46e89b148aa7ec102aa535fc
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Boddy
-    100004: Boddy_001
-    100006: Boddy_002
-    100008: Boddy_003
-    100010: Plane
-    100012: Up
-    100014: Up_001
-    100016: Up_002
-    100018: Up_003
-    400000: //RootNode
-    400002: Boddy
-    400004: Boddy_001
-    400006: Boddy_002
-    400008: Boddy_003
-    400010: Plane
-    400012: Up
-    400014: Up_001
-    400016: Up_002
-    400018: Up_003
-    2100000: Text
-    2100002: text
-    2100004: Material_001
-    2300000: Boddy
-    2300002: Boddy_001
-    2300004: Boddy_002
-    2300006: Boddy_003
-    2300008: Plane
-    2300010: Up
-    2300012: Up_001
-    2300014: Up_002
-    2300016: Up_003
-    3300000: Boddy
-    3300002: Boddy_001
-    3300004: Boddy_002
-    3300006: Boddy_003
-    3300008: Plane
-    3300010: Up
-    3300012: Up_001
-    3300014: Up_002
-    3300016: Up_003
-    4300000: Boddy_003
-    4300002: Up_003
-    4300004: Boddy_002
-    4300006: Up_002
-    4300008: Boddy_001
-    4300010: Up_001
-    4300012: Plane
-    4300014: Boddy
-    4300016: Up
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Boddy
+  - first:
+      1: 100004
+    second: Boddy_001
+  - first:
+      1: 100006
+    second: Boddy_002
+  - first:
+      1: 100008
+    second: Boddy_003
+  - first:
+      1: 100010
+    second: Plane
+  - first:
+      1: 100012
+    second: Up
+  - first:
+      1: 100014
+    second: Up_001
+  - first:
+      1: 100016
+    second: Up_002
+  - first:
+      1: 100018
+    second: Up_003
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Boddy
+  - first:
+      4: 400004
+    second: Boddy_001
+  - first:
+      4: 400006
+    second: Boddy_002
+  - first:
+      4: 400008
+    second: Boddy_003
+  - first:
+      4: 400010
+    second: Plane
+  - first:
+      4: 400012
+    second: Up
+  - first:
+      4: 400014
+    second: Up_001
+  - first:
+      4: 400016
+    second: Up_002
+  - first:
+      4: 400018
+    second: Up_003
+  - first:
+      21: 2100000
+    second: Text
+  - first:
+      21: 2100002
+    second: text
+  - first:
+      21: 2100004
+    second: Material_001
+  - first:
+      23: 2300000
+    second: Boddy
+  - first:
+      23: 2300002
+    second: Boddy_001
+  - first:
+      23: 2300004
+    second: Boddy_002
+  - first:
+      23: 2300006
+    second: Boddy_003
+  - first:
+      23: 2300008
+    second: Plane
+  - first:
+      23: 2300010
+    second: Up
+  - first:
+      23: 2300012
+    second: Up_001
+  - first:
+      23: 2300014
+    second: Up_002
+  - first:
+      23: 2300016
+    second: Up_003
+  - first:
+      33: 3300000
+    second: Boddy
+  - first:
+      33: 3300002
+    second: Boddy_001
+  - first:
+      33: 3300004
+    second: Boddy_002
+  - first:
+      33: 3300006
+    second: Boddy_003
+  - first:
+      33: 3300008
+    second: Plane
+  - first:
+      33: 3300010
+    second: Up
+  - first:
+      33: 3300012
+    second: Up_001
+  - first:
+      33: 3300014
+    second: Up_002
+  - first:
+      33: 3300016
+    second: Up_003
+  - first:
+      43: 4300000
+    second: Boddy_003
+  - first:
+      43: 4300002
+    second: Up_003
+  - first:
+      43: 4300004
+    second: Boddy_002
+  - first:
+      43: 4300006
+    second: Up_002
+  - first:
+      43: 4300008
+    second: Boddy_001
+  - first:
+      43: 4300010
+    second: Up_001
+  - first:
+      43: 4300012
+    second: Plane
+  - first:
+      43: 4300014
+    second: Boddy
+  - first:
+      43: 4300016
+    second: Up
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -83,7 +189,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -98,18 +233,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -118,10 +254,11 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -131,6 +268,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
