@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="635" Width="800">
+        Title="VR Content Management System" Height="645" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -85,11 +85,17 @@
         </TabControl>
         <StackPanel Grid.Row="1" Grid.Column="3">
             <Image Source="{Binding Image}" />
-            <Label Content="{Binding ImageName}" Name="label"/>
-            <TextBox Text="{Binding ImageCode}" />
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Filename: " />
+                <Label Content="{Binding ImageName}" Name="label"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Code: " />
+                <TextBox Margin="24,0,0,0" Width="175" Text="{Binding ImageCode}" />
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="3D" />
-                <CheckBox IsChecked="{Binding ImageType}" RenderTransformOrigin="0.688,5.321" Width="27" Height="14"/>
+                <CheckBox Margin="41,0,0,0" IsChecked="{Binding ImageType}" RenderTransformOrigin="0.688,5.321" Width="27" Height="14"/>
             </StackPanel>
             <Button Content="Save code" Click="Button_Click_Save"/>
             <Button Content="Write to CMS " Click="Button_Click_SaveToFile"/>
