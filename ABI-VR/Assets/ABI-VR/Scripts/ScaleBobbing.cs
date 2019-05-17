@@ -17,6 +17,8 @@ public class ScaleBobbing : MonoBehaviour
         tempPos = transform.localScale;
     }
 
+
+    // same idea as the float script, but used to change the scale of an object following a sine wave.
     void Update()
     {
         tempPos.z = tempVal + amplitude * Mathf.Sin(speed * Time.time);

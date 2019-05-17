@@ -16,6 +16,7 @@ public class TogglePopup : MonoBehaviour
         
     }
 
+    //method to toggle the popup part of the object on or off depending on its active state.
     public void Toggle()
     {
         if (gameObject.active)

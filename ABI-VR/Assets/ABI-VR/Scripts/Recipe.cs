@@ -9,6 +9,7 @@ public class Recipe : MonoBehaviour
     private GameObject next;
 
     // Start is called before the first frame update
+    // initialize first ingredient as next to add.
     void Start()
     {
         next = ingredients[0];
@@ -20,10 +21,15 @@ public class Recipe : MonoBehaviour
         
     }
 
+    //returns the expected ingredient.
     public GameObject nextIngredient(){
         return next;
     }
 
+    //method to check wether the added ingredient is the right one.
+    // returns null if it is the last ingredient
+    // returns the given ingredient if it is not the right one
+    //returns the next ingredient wanted if it is the right one. 
     public GameObject addIngredient(GameObject ingredient){
         if(next == ingredient){
             

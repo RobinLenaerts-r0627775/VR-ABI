@@ -23,6 +23,8 @@ public class ReturnAfterVideo : MonoBehaviour
         
     }
 
+    //method to handle the looppointreached event
+    //jumps to a given scene when the video reaches its end point.
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
         SceneChanger.ChangeScene(JumpTo);

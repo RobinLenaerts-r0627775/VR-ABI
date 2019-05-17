@@ -17,6 +17,7 @@ public class VideoControls : MonoBehaviour
         
     }
 
+    //toggles a video to play or pause depending on the isPlaying state.
     public void TogglePlayPause()
     {
         var video = GetComponent<VideoPlayer>();

@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    // go to the main menu screen when all object are loaded in.
     void Start()
     {
         GameManager gm = (GameManager)FindObjectOfType(typeof(GameManager));

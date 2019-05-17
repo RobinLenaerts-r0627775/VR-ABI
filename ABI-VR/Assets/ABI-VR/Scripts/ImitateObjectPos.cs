@@ -13,6 +13,7 @@ public class ImitateObjectPos : MonoBehaviour
     }
 
     // Update is called once per frame
+    // make the attached object imitate the position of the given imitateObject. used for the home button on the hand model.
     void Update()
     {
         gameObject.transform.localPosition = ImitateObject.transform.localPosition;

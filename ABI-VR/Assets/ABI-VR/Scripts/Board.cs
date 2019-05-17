@@ -18,7 +18,7 @@ public class Board : MonoBehaviour
         
     }
 
-
+    // checks if the player is putting a recipe on the board, if true: spawn the ingredients and disable the other recipes. also shortly disables the grab of the player so the recipe doesnt spasm out.
     void OnTriggerEnter(Collider c){
         if(Recipes.Contains(c.gameObject)){
             Ingredients.SetActive(true); 
@@ -34,7 +34,9 @@ public class Board : MonoBehaviour
             ((OVRGrabber) FindObjectOfType(typeof(OVRGrabber))).enabled = true;
         }
     }
+
     //called when a collider enters the trigger zone
+    //keeps the recipe in place against the board.
     void OnTriggerStay(Collider c){
         if(Recipes.Contains(c.gameObject)){
             //make sure the recipe is in the right place and no longer being grabbed by the player
@@ -47,6 +49,8 @@ public class Board : MonoBehaviour
         }  
     }
 
+
+    // makes sure the recipe gets its original values back if it does exit the trigger zone. (shouldnt happen)
     void OnTriggerExit(Collider c){
         if(Recipes.Contains(c.gameObject)){
             c.gameObject.GetComponent<OVRGrabbable>().enabled = true;

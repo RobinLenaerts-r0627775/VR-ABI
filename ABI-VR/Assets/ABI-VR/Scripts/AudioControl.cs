@@ -16,6 +16,7 @@ public class AudioControl : MonoBehaviour
 
     }
 
+    // play video when paused, pause video when played on click.
     public void TogglePlayPause()
     {
         var audio = GetComponent<AudioSource>();

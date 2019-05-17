@@ -4,6 +4,8 @@
 public class DontDestroyObject : MonoBehaviour
 {
 
+
+    //added to objects that need to stay when transitioning between scenes, like the camera rig, controllers,...
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

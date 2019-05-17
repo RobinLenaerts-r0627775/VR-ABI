@@ -6,17 +6,20 @@ public class Float : MonoBehaviour
 {
 
     [Header("Float parametres")]
-    public float amplitude;          //Set in Inspector 
-    public float speed;                  //Set in Inspector 
+    public float amplitude;          
+    public float speed;                  
     private float tempVal;
     private Vector3 tempPos;
 
+
+    //get initial position of the object.
     void Start()
     {
         tempVal = transform.position.y;
         tempPos = transform.position;
     }
 
+    // make the height value update following a sine wave.
     void Update()
     {
         tempPos.y = tempVal + amplitude * Mathf.Sin(speed * Time.time);

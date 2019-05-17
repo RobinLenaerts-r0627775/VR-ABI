@@ -19,6 +19,7 @@ public class WaterTrigger : MonoBehaviour
     List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
     
     // Start is called before the first frame update
+    // checks if the bottle is tilted and if water should flow.
     void Start()
     {
         if (Up.transform.position.y >= Down.transform.position.y){
@@ -33,6 +34,7 @@ public class WaterTrigger : MonoBehaviour
     }
 
     // Update is called once per frame
+    // checks the bottle orientation and updates the pour boolian when needed.
     void Update()
     {
         pMain = ParticleSystem.main;
@@ -51,6 +53,7 @@ public class WaterTrigger : MonoBehaviour
         }
     }
 
+    //checks if the particles collide with a container. if they do, up the counter and if the counter reaches 300, reset it, stop the liquid particles from flowing and add the given ingredient to the selected recipe.
     void OnParticleCollision(GameObject other){
         if(other == Container){
             Debug.Log("collision with container");

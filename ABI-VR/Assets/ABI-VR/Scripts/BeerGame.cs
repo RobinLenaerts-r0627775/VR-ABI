@@ -17,9 +17,9 @@ public class BeerGame : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource Boo;
     [SerializeField] AudioSource Yay;
+    [Header("Confetti particles")]
     [SerializeField] ParticleSystem Particle;
 
-    [Header("Particles")]
     GameObject nextIngredient;
 
     [Header("UI")]
@@ -28,6 +28,7 @@ public class BeerGame : MonoBehaviour
 
 
     // Start is called before the first frame update
+    // set first recipe as default, 
     void Start()
     {
         selectedRecipe = Recipes[0];
@@ -35,10 +36,13 @@ public class BeerGame : MonoBehaviour
         container.GetComponentsInChildren(true, results);
     }
 
+    // method to select a recipe so the script knows what ingredients to expect.
     public void SelectRecipe(Recipe Recipe){
         if (selectedRecipe != Recipe) selectedRecipe = Recipe;
     }
 
+    // method that checks if the ingredient that was added is the right one and plays a corresponding sound. 
+    // also checks if it is the last ingredient in the recipe and ends the game when it is.
     public bool addIngredient(GameObject i){
         GameObject res;
         res = selectedRecipe.addIngredient(i);
@@ -55,6 +59,7 @@ public class BeerGame : MonoBehaviour
         return false;
     }
 
+    // method to handle the game end. disables or enables different ui and objects. activates the confetti particles and spawns the reward.
     public void endGame(){
         Debug.Log("disabling ingredients");
         Ingredients.SetActive(false);
