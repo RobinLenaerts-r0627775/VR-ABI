@@ -73,15 +73,15 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowSpeed: -0.5
-    - _GlowTiling: 0.593
+    - _GlowSpeed: 0
+    - _GlowTiling: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 1.29
-    - _ScanSpeed: 0.1
-    - _ScanTiling: 5.49
+    - _ScanSpeed: 0.86
+    - _ScanTiling: 4.92
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -92,4 +92,4 @@ Material:
     - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainColor: {r: 0.85882354, g: 0.34509805, b: 0.043137256, a: 1}
-    - _RimColor: {r: 0, g: 0.85882354, b: 0.28235295, a: 0}
+    - _RimColor: {r: 0.764151, g: 0.6998638, b: 0.3063813, a: 0}
