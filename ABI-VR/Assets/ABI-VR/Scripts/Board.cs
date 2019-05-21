@@ -10,6 +10,8 @@ public class Board : MonoBehaviour
     [SerializeField] GameObject Recipetext;
     [SerializeField] GameObject Gametext;
     [SerializeField] Collider triggerBox;
+    [SerializeField] AudioSource soundOnTrigger;
+
     
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class Board : MonoBehaviour
             Ingredients.SetActive(true); 
             Recipetext.SetActive(false);
             Gametext.SetActive(true);
+            soundOnTrigger.Play();
             foreach(GameObject rec in Recipes){
                 if(c.gameObject == rec){
                     continue;
