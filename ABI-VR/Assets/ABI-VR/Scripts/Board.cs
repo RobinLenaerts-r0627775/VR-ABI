@@ -43,7 +43,7 @@ public class Board : MonoBehaviour
             BeerGame.SelectRecipe(c.gameObject.GetComponent<Recipe>());
             c.attachedRigidbody.isKinematic = true; //recipe stuck to the wall
             c.gameObject.transform.eulerAngles = new Vector3(90,(float) -219.4,0);
-            c.gameObject.transform.localPosition = new Vector3((float) -1.001, (float) 1.553, (float) 0.527);
+            c.gameObject.transform.localPosition = new Vector3((float) -1.001, (float) 1.784, (float) 0.527);
             c.attachedRigidbody.freezeRotation = true;
             c.enabled = false;
         }  

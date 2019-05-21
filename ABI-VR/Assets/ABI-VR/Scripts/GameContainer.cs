@@ -19,7 +19,6 @@ public class GameContainer : MonoBehaviour
 
     // called every time there is a collider in the trigger zone
     void OnTriggerStay(Collider other){
-        Debug.Log("Stay");
 
         if(other.tag == "GameController"){
             return;
@@ -29,9 +28,9 @@ public class GameContainer : MonoBehaviour
             other.gameObject.SetActive(false);
         } else {
             Vector3 vec = other.gameObject.transform.localPosition;
-            vec.x = 0;
+            vec.x = (float) 0.204;
             vec.y = (float) 1.8;
-            vec.z = 1;
+            vec.z = (float) 0.461;
             other.gameObject.transform.localPosition = vec;
         }
     }
