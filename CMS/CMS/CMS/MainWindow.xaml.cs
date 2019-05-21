@@ -162,23 +162,46 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
-                if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName))
+                bool exist = false;
+                foreach (Image img in dictionaryImages.Values)
                 {
-                    logs.Text = "Copying " + fileName + " to folder ";
-                    WebClient wc = new WebClient();
-                    wc.DownloadProgressChanged += DownloadProgress;
-                    wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName);
-                    while (wc.IsBusy) { }
-                    wc.Dispose();
-                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName));
-                    Image image = new Image(fileName, Image, true);
-                    dictionaryImages[fileName] = image;
-                    ListImages.Add(image);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                    if (img.Name.Equals(fileName))
+                    {
+                        exist = true;
+                    }
+                }
+                if (fileName.Split('.').Last().Equals("png") || fileName.Split('.').Last().Equals("jpg"))
+                {
+                    if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName))
+                    {
+                        logs.Text = "Copying " + fileName + " to folder ";
+                        WebClient wc = new WebClient();
+                        wc.DownloadProgressChanged += DownloadProgress;
+                        wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName);
+                        while (wc.IsBusy) { }
+                        wc.Dispose();
+                        Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName));
+                        Image image = new Image(fileName, Image, true);
+                        dictionaryImages[fileName] = image;
+                        ListImages.Add(image);
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                    }
+                    else if (File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName) && !exist)
+                    {
+                        Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + fileName));
+                        Image image = new Image(fileName, Image, true);
+                        dictionaryImages[fileName] = image;
+                        ListImages.Add(image);
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                    }
+                    else
+                    {
+                        logs.Text = "This file already exists in CMS";
+                    }
                 }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "Your selected file is not recognized as an image file";
                 }
             }
         }
@@ -189,23 +212,30 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
-                if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
+                if (fileName.Split('.').Last().Equals("mp4"))
                 {
-                    logs.Text = "Copying " + fileName + " to folder ";
-                    WebClient wc = new WebClient();
-                    wc.DownloadProgressChanged += DownloadProgress;
-                    wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName);
-                    wc.Dispose();
-                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
-                    Image image = new Image(fileName, Image, true);
-                    image.Name = fileName;
-                    dictionaryVideos[fileName] = image;
-                    ListVideos.Add(image);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+                    if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
+                    {
+                        logs.Text = "Copying " + fileName + " to folder ";
+                        WebClient wc = new WebClient();
+                        wc.DownloadProgressChanged += DownloadProgress;
+                        wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName);
+                        wc.Dispose();
+                        Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\video_placeholder.jpg"));
+                        Image image = new Image(fileName, Image, true);
+                        image.Name = fileName;
+                        dictionaryVideos[fileName] = image;
+                        ListVideos.Add(image);
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+                    }
+                    else
+                    {
+                        logs.Text = "This file already exists in CMS";
+                    }
                 }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "Your selected file is not recognized as a video file";
                 }
             }
         }
@@ -216,23 +246,30 @@ namespace CMS
             if (!file.Equals(""))
             {
                 string fileName = System.IO.Path.GetFileName(file);
-                if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
+                if (fileName.Split('.').Last().Equals("wav") || fileName.Split('.').Last().Equals("mp3"))
                 {
-                    logs.Text = "Copying " + fileName + " to folder ";
-                    WebClient wc = new WebClient();
-                    wc.DownloadProgressChanged += DownloadProgress;
-                    wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + fileName);
-                    wc.Dispose();
-                    Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
-                    Image image = new Image(fileName, Image, true);
-                    image.Name = fileName;
-                    dictionaryAudio[fileName] = image;
-                    ListAudios.Add(image);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
+                    if (!File.Exists("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + fileName))
+                    {
+                        logs.Text = "Copying " + fileName + " to folder ";
+                        WebClient wc = new WebClient();
+                        wc.DownloadProgressChanged += DownloadProgress;
+                        wc.DownloadFileAsync(new Uri(file), "C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + fileName);
+                        wc.Dispose();
+                        Image = new BitmapImage(new Uri("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\audio_placeholder.jpg"));
+                        Image image = new Image(fileName, Image, true);
+                        image.Name = fileName;
+                        dictionaryAudio[fileName] = image;
+                        ListAudios.Add(image);
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
+                    }
+                    else
+                    {
+                        logs.Text = "This file already exists in CMS";
+                    }
                 }
                 else
                 {
-                    logs.Text = "This file already exists in CMS";
+                    logs.Text = "Your selected file is not recognized as an audio file";
                 }
             }
         }
@@ -275,34 +312,41 @@ namespace CMS
             string name = ImageName;
             string code = ImageCode;
             bool type = ImageType;
-            if (name.Split('.').Last().Equals("mp4"))
+            if (name != null)
             {
-                var key = dictionaryVideos.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                var video = dictionaryVideos[key];
-                video.Code = code;
-                video.Type = type;
-                logs.Text = "File " + video.Name + " is saved with code " + video.Code;
-            }
-            else if (name.Split('.').Last().Equals("wav"))
-            {
-                var key = dictionaryAudio.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                var sound = dictionaryAudio[key];
-                sound.Code = code;
-                sound.Type = type;
-                logs.Text = "File " + sound.Name + " is saved with code " + sound.Code;
+                if (name.Split('.').Last().Equals("mp4"))
+                {
+                    var key = dictionaryVideos.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                    var video = dictionaryVideos[key];
+                    video.Code = code;
+                    video.Type = type;
+                    logs.Text = "File " + video.Name + " is saved with code " + video.Code;
+                }
+                else if (name.Split('.').Last().Equals("wav"))
+                {
+                    var key = dictionaryAudio.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                    var sound = dictionaryAudio[key];
+                    sound.Code = code;
+                    sound.Type = type;
+                    logs.Text = "File " + sound.Name + " is saved with code " + sound.Code;
+                }
+                else
+                {
+                    var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
+                    var image = dictionaryImages[key];
+                    image.Code = code;
+                    image.Type = type;
+                    logs.Text = "File " + image.Name + " is saved with code " + image.Code;
+                }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
             }
             else
-            { 
-                var key = dictionaryImages.FirstOrDefault(x => x.Value.Name.Equals(name)).Key;
-                var image = dictionaryImages[key];
-                image.Code = code;
-                image.Type = type;
-                logs.Text = "File " + image.Name + " is saved with code " + image.Code;
+            {
+                logs.Text = "Please select a file first to save";
             }
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageCode)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
         }
 
         private void Button_Click_SaveToFile(object sender, RoutedEventArgs e)
@@ -340,36 +384,43 @@ namespace CMS
         {
             string name = ImageName;
             string code = ImageCode;
-            if (name.Split('.').Last().Equals("mp4"))
+            if (name != null)
             {
-                ListVideos.Remove(dictionaryVideos[code]);
-                dictionaryVideos.Remove(code);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
-                System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + name);
-                logs.Text = "Video deleted";
-            }
-            else if (name.Split('.').Last().Equals("wav"))
-            {
-                ListAudios.Remove(dictionaryAudio[code]);
-                dictionaryAudio.Remove(code);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
-                System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + name);
-                logs.Text = "Audio deleted";
+                if (name.Split('.').Last().Equals("mp4"))
+                {
+                    ListVideos.Remove(dictionaryVideos[code]);
+                    dictionaryVideos.Remove(code);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListVideos)));
+                    System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\videos\\" + name);
+                    logs.Text = "Video deleted";
+                }
+                else if (name.Split('.').Last().Equals("wav"))
+                {
+                    ListAudios.Remove(dictionaryAudio[code]);
+                    dictionaryAudio.Remove(code);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListAudios)));
+                    System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\audios\\" + name);
+                    logs.Text = "Audio deleted";
+                }
+                else
+                {
+                    ListImages.Remove(dictionaryImages[code]);
+                    dictionaryImages.Remove(code);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
+                    System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + name);
+                    logs.Text = "Image deleted";
+                }
             }
             else
             {
-                ListImages.Remove(dictionaryImages[code]);
-                dictionaryImages.Remove(code);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListImages)));
-                System.IO.File.Delete("C:\\Users\\" + _computer + "\\Desktop\\CMS\\images\\" + name);
-                logs.Text = "Image deleted";
+                logs.Text = "Please select a file first to delete";
             }
         }
 
         private void createButton_Click_CreateCMS(object sender, RoutedEventArgs e)
         {
             File.Create("C:\\Users\\" + _computer + "\\Desktop\\CMS\\CMS.txt");
-            logs.Text = "";
+            logs.Text = "CMS created. You can now upload images, videos or audios";
             createButton.Visibility = Visibility.Hidden;
         }
 
