@@ -320,7 +320,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_fontSize
@@ -1116,7 +1116,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_fontSize

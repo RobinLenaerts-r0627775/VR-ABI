@@ -7,8 +7,6 @@ public class Board : MonoBehaviour
     [SerializeField] List<GameObject> Recipes;
     [SerializeField] BeerGame BeerGame;
     [SerializeField] GameObject Ingredients;
-    [SerializeField] GameObject Recipetext;
-    [SerializeField] GameObject Gametext;
     [SerializeField] Collider triggerBox;
     [SerializeField] AudioSource OldSound;
     [SerializeField] AudioSource soundOnTrigger;
@@ -25,14 +23,12 @@ public class Board : MonoBehaviour
     void OnTriggerEnter(Collider c){
         if(Recipes.Contains(c.gameObject)){
             Ingredients.SetActive(true); 
-            Recipetext.SetActive(false);
-            Gametext.SetActive(true);
             OldSound.Pause();
             soundOnTrigger.Play();
             Vector3 newScale = c.gameObject.transform.localScale;
-            newScale.x = newScale.x * (float) 1.5;
-            newScale.y = newScale.y * (float) 1.5;
-            newScale.z = newScale.z * (float) 1.5;
+            newScale.x = newScale.x * (float) 2;
+            newScale.y = newScale.y * (float) 2;
+            newScale.z = newScale.z * (float) 2;
             c.gameObject.transform.localScale = newScale;
             foreach(GameObject rec in Recipes){
                 if(c.gameObject == rec){
@@ -53,7 +49,7 @@ public class Board : MonoBehaviour
             BeerGame.SelectRecipe(c.gameObject.GetComponent<Recipe>());
             c.attachedRigidbody.isKinematic = true; //recipe stuck to the wall
             c.gameObject.transform.eulerAngles = new Vector3(90,(float) -219.4,0);
-            c.gameObject.transform.localPosition = new Vector3((float) -1.001, (float) 1.784, (float) 0.527);
+            c.gameObject.transform.localPosition = new Vector3((float) -1.021, (float) 1.569, (float) 0.514);
             c.attachedRigidbody.freezeRotation = true;
             c.enabled = false;
         }  

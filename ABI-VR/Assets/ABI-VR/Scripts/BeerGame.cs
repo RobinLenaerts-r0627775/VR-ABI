@@ -23,7 +23,6 @@ public class BeerGame : MonoBehaviour
     GameObject nextIngredient;
 
     [Header("UI")]
-    [SerializeField] GameObject Gametext;
     [SerializeField] GameObject Wintext;
 
 
@@ -64,7 +63,6 @@ public class BeerGame : MonoBehaviour
         Debug.Log("disabling ingredients");
         Ingredients.SetActive(false);
         Debug.Log("disabling gametext");
-        Gametext.SetActive(false);
         Wintext.SetActive(true);
         rewards[Recipes.IndexOf(selectedRecipe)].SetActive(true);
         Particle.Play();

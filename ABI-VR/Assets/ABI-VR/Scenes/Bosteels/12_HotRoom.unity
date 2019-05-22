@@ -395,6 +395,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextHologram
       objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_text
+      value: "Just before bottling Tripel Karmeliet, sugar and fresh yeast are added.
+        After this, the filled bottles are stored for 2 to 3 weeks in the refermentation
+        room at a constant temperature of 22 \xB0C (72 \xB0F). The yeast will convert
+        the sugar present into carbon dioxide gas to give the beer its sparkling saturation.
+        The yeast present will attach itself to the bottom of the bottle."
+      objectReference: {fileID: 0}
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -469,15 +478,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_text
-      value: "Just before bottling Tripel Karmeliet, sugar and fresh yeast are added.
-        After this, the filled bottles are stored for 2 to 3 weeks in the refermentation
-        room at a constant temperature of 22 \xB0C (72 \xB0F). The yeast will convert
-        the sugar present into carbon dioxide gas to give the beer its sparkling saturation.
-        The yeast present will attach itself to the bottom of the bottle."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40c4721c681248d4f820c1ac1a63cb21, type: 3}

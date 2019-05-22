@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioControl : MonoBehaviour
 {
+
+    [SerializeField] private AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class AudioControl : MonoBehaviour
     // play audio when paused, pause video when played on click.
     public void TogglePlayPause()
     {
-        var audio = GetComponent<AudioSource>();
+        
         if (audio.isPlaying)
         {
             audio.Pause();

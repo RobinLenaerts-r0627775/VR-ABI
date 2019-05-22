@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TogglePopup : MonoBehaviour
 {
+
+    [SerializeField] GameObject ClickMe;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,12 @@ public class TogglePopup : MonoBehaviour
         if (gameObject.active)
         {
             gameObject.SetActive(false);
+            ClickMe.SetActive(true);
         }
         else
         {
             gameObject.SetActive(true);
+            ClickMe.SetActive(false);
         }
     }
 }
