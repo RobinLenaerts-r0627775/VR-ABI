@@ -12366,6 +12366,7 @@ MonoBehaviour:
   Recipetext: {fileID: 1034794955}
   Gametext: {fileID: 1034550185}
   triggerBox: {fileID: 1063036908}
+  OldSound: {fileID: 1485330185}
   soundOnTrigger: {fileID: 362778047}
 --- !u!1 &1117390925
 GameObject:
@@ -13927,6 +13928,67 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextHologram
       objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_text
+      value: To grab something, squeeze the trigger on the handle of the controller.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_isOrthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 1353465497}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6967643348433476552, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14000,67 +14062,6 @@ PrefabInstance:
     - target: {fileID: 5220321347268313435, guid: 40c4721c681248d4f820c1ac1a63cb21,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_text
-      value: To grab something, squeeze the trigger on the handle of the controller.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
-        type: 2}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 17.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_isOrthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.textComponent
-      value: 
-      objectReference: {fileID: 1353465497}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591535964454957036, guid: 40c4721c681248d4f820c1ac1a63cb21,
-        type: 3}
-      propertyPath: m_textInfo.materialCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

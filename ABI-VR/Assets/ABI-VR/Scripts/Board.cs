@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
     [SerializeField] GameObject Recipetext;
     [SerializeField] GameObject Gametext;
     [SerializeField] Collider triggerBox;
+    [SerializeField] AudioSource OldSound;
     [SerializeField] AudioSource soundOnTrigger;
 
     
@@ -26,7 +27,13 @@ public class Board : MonoBehaviour
             Ingredients.SetActive(true); 
             Recipetext.SetActive(false);
             Gametext.SetActive(true);
+            OldSound.Pause();
             soundOnTrigger.Play();
+            Vector3 newScale = c.gameObject.transform.localScale;
+            newScale.x = newScale.x * (float) 1.5;
+            newScale.y = newScale.y * (float) 1.5;
+            newScale.z = newScale.z * (float) 1.5;
+            c.gameObject.transform.localScale = newScale;
             foreach(GameObject rec in Recipes){
                 if(c.gameObject == rec){
                     continue;
